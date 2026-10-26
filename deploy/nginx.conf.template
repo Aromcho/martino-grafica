@@ -1,0 +1,63 @@
+# Martino Gráfica — server block propio. Reemplazá __DOMINIO__ (ver deploy/DEPLOY.md).
+# No modifica ningún otro sitio: va en su propio archivo de sites-available.
+
+upstream martino_web { server 127.0.0.1:3020; keepalive 16; }
+upstream martino_api { server 127.0.0.1:4020; keepalive 16; }
+
+server {
+    listen 80;
+    listen [::]:80;
+    server_name __DOMINIO__ www.__DOMINIO__;
+
+    # Certbot agrega acá el bloque HTTPS y la redirección
+
+    access_log /var/log/nginx/martino.access.log;
+    error_log  /var/log/nginx/martino.error.log warn;
+
+    # Presupuestos con hasta 5 archivos de 25 MB y fotos del panel
+    client_max_body_size 130m;
+
+    gzip on;
+    gzip_types text/plain text/css application/json application/javascript image/svg+xml application/manifest+json;
+
+    # API (NestJS)
+    location /api/ {
+        proxy_pass http://martino_api;
+        proxy_http_version 1.1;
+        proxy_set_header Connection "";
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_read_timeout 120s;
+        proxy_request_buffering off;
+    }
+
+    # Fotos optimizadas: las sirve Nginx directo del disco (más rápido) con caché larga
+    location /uploads/ {
+        alias __RUTA__/apps/api/uploads/;
+        access_log off;
+        expires 30d;
+        add_header Cache-Control "public, max-age=2592000, immutable";
+        try_files $uri =404;
+    }
+
+    # Archivos estáticos de Next con hash en el nombre
+    location /_next/static/ {
+        proxy_pass http://martino_web;
+        access_log off;
+        expires 1y;
+        add_header Cache-Control "public, max-age=31536000, immutable";
+    }
+
+    # Sitio y panel (Next.js)
+    location / {
+        proxy_pass http://martino_web;
+        proxy_http_version 1.1;
+        proxy_set_header Connection "";
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}

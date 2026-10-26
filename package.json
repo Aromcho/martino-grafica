@@ -1,0 +1,28 @@
+{
+  "name": "martino-grafica",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Sitio web + API + panel de Martino Gráfica (Next.js 16 + NestJS 11 + PostgreSQL)",
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "env": "node scripts/init-env.mjs",
+    "db:up": "docker compose up -d db",
+    "db:down": "docker compose down",
+    "db:migrate": "npm -w apps/api run db:migrate",
+    "seed": "npm -w apps/api run seed",
+    "seed:reset": "npm -w apps/api run seed -- --reset",
+    "setup": "npm run env && npm run db:up && npm run db:migrate && npm run seed",
+    "dev": "concurrently -k -n api,web -c cyan,green \"npm -w apps/api run start:dev\" \"npm -w apps/web run dev\"",
+    "build": "npm -w apps/api run build && npm -w apps/web run build",
+    "start": "concurrently -k -n api,web -c cyan,green \"npm -w apps/api run start:prod\" \"npm -w apps/web run start\"",
+    "typecheck": "npm -w apps/api run typecheck && npm -w apps/web run typecheck"
+  },
+  "devDependencies": {
+    "concurrently": "9.2.1"
+  },
+  "engines": {
+    "node": ">=20.18"
+  }
+}

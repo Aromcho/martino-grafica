@@ -1,0 +1,23 @@
+# Base de datos de producción (VPS). Sólo escucha en 127.0.0.1 y en un puerto propio
+# para no chocar con otros sitios del servidor.
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: martino-db-prod
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: martino
+      POSTGRES_PASSWORD: ${MARTINO_DB_PASSWORD:?Definí MARTINO_DB_PASSWORD en deploy/.env.db}
+      POSTGRES_DB: martino
+    ports:
+      - '127.0.0.1:5435:5432'
+    volumes:
+      - martino-db-prod:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U martino -d martino']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  martino-db-prod:

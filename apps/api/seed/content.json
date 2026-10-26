@@ -1,0 +1,5392 @@
+{
+ "business": {
+  "name": "Martino Gráfica",
+  "tagline": "Ploteos, cartelería, calcos y estampados en Villa Gesell",
+  "description": "Taller de diseño gráfico en Villa Gesell. Diseñamos, imprimimos y colocamos: ploteo vehicular y de motos, carteles luminosos y corpóreas, vidrieras y esmerilados, calcos y stickers, vinilo decorativo, y remeras y gorras estampadas.",
+  "owner": "Emmanuel Martino",
+  "phone": "+54 11 5063-3206",
+  "whatsapp": "5491150633206",
+  "whatsappGreeting": "Hola, quería hacerte una consulta 👋",
+  "email": "emmamartino1987@gmail.com",
+  "address": "Boulevard Silvio Gesell 1136",
+  "crossStreets": "Boulevard y Paseo 111",
+  "city": "Villa Gesell",
+  "province": "Buenos Aires",
+  "postalCode": "B7165",
+  "country": "AR",
+  "lat": -37.259011,
+  "lng": -56.9820223,
+  "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Boulevard+Silvio+Gesell+1136%2C+Villa+Gesell",
+  "instagram": "martino.grafica",
+  "instagramUrl": "https://www.instagram.com/martino.grafica/",
+  "serviceArea": [
+   "Villa Gesell",
+   "Mar Azul",
+   "Mar de las Pampas",
+   "Las Gaviotas",
+   "Colonia Marina",
+   "Pinamar",
+   "Cariló",
+   "Ostende"
+  ],
+  "shipping": "Calcos DTF UV y estampados con envío a todo el país.",
+  "paymentMethods": [],
+  "credentials": "Emmanuel Martino hizo el curso de ploteo vehicular de ByLucky.",
+  "motto": "Dios está en control",
+  "stats": {
+   "posts": 605,
+   "followers": 7889,
+   "since": 2017
+  }
+ },
+ "categories": [
+  {
+   "slug": "ploteo-vehicular",
+   "name": "Ploteo vehicular",
+   "shortName": "Vehículos",
+   "tagline": "Autos, utilitarios, camiones y food trucks que publicitan tu negocio.",
+   "description": "Rotulación, forrados completos y cambios de color para autos, camionetas, utilitarios, camiones, trailers y food trucks. Diseñamos, imprimimos y colocamos en el taller.",
+   "materials": [
+    "Vinilo de corte",
+    "Vinilo impreso",
+    "Microperforado",
+    "Vinilo negro mate",
+    "Símil carbono",
+    "Laminado"
+   ],
+   "sortOrder": 0,
+   "cover": "trabajos/DdJRHqkltYn-01.jpg"
+  },
+  {
+   "slug": "motos-y-cuatris",
+   "name": "Motos y cuatris",
+   "shortName": "Motos",
+   "tagline": "Full wrap, cambios de color y kits de calcos laminadas.",
+   "description": "Forrado completo de plásticos, cambios de color, kits de calcos laminadas o laqueadas, réplicas y diseños propios para motos, cuatris, areneros y cascos.",
+   "materials": [
+    "Vinilo de forrado",
+    "Calcos laminadas",
+    "Vinilo flúor",
+    "Tornasolado",
+    "Símil carbono 3D, 4D y 6D",
+    "Cromado"
+   ],
+   "sortOrder": 1,
+   "cover": "trabajos/C-OoOUsPrGn-01.jpg"
+  },
+  {
+   "slug": "carteleria",
+   "name": "Cartelería",
+   "shortName": "Carteles",
+   "tagline": "Lona front, back light, corpóreas, acrílico y neón LED.",
+   "description": "Carteles luminosos y no luminosos para frentes de locales: lona front y back light, letras corpóreas de polyfan, PVC o alto impacto, acrílico, chapa calada, carteles botón, 360° y neón LED.",
+   "materials": [
+    "Lona front",
+    "Lona back light",
+    "Polyfan",
+    "Acrílico",
+    "Chapa",
+    "Neón LED",
+    "Alto impacto"
+   ],
+   "sortOrder": 2,
+   "cover": "trabajos/De5BiE_nRdC-03.jpg"
+  },
+  {
+   "slug": "vidrieras-y-esmerilados",
+   "name": "Vidrieras y esmerilados",
+   "shortName": "Vidrieras",
+   "tagline": "Vinilo de corte, impreso, microperforado y esmerilado para vidrios.",
+   "description": "Vidrieras de locales, esmerilados lisos, impresos o con diseño de corte para mamparas, puertas y oficinas, microperforado y vinilo cristal.",
+   "materials": [
+    "Esmerilado",
+    "Microperforado",
+    "Vinilo cristal",
+    "Vinilo de corte",
+    "Polarizado"
+   ],
+   "sortOrder": 3,
+   "cover": "trabajos/C5WcJgfPLDK-01.jpg"
+  },
+  {
+   "slug": "calcos-y-stickers",
+   "name": "Calcos y stickers",
+   "shortName": "Calcos",
+   "tagline": "Calcos con tu logo: impresas, de corte, laminadas, laqueadas u holográficas.",
+   "description": "Calcos y stickers para comercios, marcas, motos y eventos. Impresas, de corte, laminadas, laqueadas, holográficas, tornasoladas o en DTF UV con relieve para termos y celulares.",
+   "materials": [
+    "Vinilo impreso",
+    "Vinilo de corte",
+    "Holográfico",
+    "Tornasolado",
+    "DTF UV",
+    "Laminado"
+   ],
+   "sortOrder": 4,
+   "cover": "trabajos/DKsaouNynjU-03.jpg"
+  },
+  {
+   "slug": "remeras-y-gorras",
+   "name": "Remeras y gorras",
+   "shortName": "Estampados",
+   "tagline": "Remeras, buzos y gorras trucker estampadas por mayor y menor.",
+   "description": "Remeras y buzos estampados con tu logo o tu diseño, por unidad o en cantidad, y gorras trucker personalizadas. Trabajamos con tu diseño o te ayudamos a crearlo.",
+   "materials": [
+    "Estampado DTF",
+    "Vinilo textil",
+    "Jersey peinado 24/1",
+    "Gorras trucker"
+   ],
+   "sortOrder": 5,
+   "cover": "trabajos/DFdmot5PEme-07.jpg"
+  },
+  {
+   "slug": "vinilo-decorativo",
+   "name": "Vinilo decorativo y forrados",
+   "shortName": "Deco",
+   "tagline": "Paredes, heladeras, muebles, notebooks y pisos.",
+   "description": "Vinilo decorativo impreso para paredes y techos, forrado de heladeras, frigobares, alacenas y notebooks, y vinilo de alto tránsito para pisos.",
+   "materials": [
+    "Vinilo impreso mate",
+    "Símil madera",
+    "Vinilo de alto tránsito",
+    "Negro mate"
+   ],
+   "sortOrder": 6,
+   "cover": "trabajos/C0h4gRkv29T-07.jpg"
+  },
+  {
+   "slug": "inmobiliarias",
+   "name": "Para inmobiliarias",
+   "shortName": "Inmobiliarias",
+   "tagline": "Carteles de venta y alquiler, mapas y llaveros.",
+   "description": "Carteles inmobiliarios con bastidor de madera, chapa gruesa y vinilo refractario, mapas de zonificación y murales, llaveros personalizados y ploteo de oficinas.",
+   "materials": [
+    "Bastidor de madera",
+    "Chapa gruesa",
+    "Vinilo refractario",
+    "Vinilo impreso"
+   ],
+   "sortOrder": 7,
+   "cover": "trabajos/C0UwllEvXtM-01.jpg"
+  }
+ ],
+ "products": [
+  {
+   "slug": "remera-estampada",
+   "name": "Remera estampada personalizada",
+   "category": "remeras-y-gorras",
+   "summary": "Remeras con tu logo o tu diseño, por mayor y menor. Las podés tener en el día.",
+   "description": "Remeras para tu negocio, emprendimiento, equipo o evento. Estampamos tu logo adelante y atrás, o el diseño que quieras. Trabajamos con tu diseño o te ayudamos a crearlo.",
+   "priceFrom": 16000,
+   "priceTiers": [
+    {
+     "minQty": 1,
+     "price": 25000,
+     "label": "1 unidad (desde)"
+    },
+    {
+     "minQty": 5,
+     "price": 22000
+    },
+    {
+     "minQty": 10,
+     "price": 21000
+    },
+    {
+     "minQty": 20,
+     "price": 20000
+    },
+    {
+     "minQty": 50,
+     "price": 18000
+    },
+    {
+     "minQty": 100,
+     "price": 16000
+    }
+   ],
+   "priceNote": "Precio por unidad publicado en febrero de 2026. 1 unidad: $25.000 a $35.000 según el diseño.",
+   "unit": "unidad",
+   "leadTime": "1 a 5 días (también en el día)",
+   "materials": [
+    "Jersey peinado 24/1",
+    "Costura reforzada overlock de 4 hilos"
+   ],
+   "finishes": [
+    "Estampado DTF",
+    "Vinilo textil"
+   ],
+   "features": [
+    "Tu logo adelante y atrás",
+    "Diseños personalizados",
+    "Talles del S al XXXL",
+    "Venta por mayor y menor"
+   ],
+   "sizes": [
+    {
+     "label": "S"
+    },
+    {
+     "label": "M"
+    },
+    {
+     "label": "L"
+    },
+    {
+     "label": "XL"
+    },
+    {
+     "label": "XXL"
+    },
+    {
+     "label": "XXXL"
+    }
+   ],
+   "quoteMode": "UNITS",
+   "featured": true,
+   "sortOrder": 0,
+   "images": [
+    {
+     "file": "trabajos/DFdmot5PEme-07.jpg",
+     "alt": "Remera estampada personalizada"
+    },
+    {
+     "file": "trabajos/DFix0uCvLfQ-01.jpg",
+     "alt": "Remera estampada personalizada"
+    },
+    {
+     "file": "trabajos/C2VjBg-vqoX-08.jpg",
+     "alt": "Remera estampada personalizada"
+    },
+    {
+     "file": "trabajos/Cxknna4OEOf-01.jpg",
+     "alt": "Remera estampada personalizada"
+    }
+   ]
+  },
+  {
+   "slug": "gorra-trucker",
+   "name": "Gorra trucker personalizada",
+   "category": "remeras-y-gorras",
+   "summary": "Gorras trucker con tu logo o personalizadas. Producción en 1 a 2 días.",
+   "description": "Gorras trucker estampadas con tu logo o con un diseño personalizado, para equipos, bares, comercios y eventos.",
+   "priceFrom": 7000,
+   "priceTiers": [
+    {
+     "minQty": 1,
+     "price": 10000
+    },
+    {
+     "minQty": 5,
+     "price": 7000
+    }
+   ],
+   "priceNote": "Precio por unidad publicado en febrero de 2026.",
+   "unit": "unidad",
+   "leadTime": "1 a 2 días",
+   "materials": [
+    "Gorra trucker con red"
+   ],
+   "finishes": [
+    "Estampado",
+    "Estampado cromado"
+   ],
+   "features": [
+    "Con tu logo o personalizada",
+    "Por unidad o en cantidad"
+   ],
+   "sizes": [],
+   "quoteMode": "UNITS",
+   "featured": true,
+   "sortOrder": 1,
+   "images": [
+    {
+     "file": "trabajos/CupZSoxvJSw-04.jpg",
+     "alt": "Gorra trucker personalizada"
+    },
+    {
+     "file": "trabajos/C02v_UptMvZ-01.jpg",
+     "alt": "Gorra trucker personalizada"
+    },
+    {
+     "file": "trabajos/CupZSoxvJSw-08.jpg",
+     "alt": "Gorra trucker personalizada"
+    }
+   ]
+  },
+  {
+   "slug": "ploteo-rotulacion-vehicular",
+   "name": "Ploteo y rotulación vehicular",
+   "category": "ploteo-vehicular",
+   "summary": "Tu vehículo convertido en publicidad en movimiento: diseño, impresión y colocación.",
+   "description": "Rotulación de autos, camionetas, utilitarios, camiones y trailers con vinilo de corte, vinilo impreso y microperforado. Mandanos una foto y te mostramos cómo quedaría el tuyo.",
+   "priceFrom": null,
+   "priceTiers": [],
+   "priceNote": null,
+   "unit": "vehículo",
+   "leadTime": "Según el trabajo",
+   "materials": [
+    "Vinilo de corte",
+    "Vinilo impreso",
+    "Microperforado",
+    "Laminado"
+   ],
+   "finishes": [
+    "Brillante",
+    "Mate",
+    "Satinado"
+   ],
+   "features": [
+    "Diseño personalizado",
+    "Vinilos de alta calidad",
+    "Terminaciones prolijas y duraderas",
+    "Mandanos una foto y te mostramos cómo quedaría"
+   ],
+   "sizes": [],
+   "quoteMode": "CUSTOM",
+   "featured": true,
+   "sortOrder": 2,
+   "images": [
+    {
+     "file": "trabajos/DdJRHqkltYn-01.jpg",
+     "alt": "Ploteo y rotulación vehicular"
+    },
+    {
+     "file": "trabajos/C1xpetkPmKw-01.jpg",
+     "alt": "Ploteo y rotulación vehicular"
+    },
+    {
+     "file": "trabajos/C0c9OArND0X-01.jpg",
+     "alt": "Ploteo y rotulación vehicular"
+    },
+    {
+     "file": "trabajos/DYe-HV6FrLN-03.jpg",
+     "alt": "Ploteo y rotulación vehicular"
+    }
+   ]
+  },
+  {
+   "slug": "forrado-cambio-de-color",
+   "name": "Forrado completo y cambio de color",
+   "category": "ploteo-vehicular",
+   "summary": "Full wrap en negro mate, gris nardo, rojo brilloso, carbono y más.",
+   "description": "Forrado completo o por partes (techo, parantes, espejos, capó) para cambiar el color o proteger la pintura.",
+   "priceFrom": null,
+   "priceTiers": [],
+   "priceNote": null,
+   "unit": "vehículo",
+   "leadTime": null,
+   "materials": [
+    "Vinilo de forrado",
+    "Símil carbono",
+    "Cromado"
+   ],
+   "finishes": [
+    "Negro mate",
+    "Negro brilloso",
+    "Gris nardo",
+    "Rojo brilloso",
+    "Azul metalizado"
+   ],
+   "features": [
+    "Techo, parantes y espejos",
+    "Forrado total o por partes"
+   ],
+   "sizes": [],
+   "quoteMode": "CUSTOM",
+   "featured": false,
+   "sortOrder": 3,
+   "images": [
+    {
+     "file": "trabajos/CuRphXmOIiD-02.jpg",
+     "alt": "Forrado completo y cambio de color"
+    },
+    {
+     "file": "trabajos/C7keQ7oP_vN-01.jpg",
+     "alt": "Forrado completo y cambio de color"
+    }
+   ]
+  },
+  {
+   "slug": "full-wrap-motos",
+   "name": "Full wrap para motos",
+   "category": "motos-y-cuatris",
+   "summary": "Cambio de color total de los plásticos, con o sin calcos.",
+   "description": "Forramos los plásticos de tu moto o cuatri en el color que elijas y combinamos con calcos de diseño propio. Muchos trabajos se plotean en el mismo día.",
+   "priceFrom": null,
+   "priceTiers": [],
+   "priceNote": null,
+   "unit": "moto",
+   "leadTime": null,
+   "materials": [
+    "Vinilo de forrado",
+    "Vinilo flúor",
+    "Tornasolado",
+    "Símil carbono 3D, 4D y 6D"
+   ],
+   "finishes": [
+    "Brillante",
+    "Mate",
+    "Satinado"
+   ],
+   "features": [
+    "Cambio de color total",
+    "Detalles en carbono",
+    "Calcos a juego"
+   ],
+   "sizes": [],
+   "quoteMode": "CUSTOM",
+   "featured": true,
+   "sortOrder": 4,
+   "images": [
+    {
+     "file": "trabajos/C4y9JejOCox-01.jpg",
+     "alt": "Full wrap para motos"
+    },
+    {
+     "file": "trabajos/C-OoOUsPrGn-01.jpg",
+     "alt": "Full wrap para motos"
+    },
+    {
+     "file": "trabajos/C45a0KIugMn-03.jpg",
+     "alt": "Full wrap para motos"
+    }
+   ]
+  },
+  {
+   "slug": "kit-calcos-motos",
+   "name": "Kit de calcos para motos",
+   "category": "motos-y-cuatris",
+   "summary": "Kits de calcos laminadas, personalizadas o réplicas. En stock o a tu gusto.",
+   "description": "Kits de calcos laminadas o laqueadas para motos, cuatris, karting y areneros. Tenemos en stock o hacemos el diseño a tu gusto, con tu número y tu nombre.",
+   "priceFrom": null,
+   "priceTiers": [],
+   "priceNote": null,
+   "unit": "kit",
+   "leadTime": null,
+   "materials": [
+    "Vinilo impreso",
+    "Vinilo de corte",
+    "Holográfico"
+   ],
+   "finishes": [
+    "Laminado",
+    "Laqueado"
+   ],
+   "features": [
+    "En stock o diseño a medida",
+    "Número y nombre personalizados",
+    "Réplicas de calcos originales"
+   ],
+   "sizes": [],
+   "quoteMode": "CUSTOM",
+   "featured": true,
+   "sortOrder": 5,
+   "images": [
+    {
+     "file": "trabajos/C7-KdCBvi6y-09.jpg",
+     "alt": "Kit de calcos para motos"
+    },
+    {
+     "file": "trabajos/C9rtyvrO49H-02.jpg",
+     "alt": "Kit de calcos para motos"
+    },
+    {
+     "file": "trabajos/DKsaouNynjU-03.jpg",
+     "alt": "Kit de calcos para motos"
+    }
+   ]
+  },
+  {
+   "slug": "cartel-lona-front",
+   "name": "Cartel de lona front o back light",
+   "category": "carteleria",
+   "summary": "Lona front con luz exterior o lona back light luminosa, con estructura.",
+   "description": "Carteles de lona front laqueada con luz exterior y carteles luminosos o marquesinas de lona back light. Diseño, impresión y colocación.",
+   "priceFrom": null,
+   "priceTiers": [],
+   "priceNote": null,
+   "unit": "m²",
+   "leadTime": null,
+   "materials": [
+    "Lona front",
+    "Lona back light",
+    "Estructura de hierro"
+   ],
+   "finishes": [
+    "Laqueada",
+    "Con luz exterior",
+    "Luminosa"
+   ],
+   "features": [
+    "Diseño, impresión y colocación",
+    "Marquesinas de varios metros"
+   ],
+   "sizes": [],
+   "quoteMode": "AREA",
+   "featured": true,
+   "sortOrder": 6,
+   "images": [
+    {
+     "file": "trabajos/DdDoE_nljFJ-04.jpg",
+     "alt": "Cartel de lona front o back light"
+    },
+    {
+     "file": "trabajos/De5BiE_nRdC-03.jpg",
+     "alt": "Cartel de lona front o back light"
+    },
+    {
+     "file": "trabajos/C9gWzdLtNmu-04.jpg",
+     "alt": "Cartel de lona front o back light"
+    }
+   ]
+  },
+  {
+   "slug": "letras-corporeas",
+   "name": "Letras corpóreas",
+   "category": "carteleria",
+   "summary": "Letras y logos en volumen de polyfan, PVC, alto impacto o acrílico.",
+   "description": "Corpóreas de polyfan, PVC ploteado, alto impacto, MDF o acrílico, con o sin luz, para frentes, interiores y tótems.",
+   "priceFrom": null,
+   "priceTiers": [],
+   "priceNote": null,
+   "unit": "juego",
+   "leadTime": null,
+   "materials": [
+    "Polyfan",
+    "PVC",
+    "Alto impacto",
+    "Acrílico",
+    "MDF"
+   ],
+   "finishes": [
+    "Pintadas",
+    "Ploteadas",
+    "Símil acero",
+    "Con LED"
+   ],
+   "features": [
+    "Interior o exterior",
+    "Con o sin iluminación"
+   ],
+   "sizes": [],
+   "quoteMode": "AREA",
+   "featured": false,
+   "sortOrder": 7,
+   "images": [
+    {
+     "file": "trabajos/DD8c6_0t0yh-01.jpg",
+     "alt": "Letras corpóreas"
+    },
+    {
+     "file": "trabajos/CyUqoBBNcLY-03.jpg",
+     "alt": "Letras corpóreas"
+    },
+    {
+     "file": "trabajos/CyoTjwIOZVO-02.jpg",
+     "alt": "Letras corpóreas"
+    }
+   ]
+  },
+  {
+   "slug": "cartel-luminoso-acrilico",
+   "name": "Cartel luminoso de acrílico",
+   "category": "carteleria",
+   "summary": "Acrílico retroiluminado, con luz difusa, botón redondo o 360°.",
+   "description": "Carteles luminosos con frente de acrílico y cuerpo de chapa, carteles botón redondos, carteles 360° y acrílico líquido, con sistema de luz LED.",
+   "priceFrom": null,
+   "priceTiers": [],
+   "priceNote": null,
+   "unit": "unidad",
+   "leadTime": null,
+   "materials": [
+    "Acrílico",
+    "Chapa",
+    "Chapa calada",
+    "LED"
+   ],
+   "finishes": [
+    "Retroiluminado",
+    "Luz difusa"
+   ],
+   "features": [
+    "Cartel botón redondo",
+    "Cartel 360°",
+    "Doble faz"
+   ],
+   "sizes": [],
+   "quoteMode": "AREA",
+   "featured": false,
+   "sortOrder": 8,
+   "images": [
+    {
+     "file": "trabajos/DZnpo7knQR0-02.jpg",
+     "alt": "Cartel luminoso de acrílico"
+    },
+    {
+     "file": "trabajos/CqO2Ridu_r5-05.jpg",
+     "alt": "Cartel luminoso de acrílico"
+    },
+    {
+     "file": "trabajos/CtcwncAPu_F-01.jpg",
+     "alt": "Cartel luminoso de acrílico"
+    }
+   ]
+  },
+  {
+   "slug": "neon-led",
+   "name": "Neón LED",
+   "category": "carteleria",
+   "summary": "Neón LED para frentes, interiores y eventos, fijo o intermitente.",
+   "description": "Carteles y frases de neón LED para frentes, interiores, gimnasios y locales, con luz fija o intermitente.",
+   "priceFrom": null,
+   "priceTiers": [],
+   "priceNote": null,
+   "unit": "unidad",
+   "leadTime": null,
+   "materials": [
+    "Neón LED",
+    "Acrílico"
+   ],
+   "finishes": [
+    "Fijo",
+    "Intermitente"
+   ],
+   "features": [
+    "Interior o exterior",
+    "Tu logo o tu frase"
+   ],
+   "sizes": [],
+   "quoteMode": "AREA",
+   "featured": true,
+   "sortOrder": 9,
+   "images": [
+    {
+     "file": "trabajos/C-Sg_pLugNS-01.jpg",
+     "alt": "Neón LED"
+    },
+    {
+     "file": "trabajos/DZvb5Z_HZ_8-01.jpg",
+     "alt": "Neón LED"
+    },
+    {
+     "file": "trabajos/DMG1uBBvsXG-01.jpg",
+     "alt": "Neón LED"
+    }
+   ]
+  },
+  {
+   "slug": "ploteo-de-vidrieras",
+   "name": "Ploteo de vidrieras",
+   "category": "vidrieras-y-esmerilados",
+   "summary": "Vinilo de corte, impreso, microperforado y vinilo cristal para locales.",
+   "description": "Ploteamos vidrieras con vinilo de corte, vinilo impreso, microperforado (se ve de adentro hacia afuera) y vinilo cristal.",
+   "priceFrom": null,
+   "priceTiers": [],
+   "priceNote": null,
+   "unit": "m²",
+   "leadTime": null,
+   "materials": [
+    "Vinilo de corte",
+    "Vinilo impreso",
+    "Microperforado",
+    "Vinilo cristal"
+   ],
+   "finishes": [
+    "Brillante",
+    "Mate"
+   ],
+   "features": [
+    "Logos, horarios y redes",
+    "Medio corte"
+   ],
+   "sizes": [],
+   "quoteMode": "AREA",
+   "featured": false,
+   "sortOrder": 10,
+   "images": [
+    {
+     "file": "trabajos/C5WcJgfPLDK-01.jpg",
+     "alt": "Ploteo de vidrieras"
+    },
+    {
+     "file": "trabajos/C7FamRGv8J1-03.jpg",
+     "alt": "Ploteo de vidrieras"
+    }
+   ]
+  },
+  {
+   "slug": "esmerilado",
+   "name": "Esmerilado para vidrios",
+   "category": "vidrieras-y-esmerilados",
+   "summary": "Esmerilado liso, impreso o con diseño de corte para mamparas, puertas y oficinas.",
+   "description": "Esmerilado que da privacidad y deja pasar la luz: liso, impreso o con diseños de corte para mamparas de baño, puertas, oficinas y bancos.",
+   "priceFrom": null,
+   "priceTiers": [],
+   "priceNote": null,
+   "unit": "m²",
+   "leadTime": null,
+   "materials": [
+    "Esmerilado",
+    "Esmerilado impreso"
+   ],
+   "finishes": [
+    "Liso",
+    "Con diseño de corte",
+    "Franjas"
+   ],
+   "features": [
+    "Privacidad con luz",
+    "Diseños a medida"
+   ],
+   "sizes": [],
+   "quoteMode": "AREA",
+   "featured": true,
+   "sortOrder": 11,
+   "images": [
+    {
+     "file": "trabajos/C0kzsw9tvjL-01.jpg",
+     "alt": "Esmerilado para vidrios"
+    },
+    {
+     "file": "trabajos/C8PPbH9OeTs-01.jpg",
+     "alt": "Esmerilado para vidrios"
+    }
+   ]
+  },
+  {
+   "slug": "calcos-con-tu-logo",
+   "name": "Calcos y stickers con tu logo",
+   "category": "calcos-y-stickers",
+   "summary": "Calcos impresas, de corte, laminadas o laqueadas, troqueladas a la forma.",
+   "description": "Diseñamos tu calco: puede ser impresa, de corte, laminada o laqueada, holográfica o tornasolada. Para packaging, vidrieras, eventos y regalos.",
+   "priceFrom": null,
+   "priceTiers": [],
+   "priceNote": null,
+   "unit": "unidad",
+   "leadTime": null,
+   "materials": [
+    "Vinilo impreso",
+    "Vinilo de corte",
+    "Holográfico",
+    "Tornasolado",
+    "Vinilo cepillado"
+   ],
+   "finishes": [
+    "Laminado",
+    "Laqueado",
+    "Troquelado"
+   ],
+   "features": [
+    "En rollo o en planchas",
+    "Grandes cantidades"
+   ],
+   "sizes": [],
+   "quoteMode": "UNITS",
+   "featured": true,
+   "sortOrder": 12,
+   "images": [
+    {
+     "file": "trabajos/C4Dm4eYOfyY-01.jpg",
+     "alt": "Calcos y stickers con tu logo"
+    },
+    {
+     "file": "trabajos/Cz01bG9OHOR-01.jpg",
+     "alt": "Calcos y stickers con tu logo"
+    },
+    {
+     "file": "trabajos/C2lYuA9Nx7e-03.jpg",
+     "alt": "Calcos y stickers con tu logo"
+    }
+   ]
+  },
+  {
+   "slug": "calcos-dtf-uv",
+   "name": "Calcos DTF UV para termos y celulares",
+   "category": "calcos-y-stickers",
+   "summary": "Calcos con relieve, resistentes y de colores intensos. Envíos a todo el país.",
+   "description": "Calcos en DTF UV con relieve para personalizar termos, celulares y objetos. Ideales para regalar o llevar tu marca a otro nivel. Hacemos diseños a pedido.",
+   "priceFrom": null,
+   "priceTiers": [],
+   "priceNote": "Envíos a todo el país",
+   "unit": "unidad",
+   "leadTime": null,
+   "materials": [
+    "DTF UV"
+   ],
+   "finishes": [
+    "Con relieve"
+   ],
+   "features": [
+    "Diseños a pedido",
+    "Envíos a todo el país"
+   ],
+   "sizes": [],
+   "quoteMode": "UNITS",
+   "featured": false,
+   "sortOrder": 13,
+   "images": [
+    {
+     "file": "trabajos/Cxpv8ZGOPmr-03.jpg",
+     "alt": "Calcos DTF UV para termos y celulares"
+    }
+   ]
+  },
+  {
+   "slug": "vinilo-decorativo-impreso",
+   "name": "Vinilo decorativo impreso",
+   "category": "vinilo-decorativo",
+   "summary": "Paredes, techos y muebles con la imagen que elijas.",
+   "description": "Elegís la imagen, la imprimimos y la colocamos: paredes, techos, puertas, medidores de altura y decoración de locales y casas.",
+   "priceFrom": null,
+   "priceTiers": [],
+   "priceNote": null,
+   "unit": "m²",
+   "leadTime": null,
+   "materials": [
+    "Vinilo impreso mate",
+    "Vinilo de corte"
+   ],
+   "finishes": [
+    "Mate",
+    "Brillante"
+   ],
+   "features": [
+    "Diseño a medida",
+    "Colocación"
+   ],
+   "sizes": [],
+   "quoteMode": "AREA",
+   "featured": false,
+   "sortOrder": 14,
+   "images": [
+    {
+     "file": "trabajos/CxaROyiuai1-01.jpg",
+     "alt": "Vinilo decorativo impreso"
+    }
+   ]
+  },
+  {
+   "slug": "forrado-heladeras-muebles",
+   "name": "Forrado de heladeras, muebles y notebooks",
+   "category": "vinilo-decorativo",
+   "summary": "Heladeras, frigobares, alacenas, notebooks y arcades con vinilo.",
+   "description": "Renovamos heladeras, frigobares, alacenas, notebooks y máquinas arcade con vinilo liso, símil madera o impreso con el diseño que quieras.",
+   "priceFrom": null,
+   "priceTiers": [],
+   "priceNote": null,
+   "unit": "unidad",
+   "leadTime": null,
+   "materials": [
+    "Vinilo negro mate",
+    "Blanco mate",
+    "Símil madera",
+    "Vinilo impreso"
+   ],
+   "finishes": [
+    "Mate",
+    "Brillante"
+   ],
+   "features": [
+    "Heladeras y frigobares",
+    "Notebooks",
+    "Arcades"
+   ],
+   "sizes": [],
+   "quoteMode": "CUSTOM",
+   "featured": true,
+   "sortOrder": 15,
+   "images": [
+    {
+     "file": "trabajos/CiPiF4VO5yJ-01.jpg",
+     "alt": "Forrado de heladeras, muebles y notebooks"
+    },
+    {
+     "file": "trabajos/CeGhnA_uRVJ-03.jpg",
+     "alt": "Forrado de heladeras, muebles y notebooks"
+    },
+    {
+     "file": "trabajos/C4mM_13u3mK-01.jpg",
+     "alt": "Forrado de heladeras, muebles y notebooks"
+    }
+   ]
+  },
+  {
+   "slug": "vinilo-alto-transito",
+   "name": "Vinilo de alto tránsito para pisos",
+   "category": "vinilo-decorativo",
+   "summary": "Gráfica para pisos de canchas, locales y eventos.",
+   "description": "Vinilo adhesivo de alto tránsito para pisos: logos en canchas, señalética de espera y gráfica en locales.",
+   "priceFrom": null,
+   "priceTiers": [],
+   "priceNote": null,
+   "unit": "m²",
+   "leadTime": null,
+   "materials": [
+    "Vinilo de alto tránsito"
+   ],
+   "finishes": [
+    "Antideslizante"
+   ],
+   "features": [
+    "Canchas y gimnasios",
+    "Señalética de piso"
+   ],
+   "sizes": [],
+   "quoteMode": "AREA",
+   "featured": false,
+   "sortOrder": 16,
+   "images": [
+    {
+     "file": "trabajos/C0h4gRkv29T-07.jpg",
+     "alt": "Vinilo de alto tránsito para pisos"
+    }
+   ]
+  },
+  {
+   "slug": "cartel-inmobiliario",
+   "name": "Cartel inmobiliario",
+   "category": "inmobiliarias",
+   "summary": "Carteles de venta y alquiler con bastidor de madera, chapa gruesa y vinilo refractario.",
+   "description": "Carteles inmobiliarios resistentes a la intemperie: bastidor de madera, chapa gruesa y vinilo refractario, también en lona front. Por unidad o por tandas.",
+   "priceFrom": null,
+   "priceTiers": [],
+   "priceNote": null,
+   "unit": "unidad",
+   "leadTime": null,
+   "materials": [
+    "Bastidor de madera",
+    "Chapa gruesa",
+    "Vinilo refractario",
+    "Lona front"
+   ],
+   "finishes": [
+    "Simple faz",
+    "Doble faz"
+   ],
+   "features": [
+    "Por tandas",
+    "Medida 2 × 1 m y a medida"
+   ],
+   "sizes": [
+    {
+     "label": "2 × 1 m",
+     "width": 200,
+     "height": 100
+    }
+   ],
+   "quoteMode": "UNITS",
+   "featured": true,
+   "sortOrder": 17,
+   "images": [
+    {
+     "file": "trabajos/Cyk5kbBOEps-01.jpg",
+     "alt": "Cartel inmobiliario"
+    },
+    {
+     "file": "trabajos/Cyk5kbBOEps-03.jpg",
+     "alt": "Cartel inmobiliario"
+    }
+   ]
+  },
+  {
+   "slug": "mapas-de-zonificacion",
+   "name": "Mapas de zonificación y murales",
+   "category": "inmobiliarias",
+   "summary": "Mapas para marcar lotes y propiedades, en adhesivo, papel, PVC o chapa.",
+   "description": "Mapas de zonificación y murales para oficinas inmobiliarias, en vinilo adhesivo, papel, PVC o chapa, con bastidor o montados en pared.",
+   "priceFrom": null,
+   "priceTiers": [],
+   "priceNote": null,
+   "unit": "unidad",
+   "leadTime": null,
+   "materials": [
+    "Vinilo adhesivo",
+    "Papel",
+    "PVC",
+    "Chapa"
+   ],
+   "finishes": [
+    "Con bastidor",
+    "Con iluminación"
+   ],
+   "features": [
+    "Diseño del mapa"
+   ],
+   "sizes": [],
+   "quoteMode": "AREA",
+   "featured": false,
+   "sortOrder": 18,
+   "images": [
+    {
+     "file": "trabajos/C0UwllEvXtM-01.jpg",
+     "alt": "Mapas de zonificación y murales"
+    },
+    {
+     "file": "trabajos/CzMRCWrudvi-03.jpg",
+     "alt": "Mapas de zonificación y murales"
+    }
+   ]
+  },
+  {
+   "slug": "banner-roll-up",
+   "name": "Banner roll up e impresión gran formato",
+   "category": "carteleria",
+   "summary": "Roll up, lonas con ojales reforzados e impresiones de gran formato.",
+   "description": "Banners roll up para ferias y locales, lonas con ojales reforzados e impresión en gran formato.",
+   "priceFrom": null,
+   "priceTiers": [],
+   "priceNote": null,
+   "unit": "unidad",
+   "leadTime": null,
+   "materials": [
+    "Lona",
+    "Vinilo impreso"
+   ],
+   "finishes": [
+    "Ojales reforzados",
+    "Laminado"
+   ],
+   "features": [
+    "Roll up con estructura",
+    "Gran formato"
+   ],
+   "sizes": [],
+   "quoteMode": "AREA",
+   "featured": false,
+   "sortOrder": 19,
+   "images": [
+    {
+     "file": "trabajos/DNquwQYu-tD-01.jpg",
+     "alt": "Banner roll up e impresión gran formato"
+    }
+   ]
+  },
+  {
+   "slug": "tarjetas-personales",
+   "name": "Tarjetas personales",
+   "category": "calcos-y-stickers",
+   "summary": "Tarjetas de 100 o 500 unidades, laminadas y laqueadas, doble faz.",
+   "description": "Diseño e impresión de tarjetas personales, laminadas y laqueadas, simple o doble faz mate.",
+   "priceFrom": null,
+   "priceTiers": [],
+   "priceNote": null,
+   "unit": "pack",
+   "leadTime": null,
+   "materials": [
+    "Cartulina"
+   ],
+   "finishes": [
+    "Laminadas",
+    "Laqueadas",
+    "Doble faz mate"
+   ],
+   "features": [
+    "Packs de 100 o 500",
+    "Diseño incluido a pedido"
+   ],
+   "sizes": [
+    {
+     "label": "100 unidades"
+    },
+    {
+     "label": "500 unidades"
+    }
+   ],
+   "quoteMode": "UNITS",
+   "featured": false,
+   "sortOrder": 20,
+   "images": [
+    {
+     "file": "trabajos/CaNJAaWuTvE-01.jpg",
+     "alt": "Tarjetas personales"
+    },
+    {
+     "file": "trabajos/CbI9fhDPKTu-01.jpg",
+     "alt": "Tarjetas personales"
+    },
+    {
+     "file": "trabajos/CeGhnA_uRVJ-06.jpg",
+     "alt": "Tarjetas personales"
+    }
+   ]
+  },
+  {
+   "slug": "diseno-de-logo",
+   "name": "Diseño de logo e identidad",
+   "category": "carteleria",
+   "summary": "Diseñamos tu logo y lo llevamos al cartel, al vehículo y a la ropa.",
+   "description": "Si no tenés logo, lo diseñamos con vos y después lo aplicamos donde lo necesites: cartel, vidriera, vehículo, remeras y tarjetas.",
+   "priceFrom": null,
+   "priceTiers": [],
+   "priceNote": null,
+   "unit": "proyecto",
+   "leadTime": null,
+   "materials": [],
+   "finishes": [],
+   "features": [
+    "Del logo a la aplicación",
+    "Archivos para imprimir"
+   ],
+   "sizes": [],
+   "quoteMode": "CUSTOM",
+   "featured": false,
+   "sortOrder": 21,
+   "images": [
+    {
+     "file": "trabajos/C2YJoOOvYWE-02.jpg",
+     "alt": "Diseño de logo e identidad"
+    },
+    {
+     "file": "trabajos/C3tmI9YtvKD-01.jpg",
+     "alt": "Diseño de logo e identidad"
+    }
+   ]
+  }
+ ],
+ "works": [
+  {
+   "slug": "limpia-todo-marquesina-back-light",
+   "title": "Marquesina back light para Limpia Todo",
+   "client": "Limpia Todo",
+   "category": "carteleria",
+   "location": "Villa Gesell",
+   "doneAt": "2026-10-24",
+   "summary": "Cartel marquesina de lona back light, de día y encendido de noche. Se armó en el taller y se colocó en el frente del local.",
+   "description": null,
+   "materials": [
+    "Lona back light",
+    "Estructura luminosa"
+   ],
+   "featured": true,
+   "instagramCode": "De5BiE_nRdC",
+   "images": [
+    {
+     "file": "trabajos/De5BiE_nRdC-03.jpg",
+     "alt": "Marquesina back light para Limpia Todo — foto 1"
+    },
+    {
+     "file": "trabajos/De5BiE_nRdC-02.jpg",
+     "alt": "Marquesina back light para Limpia Todo — foto 2"
+    },
+    {
+     "file": "trabajos/De5BiE_nRdC-04.jpg",
+     "alt": "Marquesina back light para Limpia Todo — foto 3"
+    },
+    {
+     "file": "trabajos/De5BiE_nRdC-05.jpg",
+     "alt": "Marquesina back light para Limpia Todo — foto 4"
+    },
+    {
+     "file": "trabajos/De5BiE_nRdC-08.jpg",
+     "alt": "Marquesina back light para Limpia Todo — foto 5"
+    },
+    {
+     "file": "trabajos/De5BiE_nRdC-07.jpg",
+     "alt": "Marquesina back light para Limpia Todo — foto 6"
+    }
+   ]
+  },
+  {
+   "slug": "rotulacion-utilitario-panaderia",
+   "title": "Rotulación de un utilitario para una panadería",
+   "client": null,
+   "category": "ploteo-vehicular",
+   "location": "Villa Gesell",
+   "doneAt": "2026-09-11",
+   "summary": "Ploteo y rotulación vehicular para que el negocio se vea a donde vaya: diseño personalizado, vinilos de alta calidad y terminaciones prolijas.",
+   "description": null,
+   "materials": [
+    "Vinilo impreso",
+    "Vinilo de corte"
+   ],
+   "featured": true,
+   "instagramCode": "DdJRHqkltYn",
+   "images": [
+    {
+     "file": "trabajos/DdJRHqkltYn-01.jpg",
+     "alt": "Rotulación de un utilitario para una panadería — foto 1"
+    },
+    {
+     "file": "trabajos/DdJRHqkltYn-02.jpg",
+     "alt": "Rotulación de un utilitario para una panadería — foto 2"
+    },
+    {
+     "file": "trabajos/DdJRHqkltYn-03.jpg",
+     "alt": "Rotulación de un utilitario para una panadería — foto 3"
+    },
+    {
+     "file": "trabajos/DdJRHqkltYn-04.jpg",
+     "alt": "Rotulación de un utilitario para una panadería — foto 4"
+    },
+    {
+     "file": "trabajos/DdJRHqkltYn-05.jpg",
+     "alt": "Rotulación de un utilitario para una panadería — foto 5"
+    },
+    {
+     "file": "trabajos/DdJRHqkltYn-06.jpg",
+     "alt": "Rotulación de un utilitario para una panadería — foto 6"
+    }
+   ]
+  },
+  {
+   "slug": "dona-haydee-pastas-marquesina",
+   "title": "Marquesina luminosa para Doña Haydée Pastas",
+   "client": "Doña Haydée Pastas",
+   "category": "carteleria",
+   "location": "Villa Gesell",
+   "doneAt": "2026-09-09",
+   "summary": "Cartel luminoso de lona back light pensado para que la marca se vea y se reconozca, sobre todo de noche.",
+   "description": null,
+   "materials": [
+    "Lona back light",
+    "Tubos LED"
+   ],
+   "featured": true,
+   "instagramCode": "DdDoE_nljFJ",
+   "images": [
+    {
+     "file": "trabajos/DdDoE_nljFJ-04.jpg",
+     "alt": "Marquesina luminosa para Doña Haydée Pastas — foto 1"
+    },
+    {
+     "file": "trabajos/DdDoE_nljFJ-01.jpg",
+     "alt": "Marquesina luminosa para Doña Haydée Pastas — foto 2"
+    },
+    {
+     "file": "trabajos/DdDoE_nljFJ-03.jpg",
+     "alt": "Marquesina luminosa para Doña Haydée Pastas — foto 3"
+    },
+    {
+     "file": "trabajos/DdDoE_nljFJ-05.jpg",
+     "alt": "Marquesina luminosa para Doña Haydée Pastas — foto 4"
+    }
+   ]
+  },
+  {
+   "slug": "refrigeracion-jv-ploteo",
+   "title": "Ploteo vehicular para Refrigeración JV",
+   "client": "Refrigeración JV",
+   "category": "ploteo-vehicular",
+   "location": "Villa Gesell",
+   "doneAt": "2026-09-02",
+   "summary": "Rotulación lateral y trasera para clientes habituales del taller.",
+   "description": null,
+   "materials": [
+    "Vinilo de corte",
+    "Vinilo impreso"
+   ],
+   "featured": false,
+   "instagramCode": "DcyRZCdFoNW",
+   "images": [
+    {
+     "file": "trabajos/DcyRZCdFoNW-01.jpg",
+     "alt": "Ploteo vehicular para Refrigeración JV — foto 1"
+    },
+    {
+     "file": "trabajos/DcyRZCdFoNW-02.jpg",
+     "alt": "Ploteo vehicular para Refrigeración JV — foto 2"
+    },
+    {
+     "file": "trabajos/DcyRZCdFoNW-03.jpg",
+     "alt": "Ploteo vehicular para Refrigeración JV — foto 3"
+    }
+   ]
+  },
+  {
+   "slug": "pet-shop-carteleria-integral",
+   "title": "Cartelería integral para un pet shop",
+   "client": "Pet Shop",
+   "category": "carteleria",
+   "location": "Villa Gesell",
+   "doneAt": "2026-08-08",
+   "summary": "Un proyecto con muchas soluciones: cartel de acrílico retroiluminado, cartel de acrílico con luz difusa, letras corpóreas, cartel de chapa laminado doble y esmerilado impreso y de corte.",
+   "description": null,
+   "materials": [
+    "Acrílico retroiluminado",
+    "Letras corpóreas",
+    "Chapa laminada",
+    "Esmerilado impreso"
+   ],
+   "featured": true,
+   "instagramCode": "DbzAD8LHQ1s",
+   "images": [
+    {
+     "file": "trabajos/DbzAD8LHQ1s-01.jpg",
+     "alt": "Cartelería integral para un pet shop — foto 1"
+    },
+    {
+     "file": "trabajos/DbzAD8LHQ1s-02.jpg",
+     "alt": "Cartelería integral para un pet shop — foto 2"
+    },
+    {
+     "file": "trabajos/DbzAD8LHQ1s-04.jpg",
+     "alt": "Cartelería integral para un pet shop — foto 3"
+    },
+    {
+     "file": "trabajos/DbzAD8LHQ1s-05.jpg",
+     "alt": "Cartelería integral para un pet shop — foto 4"
+    }
+   ]
+  },
+  {
+   "slug": "instituto-vives-lona-front",
+   "title": "Carteles de lona front para el Instituto Vives",
+   "client": "Instituto Vives",
+   "category": "carteleria",
+   "location": "Villa Gesell",
+   "doneAt": "2026-07-27",
+   "summary": "Carteles nuevos para el instituto, todos de lona front laqueada.",
+   "description": null,
+   "materials": [
+    "Lona front laqueada"
+   ],
+   "featured": false,
+   "instagramCode": "DbTJ7FOllfo",
+   "images": [
+    {
+     "file": "trabajos/DbTJ7FOllfo-01.jpg",
+     "alt": "Carteles de lona front para el Instituto Vives — foto 1"
+    },
+    {
+     "file": "trabajos/DbTJ7FOllfo-02.jpg",
+     "alt": "Carteles de lona front para el Instituto Vives — foto 2"
+    }
+   ]
+  },
+  {
+   "slug": "rotulacion-cambio-total",
+   "title": "Diseño y rotulación vehicular: cambio total",
+   "client": null,
+   "category": "ploteo-vehicular",
+   "location": "Villa Gesell",
+   "doneAt": "2026-07-18",
+   "summary": "Diseño y rotulación completa de una camioneta, frente al taller de Martino Gráfica.",
+   "description": null,
+   "materials": [
+    "Vinilo impreso",
+    "Vinilo de corte"
+   ],
+   "featured": true,
+   "instagramCode": "Da7zmZmlmsf",
+   "images": [
+    {
+     "file": "trabajos/Da7zmZmlmsf-01.jpg",
+     "alt": "Diseño y rotulación vehicular: cambio total — foto 1"
+    },
+    {
+     "file": "trabajos/Da7zmZmlmsf-02.jpg",
+     "alt": "Diseño y rotulación vehicular: cambio total — foto 2"
+    },
+    {
+     "file": "trabajos/Da7zmZmlmsf-03.jpg",
+     "alt": "Diseño y rotulación vehicular: cambio total — foto 3"
+    },
+    {
+     "file": "trabajos/Da7zmZmlmsf-04.jpg",
+     "alt": "Diseño y rotulación vehicular: cambio total — foto 4"
+    }
+   ]
+  },
+  {
+   "slug": "pizza-2-neon-led",
+   "title": "Pizza 2: neón LED, vinilo de corte e impreso",
+   "client": "Pizza 2",
+   "category": "carteleria",
+   "location": "Villa Gesell",
+   "doneAt": "2026-06-18",
+   "summary": "Neón LED exterior con luz intermitente, neón LED interior, vinilo de corte, vinilo impreso y diseño: acá hicimos todo.",
+   "description": null,
+   "materials": [
+    "Neón LED",
+    "Vinilo de corte",
+    "Vinilo impreso"
+   ],
+   "featured": true,
+   "instagramCode": "DZvb5Z_HZ_8",
+   "images": [
+    {
+     "file": "trabajos/DZvb5Z_HZ_8-01.jpg",
+     "alt": "Pizza 2: neón LED, vinilo de corte e impreso — foto 1"
+    },
+    {
+     "file": "trabajos/DZvb5Z_HZ_8-03.jpg",
+     "alt": "Pizza 2: neón LED, vinilo de corte e impreso — foto 2"
+    },
+    {
+     "file": "trabajos/DZvb5Z_HZ_8-04.jpg",
+     "alt": "Pizza 2: neón LED, vinilo de corte e impreso — foto 3"
+    },
+    {
+     "file": "trabajos/DZvb5Z_HZ_8-05.jpg",
+     "alt": "Pizza 2: neón LED, vinilo de corte e impreso — foto 4"
+    },
+    {
+     "file": "trabajos/DZvb5Z_HZ_8-06.jpg",
+     "alt": "Pizza 2: neón LED, vinilo de corte e impreso — foto 5"
+    }
+   ]
+  },
+  {
+   "slug": "bull-gesell-cartel-luminoso",
+   "title": "Cartel luminoso de acrílico líquido para Bull",
+   "client": "Bull Gesell",
+   "category": "carteleria",
+   "location": "Villa Gesell",
+   "doneAt": "2026-06-15",
+   "summary": "Otro cartel luminoso para Bull: esta vez con acrílico líquido sobre una base hecha en 3D.",
+   "description": null,
+   "materials": [
+    "Acrílico líquido",
+    "Base impresa en 3D",
+    "LED"
+   ],
+   "featured": true,
+   "instagramCode": "DZnpo7knQR0",
+   "images": [
+    {
+     "file": "trabajos/DZnpo7knQR0-02.jpg",
+     "alt": "Cartel luminoso de acrílico líquido para Bull — foto 1"
+    },
+    {
+     "file": "trabajos/DZnpo7knQR0-01.jpg",
+     "alt": "Cartel luminoso de acrílico líquido para Bull — foto 2"
+    },
+    {
+     "file": "trabajos/DZnpo7knQR0-03.jpg",
+     "alt": "Cartel luminoso de acrílico líquido para Bull — foto 3"
+    },
+    {
+     "file": "trabajos/DZnpo7knQR0-05.jpg",
+     "alt": "Cartel luminoso de acrílico líquido para Bull — foto 4"
+    }
+   ]
+  },
+  {
+   "slug": "santa-elena-camion",
+   "title": "Ploteo y rotulación para Santa Elena",
+   "client": "Santa Elena · Ciudades Limpias",
+   "category": "ploteo-vehicular",
+   "location": "Villa Gesell",
+   "doneAt": "2026-05-18",
+   "summary": "Ploteo y rotulación vehicular de un camión recolector.",
+   "description": null,
+   "materials": [
+    "Vinilo impreso",
+    "Vinilo de corte"
+   ],
+   "featured": true,
+   "instagramCode": "DYe-HV6FrLN",
+   "images": [
+    {
+     "file": "trabajos/DYe-HV6FrLN-03.jpg",
+     "alt": "Ploteo y rotulación para Santa Elena — foto 1"
+    },
+    {
+     "file": "trabajos/DYe-HV6FrLN-01.jpg",
+     "alt": "Ploteo y rotulación para Santa Elena — foto 2"
+    },
+    {
+     "file": "trabajos/DYe-HV6FrLN-02.jpg",
+     "alt": "Ploteo y rotulación para Santa Elena — foto 3"
+    },
+    {
+     "file": "trabajos/DYe-HV6FrLN-04.jpg",
+     "alt": "Ploteo y rotulación para Santa Elena — foto 4"
+    }
+   ]
+  },
+  {
+   "slug": "casa-mateo-lona-front",
+   "title": "Casa Mateo: lona front con luz y back light",
+   "client": "Casa Mateo",
+   "category": "carteleria",
+   "location": "Villa Gesell",
+   "doneAt": "2026-05-06",
+   "summary": "Cartel de lona front con luz exterior y carteles luminosos back light.",
+   "description": null,
+   "materials": [
+    "Lona front",
+    "Lona back light",
+    "Luz exterior"
+   ],
+   "featured": false,
+   "instagramCode": "DYBB9C_HTuu",
+   "images": [
+    {
+     "file": "trabajos/DYBB9C_HTuu-01.jpg",
+     "alt": "Casa Mateo: lona front con luz y back light — foto 1"
+    },
+    {
+     "file": "trabajos/DYBB9C_HTuu-03.jpg",
+     "alt": "Casa Mateo: lona front con luz y back light — foto 2"
+    }
+   ]
+  },
+  {
+   "slug": "black-fly-frente-y-vidriera",
+   "title": "Black Fly: frente y vidriera",
+   "client": "Black Fly",
+   "category": "carteleria",
+   "location": "Villa Gesell",
+   "doneAt": "2025-10-23",
+   "summary": "Renovamos una vez más el cartel de lona front, ploteado con vinilo naranja satinado. Todo con vinilo de corte, y también la vidriera.",
+   "description": null,
+   "materials": [
+    "Lona front",
+    "Vinilo naranja satinado",
+    "Vinilo de corte"
+   ],
+   "featured": false,
+   "instagramCode": "DQIbqfujA83",
+   "images": [
+    {
+     "file": "trabajos/DQIbqfujA83-01.jpg",
+     "alt": "Black Fly: frente y vidriera — foto 1"
+    },
+    {
+     "file": "trabajos/DQIbqfujA83-03.jpg",
+     "alt": "Black Fly: frente y vidriera — foto 2"
+    },
+    {
+     "file": "trabajos/DQIbqfujA83-04.jpg",
+     "alt": "Black Fly: frente y vidriera — foto 3"
+    },
+    {
+     "file": "trabajos/DQIbqfujA83-05.jpg",
+     "alt": "Black Fly: frente y vidriera — foto 4"
+    },
+    {
+     "file": "trabajos/DQIbqfujA83-06.jpg",
+     "alt": "Black Fly: frente y vidriera — foto 5"
+    }
+   ]
+  },
+  {
+   "slug": "olimpo-gym-neon-y-vinilo",
+   "title": "Olimpo Gym: neón LED y vinilo de corte",
+   "client": "Olimpo Gym",
+   "category": "carteleria",
+   "location": "Villa Gesell",
+   "doneAt": "2025-07-14",
+   "summary": "Neón LED, vinilo de corte y decoración en los baños del gimnasio.",
+   "description": null,
+   "materials": [
+    "Neón LED",
+    "Vinilo de corte"
+   ],
+   "featured": true,
+   "instagramCode": "DMG1uBBvsXG",
+   "images": [
+    {
+     "file": "trabajos/DMG1uBBvsXG-01.jpg",
+     "alt": "Olimpo Gym: neón LED y vinilo de corte — foto 1"
+    },
+    {
+     "file": "trabajos/DMG1uBBvsXG-03.jpg",
+     "alt": "Olimpo Gym: neón LED y vinilo de corte — foto 2"
+    },
+    {
+     "file": "trabajos/DMG1uBBvsXG-05.jpg",
+     "alt": "Olimpo Gym: neón LED y vinilo de corte — foto 3"
+    },
+    {
+     "file": "trabajos/DMG1uBBvsXG-06.jpg",
+     "alt": "Olimpo Gym: neón LED y vinilo de corte — foto 4"
+    },
+    {
+     "file": "trabajos/DMG1uBBvsXG-08.jpg",
+     "alt": "Olimpo Gym: neón LED y vinilo de corte — foto 5"
+    },
+    {
+     "file": "trabajos/DMG1uBBvsXG-10.jpg",
+     "alt": "Olimpo Gym: neón LED y vinilo de corte — foto 6"
+    }
+   ]
+  },
+  {
+   "slug": "calcos-para-motos-2025",
+   "title": "Calcos para motos personalizadas",
+   "client": null,
+   "category": "calcos-y-stickers",
+   "location": "Villa Gesell",
+   "doneAt": "2025-06-09",
+   "summary": "Calcos para motos: tenemos en stock o hacemos el diseño a tu gusto.",
+   "description": null,
+   "materials": [
+    "Vinilo impreso",
+    "Vinilo de corte",
+    "Holográfico"
+   ],
+   "featured": true,
+   "instagramCode": "DKsaouNynjU",
+   "images": [
+    {
+     "file": "trabajos/DKsaouNynjU-03.jpg",
+     "alt": "Calcos para motos personalizadas — foto 1"
+    },
+    {
+     "file": "trabajos/DKsaouNynjU-04.jpg",
+     "alt": "Calcos para motos personalizadas — foto 2"
+    },
+    {
+     "file": "trabajos/DKsaouNynjU-06.jpg",
+     "alt": "Calcos para motos personalizadas — foto 3"
+    },
+    {
+     "file": "trabajos/DKsaouNynjU-07.jpg",
+     "alt": "Calcos para motos personalizadas — foto 4"
+    },
+    {
+     "file": "trabajos/DKsaouNynjU-08.jpg",
+     "alt": "Calcos para motos personalizadas — foto 5"
+    },
+    {
+     "file": "trabajos/DKsaouNynjU-02.jpg",
+     "alt": "Calcos para motos personalizadas — foto 6"
+    }
+   ]
+  },
+  {
+   "slug": "camaron-azul-remeras",
+   "title": "Remeras para Camarón Azul Resto",
+   "client": "Camarón Azul",
+   "category": "remeras-y-gorras",
+   "location": "Villa Gesell",
+   "doneAt": "2025-02-01",
+   "summary": "Remeras estampadas con el logo del resto-proveeduría.",
+   "description": null,
+   "materials": [
+    "Estampado DTF"
+   ],
+   "featured": false,
+   "instagramCode": "DFix0uCvLfQ",
+   "images": [
+    {
+     "file": "trabajos/DFix0uCvLfQ-01.jpg",
+     "alt": "Remeras para Camarón Azul Resto — foto 1"
+    },
+    {
+     "file": "trabajos/DFix0uCvLfQ-02.jpg",
+     "alt": "Remeras para Camarón Azul Resto — foto 2"
+    },
+    {
+     "file": "trabajos/DFix0uCvLfQ-04.jpg",
+     "alt": "Remeras para Camarón Azul Resto — foto 3"
+    }
+   ]
+  },
+  {
+   "slug": "remeras-y-gorras-emprendimientos",
+   "title": "Remeras y gorras para emprendimientos",
+   "client": null,
+   "category": "remeras-y-gorras",
+   "location": "Villa Gesell",
+   "doneAt": "2025-01-30",
+   "summary": "Una tanda de remeras y gorras con los logos de distintos negocios de la zona.",
+   "description": null,
+   "materials": [
+    "Estampado DTF",
+    "Gorras trucker"
+   ],
+   "featured": true,
+   "instagramCode": "DFdmot5PEme",
+   "images": [
+    {
+     "file": "trabajos/DFdmot5PEme-07.jpg",
+     "alt": "Remeras y gorras para emprendimientos — foto 1"
+    },
+    {
+     "file": "trabajos/DFdmot5PEme-03.jpg",
+     "alt": "Remeras y gorras para emprendimientos — foto 2"
+    },
+    {
+     "file": "trabajos/DFdmot5PEme-05.jpg",
+     "alt": "Remeras y gorras para emprendimientos — foto 3"
+    },
+    {
+     "file": "trabajos/DFdmot5PEme-06.jpg",
+     "alt": "Remeras y gorras para emprendimientos — foto 4"
+    },
+    {
+     "file": "trabajos/DFdmot5PEme-08.jpg",
+     "alt": "Remeras y gorras para emprendimientos — foto 5"
+    },
+    {
+     "file": "trabajos/DFdmot5PEme-09.jpg",
+     "alt": "Remeras y gorras para emprendimientos — foto 6"
+    },
+    {
+     "file": "trabajos/DFdmot5PEme-10.jpg",
+     "alt": "Remeras y gorras para emprendimientos — foto 7"
+    },
+    {
+     "file": "trabajos/DFdmot5PEme-01.jpg",
+     "alt": "Remeras y gorras para emprendimientos — foto 8"
+    },
+    {
+     "file": "trabajos/DFdmot5PEme-02.jpg",
+     "alt": "Remeras y gorras para emprendimientos — foto 9"
+    }
+   ]
+  },
+  {
+   "slug": "trigo-mar-azul-corporeas",
+   "title": "Trigo Panadería: corpóreas, cartelería y ploteo",
+   "client": "Trigo Panadería",
+   "category": "carteleria",
+   "location": "Mar Azul",
+   "doneAt": "2024-12-24",
+   "summary": "Corpóreas, cartelería y ploteo para la panadería y pastelería en Mar Azul.",
+   "description": null,
+   "materials": [
+    "Letras corpóreas",
+    "Vinilo de corte"
+   ],
+   "featured": true,
+   "instagramCode": "DD8c6_0t0yh",
+   "images": [
+    {
+     "file": "trabajos/DD8c6_0t0yh-01.jpg",
+     "alt": "Trigo Panadería: corpóreas, cartelería y ploteo — foto 1"
+    },
+    {
+     "file": "trabajos/DD8c6_0t0yh-02.jpg",
+     "alt": "Trigo Panadería: corpóreas, cartelería y ploteo — foto 2"
+    },
+    {
+     "file": "trabajos/DD8c6_0t0yh-03.jpg",
+     "alt": "Trigo Panadería: corpóreas, cartelería y ploteo — foto 3"
+    },
+    {
+     "file": "trabajos/DD8c6_0t0yh-04.jpg",
+     "alt": "Trigo Panadería: corpóreas, cartelería y ploteo — foto 4"
+    }
+   ]
+  },
+  {
+   "slug": "escarlata-y-dulcinea",
+   "title": "Escarlata & Dulcinea: cartelería y corpóreas",
+   "client": "Escarlata & Dulcinea",
+   "category": "carteleria",
+   "location": "Mar Azul",
+   "doneAt": "2024-12-22",
+   "summary": "Cartelería, ploteos y corpóreas para la tienda de tabaco y growshop.",
+   "description": null,
+   "materials": [
+    "Letras corpóreas",
+    "Vinilo impreso"
+   ],
+   "featured": false,
+   "instagramCode": "DD5WiDovGRx",
+   "images": [
+    {
+     "file": "trabajos/DD5WiDovGRx-03.jpg",
+     "alt": "Escarlata & Dulcinea: cartelería y corpóreas — foto 1"
+    },
+    {
+     "file": "trabajos/DD5WiDovGRx-01.jpg",
+     "alt": "Escarlata & Dulcinea: cartelería y corpóreas — foto 2"
+    },
+    {
+     "file": "trabajos/DD5WiDovGRx-04.jpg",
+     "alt": "Escarlata & Dulcinea: cartelería y corpóreas — foto 3"
+    },
+    {
+     "file": "trabajos/DD5WiDovGRx-05.jpg",
+     "alt": "Escarlata & Dulcinea: cartelería y corpóreas — foto 4"
+    },
+    {
+     "file": "trabajos/DD5WiDovGRx-07.jpg",
+     "alt": "Escarlata & Dulcinea: cartelería y corpóreas — foto 5"
+    }
+   ]
+  },
+  {
+   "slug": "el-bosque-corporeas",
+   "title": "El Bosque: corpóreas de polyfan",
+   "client": "El Bosque",
+   "category": "carteleria",
+   "location": "Mar Azul",
+   "doneAt": "2024-12-15",
+   "summary": "Letras corpóreas de polyfan en un tótem vertical.",
+   "description": null,
+   "materials": [
+    "Polyfan"
+   ],
+   "featured": false,
+   "instagramCode": "DDmpdpVusku",
+   "images": [
+    {
+     "file": "trabajos/DDmpdpVusku-01.jpg",
+     "alt": "El Bosque: corpóreas de polyfan — foto 1"
+    },
+    {
+     "file": "trabajos/DDmpdpVusku-02.jpg",
+     "alt": "El Bosque: corpóreas de polyfan — foto 2"
+    }
+   ]
+  },
+  {
+   "slug": "bull-neon-led",
+   "title": "Bull: llegó el neón LED a Villa Gesell",
+   "client": "Bull",
+   "category": "carteleria",
+   "location": "Villa Gesell",
+   "doneAt": "2024-08-05",
+   "summary": "El primer cartel de neón LED que hicimos en Villa Gesell.",
+   "description": null,
+   "materials": [
+    "Neón LED"
+   ],
+   "featured": false,
+   "instagramCode": "C-Sg_pLugNS",
+   "images": [
+    {
+     "file": "trabajos/C-Sg_pLugNS-01.jpg",
+     "alt": "Bull: llegó el neón LED a Villa Gesell — foto 1"
+    },
+    {
+     "file": "trabajos/C-Sg_pLugNS-02.jpg",
+     "alt": "Bull: llegó el neón LED a Villa Gesell — foto 2"
+    },
+    {
+     "file": "trabajos/C-Sg_pLugNS-03.jpg",
+     "alt": "Bull: llegó el neón LED a Villa Gesell — foto 3"
+    },
+    {
+     "file": "trabajos/C-Sg_pLugNS-04.jpg",
+     "alt": "Bull: llegó el neón LED a Villa Gesell — foto 4"
+    }
+   ]
+  },
+  {
+   "slug": "full-wrap-gris-nardo",
+   "title": "Full wrap gris nardo con calcos amarillo flúor",
+   "client": null,
+   "category": "motos-y-cuatris",
+   "location": "Villa Gesell",
+   "doneAt": "2024-08-04",
+   "summary": "Forrado completo en gris nardo con calcos en amarillo flúor.",
+   "description": null,
+   "materials": [
+    "Vinilo gris nardo",
+    "Vinilo flúor"
+   ],
+   "featured": true,
+   "instagramCode": "C-OoOUsPrGn",
+   "images": [
+    {
+     "file": "trabajos/C-OoOUsPrGn-01.jpg",
+     "alt": "Full wrap gris nardo con calcos amarillo flúor — foto 1"
+    },
+    {
+     "file": "trabajos/C-OoOUsPrGn-02.jpg",
+     "alt": "Full wrap gris nardo con calcos amarillo flúor — foto 2"
+    },
+    {
+     "file": "trabajos/C-OoOUsPrGn-03.jpg",
+     "alt": "Full wrap gris nardo con calcos amarillo flúor — foto 3"
+    },
+    {
+     "file": "trabajos/C-OoOUsPrGn-04.jpg",
+     "alt": "Full wrap gris nardo con calcos amarillo flúor — foto 4"
+    }
+   ]
+  },
+  {
+   "slug": "kit-calcos-232",
+   "title": "Kit de calcos laminadas #232",
+   "client": null,
+   "category": "motos-y-cuatris",
+   "location": "Villa Gesell",
+   "doneAt": "2024-07-21",
+   "summary": "Kit de calcos laminadas y personalizadas, impreso en el taller.",
+   "description": null,
+   "materials": [
+    "Vinilo impreso",
+    "Laminado"
+   ],
+   "featured": false,
+   "instagramCode": "C9rtyvrO49H",
+   "images": [
+    {
+     "file": "trabajos/C9rtyvrO49H-02.jpg",
+     "alt": "Kit de calcos laminadas #232 — foto 1"
+    },
+    {
+     "file": "trabajos/C9rtyvrO49H-01.jpg",
+     "alt": "Kit de calcos laminadas #232 — foto 2"
+    },
+    {
+     "file": "trabajos/C9rtyvrO49H-03.jpg",
+     "alt": "Kit de calcos laminadas #232 — foto 3"
+    }
+   ]
+  },
+  {
+   "slug": "farmacia-del-sol-marquesina",
+   "title": "Marquesina de 13 metros para Farmacia Del Sol",
+   "client": "Farmacia Del Sol",
+   "category": "carteleria",
+   "location": "Villa Gesell",
+   "doneAt": "2024-07-17",
+   "summary": "Marquesina de 13 metros de lona back light luminosa.",
+   "description": null,
+   "materials": [
+    "Lona back light"
+   ],
+   "featured": true,
+   "instagramCode": "C9gWzdLtNmu",
+   "images": [
+    {
+     "file": "trabajos/C9gWzdLtNmu-04.jpg",
+     "alt": "Marquesina de 13 metros para Farmacia Del Sol — foto 1"
+    },
+    {
+     "file": "trabajos/C9gWzdLtNmu-01.jpg",
+     "alt": "Marquesina de 13 metros para Farmacia Del Sol — foto 2"
+    },
+    {
+     "file": "trabajos/C9gWzdLtNmu-02.jpg",
+     "alt": "Marquesina de 13 metros para Farmacia Del Sol — foto 3"
+    },
+    {
+     "file": "trabajos/C9gWzdLtNmu-05.jpg",
+     "alt": "Marquesina de 13 metros para Farmacia Del Sol — foto 4"
+    }
+   ]
+  },
+  {
+   "slug": "honda-wave-beige",
+   "title": "Honda Wave forrada en beige",
+   "client": null,
+   "category": "motos-y-cuatris",
+   "location": "Villa Gesell",
+   "doneAt": "2024-07-02",
+   "summary": "Full wrap en beige con vinilo Oracal y detalles en el mismo día.",
+   "description": null,
+   "materials": [
+    "Vinilo Oracal beige"
+   ],
+   "featured": false,
+   "instagramCode": "C87sKycPK8P",
+   "images": [
+    {
+     "file": "trabajos/C87sKycPK8P-01.jpg",
+     "alt": "Honda Wave forrada en beige — foto 1"
+    },
+    {
+     "file": "trabajos/C87sKycPK8P-02.jpg",
+     "alt": "Honda Wave forrada en beige — foto 2"
+    },
+    {
+     "file": "trabajos/C87sKycPK8P-03.jpg",
+     "alt": "Honda Wave forrada en beige — foto 3"
+    },
+    {
+     "file": "trabajos/C87sKycPK8P-04.jpg",
+     "alt": "Honda Wave forrada en beige — foto 4"
+    },
+    {
+     "file": "trabajos/C87sKycPK8P-06.jpg",
+     "alt": "Honda Wave forrada en beige — foto 5"
+    }
+   ]
+  },
+  {
+   "slug": "honda-tornado-full-wrap",
+   "title": "Honda Tornado: full wrap",
+   "client": null,
+   "category": "motos-y-cuatris",
+   "location": "Villa Gesell",
+   "doneAt": "2024-06-30",
+   "summary": "Forrado completo de los plásticos de una Tornado.",
+   "description": null,
+   "materials": [
+    "Vinilo de forrado"
+   ],
+   "featured": false,
+   "instagramCode": "C826sHKPczS",
+   "images": [
+    {
+     "file": "trabajos/C826sHKPczS-01.jpg",
+     "alt": "Honda Tornado: full wrap — foto 1"
+    },
+    {
+     "file": "trabajos/C826sHKPczS-02.jpg",
+     "alt": "Honda Tornado: full wrap — foto 2"
+    },
+    {
+     "file": "trabajos/C826sHKPczS-03.jpg",
+     "alt": "Honda Tornado: full wrap — foto 3"
+    },
+    {
+     "file": "trabajos/C826sHKPczS-05.jpg",
+     "alt": "Honda Tornado: full wrap — foto 4"
+    },
+    {
+     "file": "trabajos/C826sHKPczS-07.jpg",
+     "alt": "Honda Tornado: full wrap — foto 5"
+    }
+   ]
+  },
+  {
+   "slug": "esmerilado-tornasolado",
+   "title": "Esmerilado con detalles tornasolados",
+   "client": null,
+   "category": "vidrieras-y-esmerilados",
+   "location": "Villa Gesell",
+   "doneAt": "2024-06-15",
+   "summary": "Esmerilado con círculos de vinilo tornasolado para un mueble con puertas de vidrio.",
+   "description": null,
+   "materials": [
+    "Esmerilado",
+    "Vinilo tornasolado"
+   ],
+   "featured": false,
+   "instagramCode": "C8PPbH9OeTs",
+   "images": [
+    {
+     "file": "trabajos/C8PPbH9OeTs-01.jpg",
+     "alt": "Esmerilado con detalles tornasolados — foto 1"
+    },
+    {
+     "file": "trabajos/C8PPbH9OeTs-04.jpg",
+     "alt": "Esmerilado con detalles tornasolados — foto 2"
+    }
+   ]
+  },
+  {
+   "slug": "yamaha-216-calcos-laminadas",
+   "title": "El misil: calcos laminadas para Yamaha #216",
+   "client": null,
+   "category": "motos-y-cuatris",
+   "location": "Villa Gesell",
+   "doneAt": "2024-06-08",
+   "summary": "Así quedó con las calcos puestas: calcos laminadas hechas por nosotros, personalizables a tu gusto.",
+   "description": null,
+   "materials": [
+    "Vinilo impreso",
+    "Laminado"
+   ],
+   "featured": true,
+   "instagramCode": "C7-KdCBvi6y",
+   "images": [
+    {
+     "file": "trabajos/C7-KdCBvi6y-09.jpg",
+     "alt": "El misil: calcos laminadas para Yamaha #216 — foto 1"
+    },
+    {
+     "file": "trabajos/C7-KdCBvi6y-01.jpg",
+     "alt": "El misil: calcos laminadas para Yamaha #216 — foto 2"
+    },
+    {
+     "file": "trabajos/C7-KdCBvi6y-02.jpg",
+     "alt": "El misil: calcos laminadas para Yamaha #216 — foto 3"
+    },
+    {
+     "file": "trabajos/C7-KdCBvi6y-03.jpg",
+     "alt": "El misil: calcos laminadas para Yamaha #216 — foto 4"
+    },
+    {
+     "file": "trabajos/C7-KdCBvi6y-04.jpg",
+     "alt": "El misil: calcos laminadas para Yamaha #216 — foto 5"
+    },
+    {
+     "file": "trabajos/C7-KdCBvi6y-08.jpg",
+     "alt": "El misil: calcos laminadas para Yamaha #216 — foto 6"
+    }
+   ]
+  },
+  {
+   "slug": "marea-pez-camion",
+   "title": "Marea Pez: rotulación de camión térmico",
+   "client": "Marea Pez",
+   "category": "ploteo-vehicular",
+   "location": "Villa Gesell",
+   "doneAt": "2024-06-08",
+   "summary": "Rotulación completa de la caja térmica y la cabina.",
+   "description": null,
+   "materials": [
+    "Vinilo impreso",
+    "Vinilo de corte"
+   ],
+   "featured": false,
+   "instagramCode": "C7-H9MHPbVD",
+   "images": [
+    {
+     "file": "trabajos/C7-H9MHPbVD-01.jpg",
+     "alt": "Marea Pez: rotulación de camión térmico — foto 1"
+    },
+    {
+     "file": "trabajos/C7-H9MHPbVD-03.jpg",
+     "alt": "Marea Pez: rotulación de camión térmico — foto 2"
+    },
+    {
+     "file": "trabajos/C7-H9MHPbVD-04.jpg",
+     "alt": "Marea Pez: rotulación de camión térmico — foto 3"
+    },
+    {
+     "file": "trabajos/C7-H9MHPbVD-06.jpg",
+     "alt": "Marea Pez: rotulación de camión térmico — foto 4"
+    },
+    {
+     "file": "trabajos/C7-H9MHPbVD-08.jpg",
+     "alt": "Marea Pez: rotulación de camión térmico — foto 5"
+    }
+   ]
+  },
+  {
+   "slug": "motorhome-ploteado",
+   "title": "Motorhome ploteado",
+   "client": null,
+   "category": "ploteo-vehicular",
+   "location": "Villa Gesell",
+   "doneAt": "2024-06-06",
+   "summary": "Ploteo de un colectivo convertido en motorhome.",
+   "description": null,
+   "materials": [
+    "Vinilo impreso"
+   ],
+   "featured": false,
+   "instagramCode": "C735R1AOYU5",
+   "images": [
+    {
+     "file": "trabajos/C735R1AOYU5-03.jpg",
+     "alt": "Motorhome ploteado — foto 1"
+    },
+    {
+     "file": "trabajos/C735R1AOYU5-01.jpg",
+     "alt": "Motorhome ploteado — foto 2"
+    },
+    {
+     "file": "trabajos/C735R1AOYU5-02.jpg",
+     "alt": "Motorhome ploteado — foto 3"
+    },
+    {
+     "file": "trabajos/C735R1AOYU5-04.jpg",
+     "alt": "Motorhome ploteado — foto 4"
+    },
+    {
+     "file": "trabajos/C735R1AOYU5-06.jpg",
+     "alt": "Motorhome ploteado — foto 5"
+    }
+   ]
+  },
+  {
+   "slug": "honda-crf-kit-calcos",
+   "title": "Kit de calcos laminadas para Honda CRF",
+   "client": null,
+   "category": "motos-y-cuatris",
+   "location": "Villa Gesell",
+   "doneAt": "2024-06-02",
+   "summary": "Kit de calcos laminadas y personalizadas.",
+   "description": null,
+   "materials": [
+    "Vinilo impreso",
+    "Laminado"
+   ],
+   "featured": false,
+   "instagramCode": "C7sqsd2O8Vf",
+   "images": [
+    {
+     "file": "trabajos/C7sqsd2O8Vf-01.jpg",
+     "alt": "Kit de calcos laminadas para Honda CRF — foto 1"
+    },
+    {
+     "file": "trabajos/C7sqsd2O8Vf-02.jpg",
+     "alt": "Kit de calcos laminadas para Honda CRF — foto 2"
+    },
+    {
+     "file": "trabajos/C7sqsd2O8Vf-03.jpg",
+     "alt": "Kit de calcos laminadas para Honda CRF — foto 3"
+    },
+    {
+     "file": "trabajos/C7sqsd2O8Vf-04.jpg",
+     "alt": "Kit de calcos laminadas para Honda CRF — foto 4"
+    }
+   ]
+  },
+  {
+   "slug": "corolla-cross-negro-mate",
+   "title": "Techo, parantes y espejos en negro mate",
+   "client": null,
+   "category": "ploteo-vehicular",
+   "location": null,
+   "doneAt": "2024-05-29",
+   "summary": "Ploteo de techo, parantes, espejos y decoración en negro mate (Oracal 651).",
+   "description": null,
+   "materials": [
+    "Vinilo negro mate"
+   ],
+   "featured": false,
+   "instagramCode": "C7keQ7oP_vN",
+   "images": [
+    {
+     "file": "trabajos/C7keQ7oP_vN-01.jpg",
+     "alt": "Techo, parantes y espejos en negro mate — foto 1"
+    },
+    {
+     "file": "trabajos/C7keQ7oP_vN-02.jpg",
+     "alt": "Techo, parantes y espejos en negro mate — foto 2"
+    },
+    {
+     "file": "trabajos/C7keQ7oP_vN-03.jpg",
+     "alt": "Techo, parantes y espejos en negro mate — foto 3"
+    },
+    {
+     "file": "trabajos/C7keQ7oP_vN-05.jpg",
+     "alt": "Techo, parantes y espejos en negro mate — foto 4"
+    },
+    {
+     "file": "trabajos/C7keQ7oP_vN-09.jpg",
+     "alt": "Techo, parantes y espejos en negro mate — foto 5"
+    },
+    {
+     "file": "trabajos/C7keQ7oP_vN-10.jpg",
+     "alt": "Techo, parantes y espejos en negro mate — foto 6"
+    }
+   ]
+  },
+  {
+   "slug": "farmacia-amancio-fernandez-vidriera",
+   "title": "Farmacia Amancio Fernández: vidriera",
+   "client": "Farmacia Amancio Fernández",
+   "category": "vidrieras-y-esmerilados",
+   "location": "Villa Gesell",
+   "doneAt": "2024-05-17",
+   "summary": "Vinilo de corte y vinilo impreso en toda la vidriera de la farmacia.",
+   "description": null,
+   "materials": [
+    "Vinilo de corte",
+    "Vinilo impreso"
+   ],
+   "featured": false,
+   "instagramCode": "C7FamRGv8J1",
+   "images": [
+    {
+     "file": "trabajos/C7FamRGv8J1-03.jpg",
+     "alt": "Farmacia Amancio Fernández: vidriera — foto 1"
+    },
+    {
+     "file": "trabajos/C7FamRGv8J1-01.jpg",
+     "alt": "Farmacia Amancio Fernández: vidriera — foto 2"
+    },
+    {
+     "file": "trabajos/C7FamRGv8J1-04.jpg",
+     "alt": "Farmacia Amancio Fernández: vidriera — foto 3"
+    },
+    {
+     "file": "trabajos/C7FamRGv8J1-05.jpg",
+     "alt": "Farmacia Amancio Fernández: vidriera — foto 4"
+    },
+    {
+     "file": "trabajos/C7FamRGv8J1-06.jpg",
+     "alt": "Farmacia Amancio Fernández: vidriera — foto 5"
+    }
+   ]
+  },
+  {
+   "slug": "amarok-diseno-y-ploteo",
+   "title": "VW Amarok: diseño y ploteo",
+   "client": null,
+   "category": "ploteo-vehicular",
+   "location": "Villa Gesell",
+   "doneAt": "2024-05-16",
+   "summary": "Diseño y ploteo con franjas en el capó y gráfica trasera.",
+   "description": null,
+   "materials": [
+    "Vinilo impreso",
+    "Vinilo de corte"
+   ],
+   "featured": false,
+   "instagramCode": "C7CCG9JulmL",
+   "images": [
+    {
+     "file": "trabajos/C7CCG9JulmL-05.jpg",
+     "alt": "VW Amarok: diseño y ploteo — foto 1"
+    },
+    {
+     "file": "trabajos/C7CCG9JulmL-01.jpg",
+     "alt": "VW Amarok: diseño y ploteo — foto 2"
+    },
+    {
+     "file": "trabajos/C7CCG9JulmL-03.jpg",
+     "alt": "VW Amarok: diseño y ploteo — foto 3"
+    },
+    {
+     "file": "trabajos/C7CCG9JulmL-06.jpg",
+     "alt": "VW Amarok: diseño y ploteo — foto 4"
+    },
+    {
+     "file": "trabajos/C7CCG9JulmL-08.jpg",
+     "alt": "VW Amarok: diseño y ploteo — foto 5"
+    }
+   ]
+  },
+  {
+   "slug": "dore-camion",
+   "title": "Doré: logos y redes en el camión",
+   "client": "Doré",
+   "category": "ploteo-vehicular",
+   "location": "Villa Gesell",
+   "doneAt": "2024-05-15",
+   "summary": "Acá solamente ploteamos los logos y las redes sociales.",
+   "description": null,
+   "materials": [
+    "Vinilo de corte"
+   ],
+   "featured": false,
+   "instagramCode": "C7AXFU9P5UP",
+   "images": [
+    {
+     "file": "trabajos/C7AXFU9P5UP-02.jpg",
+     "alt": "Doré: logos y redes en el camión — foto 1"
+    },
+    {
+     "file": "trabajos/C7AXFU9P5UP-01.jpg",
+     "alt": "Doré: logos y redes en el camión — foto 2"
+    },
+    {
+     "file": "trabajos/C7AXFU9P5UP-03.jpg",
+     "alt": "Doré: logos y redes en el camión — foto 3"
+    },
+    {
+     "file": "trabajos/C7AXFU9P5UP-04.jpg",
+     "alt": "Doré: logos y redes en el camión — foto 4"
+    }
+   ]
+  },
+  {
+   "slug": "sprinter-tu-destino-nuestro-rumbo",
+   "title": "Sprinter viajera: «Tu destino, nuestro rumbo»",
+   "client": null,
+   "category": "ploteo-vehicular",
+   "location": "Villa Gesell",
+   "doneAt": "2024-05-14",
+   "summary": "Rotulación de una Sprinter para viajes.",
+   "description": null,
+   "materials": [
+    "Vinilo de corte",
+    "Vinilo impreso"
+   ],
+   "featured": false,
+   "instagramCode": "C69nbYwvPgi",
+   "images": [
+    {
+     "file": "trabajos/C69nbYwvPgi-01.jpg",
+     "alt": "Sprinter viajera: «Tu destino, nuestro rumbo» — foto 1"
+    },
+    {
+     "file": "trabajos/C69nbYwvPgi-02.jpg",
+     "alt": "Sprinter viajera: «Tu destino, nuestro rumbo» — foto 2"
+    },
+    {
+     "file": "trabajos/C69nbYwvPgi-03.jpg",
+     "alt": "Sprinter viajera: «Tu destino, nuestro rumbo» — foto 3"
+    },
+    {
+     "file": "trabajos/C69nbYwvPgi-04.jpg",
+     "alt": "Sprinter viajera: «Tu destino, nuestro rumbo» — foto 4"
+    }
+   ]
+  },
+  {
+   "slug": "gesatel-ploteo",
+   "title": "Gesatel: diseño y ploteo con vinilo de corte",
+   "client": "Gesatel",
+   "category": "ploteo-vehicular",
+   "location": "Villa Gesell",
+   "doneAt": "2024-05-13",
+   "summary": "Diseño y ploteo con vinilo de corte para el utilitario de servicio técnico.",
+   "description": null,
+   "materials": [
+    "Vinilo de corte"
+   ],
+   "featured": false,
+   "instagramCode": "C67Aj9yvwYo",
+   "images": [
+    {
+     "file": "trabajos/C67Aj9yvwYo-01.jpg",
+     "alt": "Gesatel: diseño y ploteo con vinilo de corte — foto 1"
+    },
+    {
+     "file": "trabajos/C67Aj9yvwYo-02.jpg",
+     "alt": "Gesatel: diseño y ploteo con vinilo de corte — foto 2"
+    },
+    {
+     "file": "trabajos/C67Aj9yvwYo-03.jpg",
+     "alt": "Gesatel: diseño y ploteo con vinilo de corte — foto 3"
+    },
+    {
+     "file": "trabajos/C67Aj9yvwYo-04.jpg",
+     "alt": "Gesatel: diseño y ploteo con vinilo de corte — foto 4"
+    }
+   ]
+  },
+  {
+   "slug": "carrera-forest-corporeas",
+   "title": "Carrera Forest: corpóreas",
+   "client": "Carrera Forest",
+   "category": "carteleria",
+   "location": "Villa Gesell",
+   "doneAt": "2024-04-11",
+   "summary": "Letras corpóreas sobre fachada de chapa.",
+   "description": null,
+   "materials": [
+    "Letras corpóreas"
+   ],
+   "featured": false,
+   "instagramCode": "C5o5YtGvY5F",
+   "images": [
+    {
+     "file": "trabajos/C5o5YtGvY5F-02.jpg",
+     "alt": "Carrera Forest: corpóreas — foto 1"
+    },
+    {
+     "file": "trabajos/C5o5YtGvY5F-01.jpg",
+     "alt": "Carrera Forest: corpóreas — foto 2"
+    },
+    {
+     "file": "trabajos/C5o5YtGvY5F-03.jpg",
+     "alt": "Carrera Forest: corpóreas — foto 3"
+    }
+   ]
+  },
+  {
+   "slug": "yamaha-xtz-antes-y-despues",
+   "title": "Yamaha XTZ: antes, proceso y después",
+   "client": null,
+   "category": "motos-y-cuatris",
+   "location": "Villa Gesell",
+   "doneAt": "2024-04-07",
+   "summary": "Los «antes», los «después» y parte del proceso de un forrado completo.",
+   "description": null,
+   "materials": [
+    "Vinilo de forrado",
+    "Calcos impresas"
+   ],
+   "featured": false,
+   "instagramCode": "C5emmslPSAm",
+   "images": [
+    {
+     "file": "trabajos/C5emmslPSAm-10.jpg",
+     "alt": "Yamaha XTZ: antes, proceso y después — foto 1"
+    },
+    {
+     "file": "trabajos/C5emmslPSAm-02.jpg",
+     "alt": "Yamaha XTZ: antes, proceso y después — foto 2"
+    },
+    {
+     "file": "trabajos/C5emmslPSAm-04.jpg",
+     "alt": "Yamaha XTZ: antes, proceso y después — foto 3"
+    },
+    {
+     "file": "trabajos/C5emmslPSAm-05.jpg",
+     "alt": "Yamaha XTZ: antes, proceso y después — foto 4"
+    },
+    {
+     "file": "trabajos/C5emmslPSAm-06.jpg",
+     "alt": "Yamaha XTZ: antes, proceso y después — foto 5"
+    },
+    {
+     "file": "trabajos/C5emmslPSAm-07.jpg",
+     "alt": "Yamaha XTZ: antes, proceso y después — foto 6"
+    },
+    {
+     "file": "trabajos/C5emmslPSAm-09.jpg",
+     "alt": "Yamaha XTZ: antes, proceso y después — foto 7"
+    }
+   ]
+  },
+  {
+   "slug": "rumini-cristal-acrilico-polyfan",
+   "title": "Rumini: vinilo cristal, acrílico y polyfan",
+   "client": "Rumini",
+   "category": "vidrieras-y-esmerilados",
+   "location": "Villa Gesell",
+   "doneAt": "2024-04-04",
+   "summary": "Vinilo impreso cristal, acrílico de 3 mm, polyfan de 20 mm, vinilo de corte y franja de esmerilado.",
+   "description": null,
+   "materials": [
+    "Vinilo impreso cristal",
+    "Acrílico 3 mm",
+    "Polyfan 20 mm",
+    "Esmerilado"
+   ],
+   "featured": true,
+   "instagramCode": "C5WcJgfPLDK",
+   "images": [
+    {
+     "file": "trabajos/C5WcJgfPLDK-01.jpg",
+     "alt": "Rumini: vinilo cristal, acrílico y polyfan — foto 1"
+    },
+    {
+     "file": "trabajos/C5WcJgfPLDK-02.jpg",
+     "alt": "Rumini: vinilo cristal, acrílico y polyfan — foto 2"
+    },
+    {
+     "file": "trabajos/C5WcJgfPLDK-03.jpg",
+     "alt": "Rumini: vinilo cristal, acrílico y polyfan — foto 3"
+    },
+    {
+     "file": "trabajos/C5WcJgfPLDK-05.jpg",
+     "alt": "Rumini: vinilo cristal, acrílico y polyfan — foto 4"
+    },
+    {
+     "file": "trabajos/C5WcJgfPLDK-06.jpg",
+     "alt": "Rumini: vinilo cristal, acrílico y polyfan — foto 5"
+    }
+   ]
+  },
+  {
+   "slug": "honda-bross-full-wrap",
+   "title": "Honda Bross: full wrap con calcos flúor",
+   "client": null,
+   "category": "motos-y-cuatris",
+   "location": "Villa Gesell",
+   "doneAt": "2024-03-24",
+   "summary": "Tremendo cambio: full wrap (ploteo completo) con calcos flúor.",
+   "description": null,
+   "materials": [
+    "Vinilo de forrado",
+    "Vinilo flúor"
+   ],
+   "featured": false,
+   "instagramCode": "C45a0KIugMn",
+   "images": [
+    {
+     "file": "trabajos/C45a0KIugMn-03.jpg",
+     "alt": "Honda Bross: full wrap con calcos flúor — foto 1"
+    },
+    {
+     "file": "trabajos/C45a0KIugMn-01.jpg",
+     "alt": "Honda Bross: full wrap con calcos flúor — foto 2"
+    },
+    {
+     "file": "trabajos/C45a0KIugMn-02.jpg",
+     "alt": "Honda Bross: full wrap con calcos flúor — foto 3"
+    },
+    {
+     "file": "trabajos/C45a0KIugMn-05.jpg",
+     "alt": "Honda Bross: full wrap con calcos flúor — foto 4"
+    }
+   ]
+  },
+  {
+   "slug": "moto-blanca-rojo-y-azul",
+   "title": "Cambio de color: blanco con rojo y azul",
+   "client": null,
+   "category": "motos-y-cuatris",
+   "location": "Villa Gesell",
+   "doneAt": "2024-03-22",
+   "summary": "Cambiamos de color toda la moto: la forramos en blanco y combinamos un diseño con rojo y azul como pidió el cliente.",
+   "description": null,
+   "materials": [
+    "Vinilo blanco",
+    "Calcos impresas"
+   ],
+   "featured": true,
+   "instagramCode": "C4y9JejOCox",
+   "images": [
+    {
+     "file": "trabajos/C4y9JejOCox-01.jpg",
+     "alt": "Cambio de color: blanco con rojo y azul — foto 1"
+    },
+    {
+     "file": "trabajos/C4y9JejOCox-03.jpg",
+     "alt": "Cambio de color: blanco con rojo y azul — foto 2"
+    },
+    {
+     "file": "trabajos/C4y9JejOCox-04.jpg",
+     "alt": "Cambio de color: blanco con rojo y azul — foto 3"
+    },
+    {
+     "file": "trabajos/C4y9JejOCox-05.jpg",
+     "alt": "Cambio de color: blanco con rojo y azul — foto 4"
+    },
+    {
+     "file": "trabajos/C4y9JejOCox-07.jpg",
+     "alt": "Cambio de color: blanco con rojo y azul — foto 5"
+    },
+    {
+     "file": "trabajos/C4y9JejOCox-09.jpg",
+     "alt": "Cambio de color: blanco con rojo y azul — foto 6"
+    }
+   ]
+  },
+  {
+   "slug": "honda-xr-cereza",
+   "title": "Honda XR: cambio de color y calcos",
+   "client": null,
+   "category": "motos-y-cuatris",
+   "location": "Villa Gesell",
+   "doneAt": "2024-03-13",
+   "summary": "Full wrap con cambio de color y calcos.",
+   "description": null,
+   "materials": [
+    "Vinilo de forrado",
+    "Calcos"
+   ],
+   "featured": false,
+   "instagramCode": "C4duyZ6u2C1",
+   "images": [
+    {
+     "file": "trabajos/C4duyZ6u2C1-01.jpg",
+     "alt": "Honda XR: cambio de color y calcos — foto 1"
+    },
+    {
+     "file": "trabajos/C4duyZ6u2C1-02.jpg",
+     "alt": "Honda XR: cambio de color y calcos — foto 2"
+    },
+    {
+     "file": "trabajos/C4duyZ6u2C1-03.jpg",
+     "alt": "Honda XR: cambio de color y calcos — foto 3"
+    },
+    {
+     "file": "trabajos/C4duyZ6u2C1-04.jpg",
+     "alt": "Honda XR: cambio de color y calcos — foto 4"
+    },
+    {
+     "file": "trabajos/C4duyZ6u2C1-06.jpg",
+     "alt": "Honda XR: cambio de color y calcos — foto 5"
+    },
+    {
+     "file": "trabajos/C4duyZ6u2C1-07.jpg",
+     "alt": "Honda XR: cambio de color y calcos — foto 6"
+    }
+   ]
+  },
+  {
+   "slug": "calcos-y-stickers-2024",
+   "title": "Calcos y stickers con tu logo",
+   "client": null,
+   "category": "calcos-y-stickers",
+   "location": "Villa Gesell",
+   "doneAt": "2024-03-03",
+   "summary": "Una tanda de calcos y stickers impresos y troquelados para distintos comercios.",
+   "description": null,
+   "materials": [
+    "Vinilo impreso",
+    "Holográfico",
+    "Troquelado"
+   ],
+   "featured": true,
+   "instagramCode": "C4Dm4eYOfyY",
+   "images": [
+    {
+     "file": "trabajos/C4Dm4eYOfyY-01.jpg",
+     "alt": "Calcos y stickers con tu logo — foto 1"
+    },
+    {
+     "file": "trabajos/C4Dm4eYOfyY-02.jpg",
+     "alt": "Calcos y stickers con tu logo — foto 2"
+    },
+    {
+     "file": "trabajos/C4Dm4eYOfyY-03.jpg",
+     "alt": "Calcos y stickers con tu logo — foto 3"
+    },
+    {
+     "file": "trabajos/C4Dm4eYOfyY-04.jpg",
+     "alt": "Calcos y stickers con tu logo — foto 4"
+    },
+    {
+     "file": "trabajos/C4Dm4eYOfyY-05.jpg",
+     "alt": "Calcos y stickers con tu logo — foto 5"
+    },
+    {
+     "file": "trabajos/C4Dm4eYOfyY-06.jpg",
+     "alt": "Calcos y stickers con tu logo — foto 6"
+    },
+    {
+     "file": "trabajos/C4Dm4eYOfyY-07.jpg",
+     "alt": "Calcos y stickers con tu logo — foto 7"
+    },
+    {
+     "file": "trabajos/C4Dm4eYOfyY-09.jpg",
+     "alt": "Calcos y stickers con tu logo — foto 8"
+    },
+    {
+     "file": "trabajos/C4Dm4eYOfyY-10.jpg",
+     "alt": "Calcos y stickers con tu logo — foto 9"
+    }
+   ]
+  },
+  {
+   "slug": "brumat-logo-y-ploteo",
+   "title": "Brumat Automotores: logo y ploteo",
+   "client": "Brumat Automotores",
+   "category": "ploteo-vehicular",
+   "location": "Villa Gesell",
+   "doneAt": "2024-02-24",
+   "summary": "Diseño de logo y ploteo vehicular.",
+   "description": null,
+   "materials": [
+    "Vinilo de corte",
+    "Vinilo holográfico"
+   ],
+   "featured": false,
+   "instagramCode": "C3tmI9YtvKD",
+   "images": [
+    {
+     "file": "trabajos/C3tmI9YtvKD-01.jpg",
+     "alt": "Brumat Automotores: logo y ploteo — foto 1"
+    },
+    {
+     "file": "trabajos/C3tmI9YtvKD-02.jpg",
+     "alt": "Brumat Automotores: logo y ploteo — foto 2"
+    },
+    {
+     "file": "trabajos/C3tmI9YtvKD-03.jpg",
+     "alt": "Brumat Automotores: logo y ploteo — foto 3"
+    },
+    {
+     "file": "trabajos/C3tmI9YtvKD-04.jpg",
+     "alt": "Brumat Automotores: logo y ploteo — foto 4"
+    },
+    {
+     "file": "trabajos/C3tmI9YtvKD-05.jpg",
+     "alt": "Brumat Automotores: logo y ploteo — foto 5"
+    }
+   ]
+  },
+  {
+   "slug": "cermat-iveco",
+   "title": "Cermat: vinilo de corte para un IVECO",
+   "client": "Cermat",
+   "category": "ploteo-vehicular",
+   "location": "Villa Gesell",
+   "doneAt": "2024-02-08",
+   "summary": "Vinilo de corte para la cabina del camión.",
+   "description": null,
+   "materials": [
+    "Vinilo de corte"
+   ],
+   "featured": false,
+   "instagramCode": "C3Gevxqvmb9",
+   "images": [
+    {
+     "file": "trabajos/C3Gevxqvmb9-01.jpg",
+     "alt": "Cermat: vinilo de corte para un IVECO — foto 1"
+    },
+    {
+     "file": "trabajos/C3Gevxqvmb9-02.jpg",
+     "alt": "Cermat: vinilo de corte para un IVECO — foto 2"
+    },
+    {
+     "file": "trabajos/C3Gevxqvmb9-03.jpg",
+     "alt": "Cermat: vinilo de corte para un IVECO — foto 3"
+    },
+    {
+     "file": "trabajos/C3Gevxqvmb9-04.jpg",
+     "alt": "Cermat: vinilo de corte para un IVECO — foto 4"
+    },
+    {
+     "file": "trabajos/C3Gevxqvmb9-05.jpg",
+     "alt": "Cermat: vinilo de corte para un IVECO — foto 5"
+    }
+   ]
+  },
+  {
+   "slug": "calcos-vinilo-cepillado",
+   "title": "Calcos impresas en vinilo cepillado",
+   "client": null,
+   "category": "calcos-y-stickers",
+   "location": "Villa Gesell",
+   "doneAt": "2024-01-27",
+   "summary": "Nuestras calcos impresas en vinilo cepillado, saliendo de la impresora.",
+   "description": null,
+   "materials": [
+    "Vinilo cepillado"
+   ],
+   "featured": false,
+   "instagramCode": "C2lYuA9Nx7e",
+   "images": [
+    {
+     "file": "trabajos/C2lYuA9Nx7e-03.jpg",
+     "alt": "Calcos impresas en vinilo cepillado — foto 1"
+    },
+    {
+     "file": "trabajos/C2lYuA9Nx7e-01.jpg",
+     "alt": "Calcos impresas en vinilo cepillado — foto 2"
+    },
+    {
+     "file": "trabajos/C2lYuA9Nx7e-02.jpg",
+     "alt": "Calcos impresas en vinilo cepillado — foto 3"
+    }
+   ]
+  },
+  {
+   "slug": "el-bazar-mar-azul",
+   "title": "El Bazar: corpóreas de polyfan",
+   "client": "El Bazar",
+   "category": "carteleria",
+   "location": "Mar Azul",
+   "doneAt": "2024-01-25",
+   "summary": "Letras corpóreas de polyfan para el bazar de Mar Azul.",
+   "description": null,
+   "materials": [
+    "Polyfan"
+   ],
+   "featured": false,
+   "instagramCode": "C2iEDRiuV4Y",
+   "images": [
+    {
+     "file": "trabajos/C2iEDRiuV4Y-01.jpg",
+     "alt": "El Bazar: corpóreas de polyfan — foto 1"
+    },
+    {
+     "file": "trabajos/C2iEDRiuV4Y-02.jpg",
+     "alt": "El Bazar: corpóreas de polyfan — foto 2"
+    },
+    {
+     "file": "trabajos/C2iEDRiuV4Y-04.jpg",
+     "alt": "El Bazar: corpóreas de polyfan — foto 3"
+    }
+   ]
+  },
+  {
+   "slug": "logo-y-camionetas",
+   "title": "Del logo a las camionetas",
+   "client": null,
+   "category": "ploteo-vehicular",
+   "location": "Villa Gesell",
+   "doneAt": "2024-01-21",
+   "summary": "El cliente nos dijo «lo dejo en tus manos»: diseñamos el logo, preparamos un diseño para las camionetas y las ploteamos.",
+   "description": null,
+   "materials": [
+    "Diseño de logo",
+    "Vinilo impreso"
+   ],
+   "featured": true,
+   "instagramCode": "C2YJoOOvYWE",
+   "images": [
+    {
+     "file": "trabajos/C2YJoOOvYWE-02.jpg",
+     "alt": "Del logo a las camionetas — foto 1"
+    },
+    {
+     "file": "trabajos/C2YJoOOvYWE-01.jpg",
+     "alt": "Del logo a las camionetas — foto 2"
+    },
+    {
+     "file": "trabajos/C2YJoOOvYWE-03.jpg",
+     "alt": "Del logo a las camionetas — foto 3"
+    },
+    {
+     "file": "trabajos/C2YJoOOvYWE-04.jpg",
+     "alt": "Del logo a las camionetas — foto 4"
+    },
+    {
+     "file": "trabajos/C2YJoOOvYWE-06.jpg",
+     "alt": "Del logo a las camionetas — foto 5"
+    }
+   ]
+  },
+  {
+   "slug": "calcos-honda",
+   "title": "Calcos para motos Honda",
+   "client": null,
+   "category": "motos-y-cuatris",
+   "location": "Villa Gesell",
+   "doneAt": "2024-01-21",
+   "summary": "Calcos para motos, réplicas y diseños propios.",
+   "description": null,
+   "materials": [
+    "Vinilo impreso",
+    "Vinilo de corte"
+   ],
+   "featured": false,
+   "instagramCode": "C2XTc3fuBno",
+   "images": [
+    {
+     "file": "trabajos/C2XTc3fuBno-01.jpg",
+     "alt": "Calcos para motos Honda — foto 1"
+    },
+    {
+     "file": "trabajos/C2XTc3fuBno-02.jpg",
+     "alt": "Calcos para motos Honda — foto 2"
+    },
+    {
+     "file": "trabajos/C2XTc3fuBno-03.jpg",
+     "alt": "Calcos para motos Honda — foto 3"
+    },
+    {
+     "file": "trabajos/C2XTc3fuBno-04.jpg",
+     "alt": "Calcos para motos Honda — foto 4"
+    },
+    {
+     "file": "trabajos/C2XTc3fuBno-06.jpg",
+     "alt": "Calcos para motos Honda — foto 5"
+    },
+    {
+     "file": "trabajos/C2XTc3fuBno-07.jpg",
+     "alt": "Calcos para motos Honda — foto 6"
+    },
+    {
+     "file": "trabajos/C2XTc3fuBno-08.jpg",
+     "alt": "Calcos para motos Honda — foto 7"
+    }
+   ]
+  },
+  {
+   "slug": "furia-club-piso",
+   "title": "Gesell Furia Club: vinilo para piso",
+   "client": "Gesell Furia Club",
+   "category": "vinilo-decorativo",
+   "location": "Villa Gesell",
+   "doneAt": "2023-12-06",
+   "summary": "Vinilo adhesivo de alto tránsito para el piso de la cancha.",
+   "description": null,
+   "materials": [
+    "Vinilo de alto tránsito"
+   ],
+   "featured": true,
+   "instagramCode": "C0h4gRkv29T",
+   "images": [
+    {
+     "file": "trabajos/C0h4gRkv29T-07.jpg",
+     "alt": "Gesell Furia Club: vinilo para piso — foto 1"
+    },
+    {
+     "file": "trabajos/C0h4gRkv29T-01.jpg",
+     "alt": "Gesell Furia Club: vinilo para piso — foto 2"
+    },
+    {
+     "file": "trabajos/C0h4gRkv29T-02.jpg",
+     "alt": "Gesell Furia Club: vinilo para piso — foto 3"
+    },
+    {
+     "file": "trabajos/C0h4gRkv29T-04.jpg",
+     "alt": "Gesell Furia Club: vinilo para piso — foto 4"
+    },
+    {
+     "file": "trabajos/C0h4gRkv29T-05.jpg",
+     "alt": "Gesell Furia Club: vinilo para piso — foto 5"
+    },
+    {
+     "file": "trabajos/C0h4gRkv29T-06.jpg",
+     "alt": "Gesell Furia Club: vinilo para piso — foto 6"
+    },
+    {
+     "file": "trabajos/C0h4gRkv29T-09.jpg",
+     "alt": "Gesell Furia Club: vinilo para piso — foto 7"
+    }
+   ]
+  },
+  {
+   "slug": "furia-club-corporeas",
+   "title": "Gesell Furia Club: corpóreas",
+   "client": "Gesell Furia Club",
+   "category": "carteleria",
+   "location": "Villa Gesell",
+   "doneAt": "2024-01-20",
+   "summary": "Letras corpóreas en el frente del club.",
+   "description": null,
+   "materials": [
+    "Letras corpóreas"
+   ],
+   "featured": false,
+   "instagramCode": "C2Vk82rv5Xj",
+   "images": [
+    {
+     "file": "trabajos/C2Vk82rv5Xj-04.jpg",
+     "alt": "Gesell Furia Club: corpóreas — foto 1"
+    },
+    {
+     "file": "trabajos/C2Vk82rv5Xj-01.jpg",
+     "alt": "Gesell Furia Club: corpóreas — foto 2"
+    },
+    {
+     "file": "trabajos/C2Vk82rv5Xj-02.jpg",
+     "alt": "Gesell Furia Club: corpóreas — foto 3"
+    },
+    {
+     "file": "trabajos/C2Vk82rv5Xj-03.jpg",
+     "alt": "Gesell Furia Club: corpóreas — foto 4"
+    }
+   ]
+  },
+  {
+   "slug": "remeras-y-gorras-2024",
+   "title": "Remeras y gorras para negocios",
+   "client": null,
+   "category": "remeras-y-gorras",
+   "location": "Villa Gesell",
+   "doneAt": "2024-01-20",
+   "summary": "Remeras y gorras estampadas con logos de comercios de la zona.",
+   "description": null,
+   "materials": [
+    "Estampado DTF",
+    "Gorras trucker"
+   ],
+   "featured": false,
+   "instagramCode": "C2VjBg-vqoX",
+   "images": [
+    {
+     "file": "trabajos/C2VjBg-vqoX-08.jpg",
+     "alt": "Remeras y gorras para negocios — foto 1"
+    },
+    {
+     "file": "trabajos/C2VjBg-vqoX-01.jpg",
+     "alt": "Remeras y gorras para negocios — foto 2"
+    },
+    {
+     "file": "trabajos/C2VjBg-vqoX-02.jpg",
+     "alt": "Remeras y gorras para negocios — foto 3"
+    },
+    {
+     "file": "trabajos/C2VjBg-vqoX-03.jpg",
+     "alt": "Remeras y gorras para negocios — foto 4"
+    },
+    {
+     "file": "trabajos/C2VjBg-vqoX-05.jpg",
+     "alt": "Remeras y gorras para negocios — foto 5"
+    },
+    {
+     "file": "trabajos/C2VjBg-vqoX-06.jpg",
+     "alt": "Remeras y gorras para negocios — foto 6"
+    },
+    {
+     "file": "trabajos/C2VjBg-vqoX-09.jpg",
+     "alt": "Remeras y gorras para negocios — foto 7"
+    }
+   ]
+  },
+  {
+   "slug": "cisneros-cooperativa-avicola",
+   "title": "Cisneros: diseño y ploteo del camión",
+   "client": "Cisneros Cooperativa Avícola",
+   "category": "ploteo-vehicular",
+   "location": "Villa Gesell",
+   "doneAt": "2024-01-06",
+   "summary": "Diseño y ploteo integral del camión de reparto.",
+   "description": null,
+   "materials": [
+    "Vinilo impreso"
+   ],
+   "featured": true,
+   "instagramCode": "C1xpetkPmKw",
+   "images": [
+    {
+     "file": "trabajos/C1xpetkPmKw-01.jpg",
+     "alt": "Cisneros: diseño y ploteo del camión — foto 1"
+    },
+    {
+     "file": "trabajos/C1xpetkPmKw-02.jpg",
+     "alt": "Cisneros: diseño y ploteo del camión — foto 2"
+    },
+    {
+     "file": "trabajos/C1xpetkPmKw-03.jpg",
+     "alt": "Cisneros: diseño y ploteo del camión — foto 3"
+    },
+    {
+     "file": "trabajos/C1xpetkPmKw-05.jpg",
+     "alt": "Cisneros: diseño y ploteo del camión — foto 4"
+    },
+    {
+     "file": "trabajos/C1xpetkPmKw-06.jpg",
+     "alt": "Cisneros: diseño y ploteo del camión — foto 5"
+    },
+    {
+     "file": "trabajos/C1xpetkPmKw-08.jpg",
+     "alt": "Cisneros: diseño y ploteo del camión — foto 6"
+    }
+   ]
+  },
+  {
+   "slug": "papelera-el-galpon",
+   "title": "Papelera El Galpón: la flota ploteada",
+   "client": "Papelera El Galpón",
+   "category": "ploteo-vehicular",
+   "location": "Villa Gesell",
+   "doneAt": "2023-12-19",
+   "summary": "Una chata más para unos clientes de siempre. Ya van tres camionetas ploteadas con vinilo de corte.",
+   "description": null,
+   "materials": [
+    "Vinilo de corte"
+   ],
+   "featured": false,
+   "instagramCode": "C1DHuIiv1Ad",
+   "images": [
+    {
+     "file": "trabajos/C1DHuIiv1Ad-03.jpg",
+     "alt": "Papelera El Galpón: la flota ploteada — foto 1"
+    },
+    {
+     "file": "trabajos/C1DHuIiv1Ad-01.jpg",
+     "alt": "Papelera El Galpón: la flota ploteada — foto 2"
+    },
+    {
+     "file": "trabajos/C1DHuIiv1Ad-05.jpg",
+     "alt": "Papelera El Galpón: la flota ploteada — foto 3"
+    },
+    {
+     "file": "trabajos/C1DHuIiv1Ad-06.jpg",
+     "alt": "Papelera El Galpón: la flota ploteada — foto 4"
+    },
+    {
+     "file": "trabajos/C1DHuIiv1Ad-07.jpg",
+     "alt": "Papelera El Galpón: la flota ploteada — foto 5"
+    }
+   ]
+  },
+  {
+   "slug": "honda-cg-calcos",
+   "title": "Honda CG: calcos personalizadas",
+   "client": null,
+   "category": "motos-y-cuatris",
+   "location": "Villa Gesell",
+   "doneAt": "2023-12-16",
+   "summary": "Calcos personalizadas para tanque y laterales.",
+   "description": null,
+   "materials": [
+    "Vinilo impreso"
+   ],
+   "featured": false,
+   "instagramCode": "C07kXWqPF9H",
+   "images": [
+    {
+     "file": "trabajos/C07kXWqPF9H-04.jpg",
+     "alt": "Honda CG: calcos personalizadas — foto 1"
+    },
+    {
+     "file": "trabajos/C07kXWqPF9H-01.jpg",
+     "alt": "Honda CG: calcos personalizadas — foto 2"
+    },
+    {
+     "file": "trabajos/C07kXWqPF9H-02.jpg",
+     "alt": "Honda CG: calcos personalizadas — foto 3"
+    },
+    {
+     "file": "trabajos/C07kXWqPF9H-05.jpg",
+     "alt": "Honda CG: calcos personalizadas — foto 4"
+    }
+   ]
+  },
+  {
+   "slug": "gorras-y-remeras-2023",
+   "title": "Gorras y remeras personalizadas",
+   "client": null,
+   "category": "remeras-y-gorras",
+   "location": "Villa Gesell",
+   "doneAt": "2023-12-15",
+   "summary": "Gorras trucker y remeras con logos de comercios, restaurantes y equipos.",
+   "description": null,
+   "materials": [
+    "Gorras trucker",
+    "Estampado DTF"
+   ],
+   "featured": false,
+   "instagramCode": "C02v_UptMvZ",
+   "images": [
+    {
+     "file": "trabajos/C02v_UptMvZ-01.jpg",
+     "alt": "Gorras y remeras personalizadas — foto 1"
+    },
+    {
+     "file": "trabajos/C02v_UptMvZ-02.jpg",
+     "alt": "Gorras y remeras personalizadas — foto 2"
+    },
+    {
+     "file": "trabajos/C02v_UptMvZ-03.jpg",
+     "alt": "Gorras y remeras personalizadas — foto 3"
+    },
+    {
+     "file": "trabajos/C02v_UptMvZ-04.jpg",
+     "alt": "Gorras y remeras personalizadas — foto 4"
+    },
+    {
+     "file": "trabajos/C02v_UptMvZ-05.jpg",
+     "alt": "Gorras y remeras personalizadas — foto 5"
+    },
+    {
+     "file": "trabajos/C02v_UptMvZ-06.jpg",
+     "alt": "Gorras y remeras personalizadas — foto 6"
+    },
+    {
+     "file": "trabajos/C02v_UptMvZ-07.jpg",
+     "alt": "Gorras y remeras personalizadas — foto 7"
+    },
+    {
+     "file": "trabajos/C02v_UptMvZ-09.jpg",
+     "alt": "Gorras y remeras personalizadas — foto 8"
+    }
+   ]
+  },
+  {
+   "slug": "esmerilados-mamparas",
+   "title": "Esmerilados para mamparas y puertas",
+   "client": null,
+   "category": "vidrieras-y-esmerilados",
+   "location": "Villa Gesell",
+   "doneAt": "2023-12-08",
+   "summary": "Una de las cosas que más nos gustan: esmerilados con diseños de corte para mamparas y puertas.",
+   "description": null,
+   "materials": [
+    "Esmerilado",
+    "Vinilo de corte"
+   ],
+   "featured": true,
+   "instagramCode": "C0kzsw9tvjL",
+   "images": [
+    {
+     "file": "trabajos/C0kzsw9tvjL-01.jpg",
+     "alt": "Esmerilados para mamparas y puertas — foto 1"
+    },
+    {
+     "file": "trabajos/C0kzsw9tvjL-02.jpg",
+     "alt": "Esmerilados para mamparas y puertas — foto 2"
+    },
+    {
+     "file": "trabajos/C0kzsw9tvjL-03.jpg",
+     "alt": "Esmerilados para mamparas y puertas — foto 3"
+    },
+    {
+     "file": "trabajos/C0kzsw9tvjL-04.jpg",
+     "alt": "Esmerilados para mamparas y puertas — foto 4"
+    },
+    {
+     "file": "trabajos/C0kzsw9tvjL-05.jpg",
+     "alt": "Esmerilados para mamparas y puertas — foto 5"
+    },
+    {
+     "file": "trabajos/C0kzsw9tvjL-06.jpg",
+     "alt": "Esmerilados para mamparas y puertas — foto 6"
+    }
+   ]
+  },
+  {
+   "slug": "valle-utilitario",
+   "title": "Valle: ploteo con vinilo de corte",
+   "client": "Valle",
+   "category": "ploteo-vehicular",
+   "location": "Villa Gesell",
+   "doneAt": "2023-12-07",
+   "summary": "Ploteo con vinilo de corte para el utilitario.",
+   "description": null,
+   "materials": [
+    "Vinilo de corte"
+   ],
+   "featured": false,
+   "instagramCode": "C0kT8MDP9hP",
+   "images": [
+    {
+     "file": "trabajos/C0kT8MDP9hP-04.jpg",
+     "alt": "Valle: ploteo con vinilo de corte — foto 1"
+    },
+    {
+     "file": "trabajos/C0kT8MDP9hP-01.jpg",
+     "alt": "Valle: ploteo con vinilo de corte — foto 2"
+    },
+    {
+     "file": "trabajos/C0kT8MDP9hP-02.jpg",
+     "alt": "Valle: ploteo con vinilo de corte — foto 3"
+    },
+    {
+     "file": "trabajos/C0kT8MDP9hP-03.jpg",
+     "alt": "Valle: ploteo con vinilo de corte — foto 4"
+    }
+   ]
+  },
+  {
+   "slug": "idaho-food-truck",
+   "title": "Idaho: full wrap de food truck",
+   "client": "Idaho",
+   "category": "ploteo-vehicular",
+   "location": "Villa Gesell",
+   "doneAt": "2023-12-05",
+   "summary": "Full wrap (ploteo completo) con vinilo impreso, vinilo de corte y laca.",
+   "description": null,
+   "materials": [
+    "Vinilo impreso",
+    "Vinilo de corte",
+    "Laca"
+   ],
+   "featured": true,
+   "instagramCode": "C0c9OArND0X",
+   "images": [
+    {
+     "file": "trabajos/C0c9OArND0X-01.jpg",
+     "alt": "Idaho: full wrap de food truck — foto 1"
+    },
+    {
+     "file": "trabajos/C0c9OArND0X-02.jpg",
+     "alt": "Idaho: full wrap de food truck — foto 2"
+    },
+    {
+     "file": "trabajos/C0c9OArND0X-03.jpg",
+     "alt": "Idaho: full wrap de food truck — foto 3"
+    },
+    {
+     "file": "trabajos/C0c9OArND0X-04.jpg",
+     "alt": "Idaho: full wrap de food truck — foto 4"
+    },
+    {
+     "file": "trabajos/C0c9OArND0X-06.jpg",
+     "alt": "Idaho: full wrap de food truck — foto 5"
+    }
+   ]
+  },
+  {
+   "slug": "trigo-pan-y-cafe-utilitario",
+   "title": "Trigo Pan & Café: utilitario",
+   "client": "Trigo Pan & Café",
+   "category": "ploteo-vehicular",
+   "location": "Villa Gesell",
+   "doneAt": "2023-12-02",
+   "summary": "Ploteo con vinilo de corte para el utilitario de la panadería.",
+   "description": null,
+   "materials": [
+    "Vinilo de corte"
+   ],
+   "featured": false,
+   "instagramCode": "C0Xo1DmOWLL",
+   "images": [
+    {
+     "file": "trabajos/C0Xo1DmOWLL-03.jpg",
+     "alt": "Trigo Pan & Café: utilitario — foto 1"
+    },
+    {
+     "file": "trabajos/C0Xo1DmOWLL-01.jpg",
+     "alt": "Trigo Pan & Café: utilitario — foto 2"
+    },
+    {
+     "file": "trabajos/C0Xo1DmOWLL-02.jpg",
+     "alt": "Trigo Pan & Café: utilitario — foto 3"
+    },
+    {
+     "file": "trabajos/C0Xo1DmOWLL-04.jpg",
+     "alt": "Trigo Pan & Café: utilitario — foto 4"
+    },
+    {
+     "file": "trabajos/C0Xo1DmOWLL-05.jpg",
+     "alt": "Trigo Pan & Café: utilitario — foto 5"
+    }
+   ]
+  },
+  {
+   "slug": "trigo-vidriera",
+   "title": "Trigo: vidriera con vinilo de corte",
+   "client": "Trigo Pan & Café",
+   "category": "vidrieras-y-esmerilados",
+   "location": "Colonia Marina",
+   "doneAt": "2023-10-07",
+   "summary": "Vinilo de corte en la vidriera del local de Colonia Marina.",
+   "description": null,
+   "materials": [
+    "Vinilo de corte"
+   ],
+   "featured": false,
+   "instagramCode": "CyHOKxdPbEz",
+   "images": [
+    {
+     "file": "trabajos/CyHOKxdPbEz-01.jpg",
+     "alt": "Trigo: vidriera con vinilo de corte — foto 1"
+    },
+    {
+     "file": "trabajos/CyHOKxdPbEz-02.jpg",
+     "alt": "Trigo: vidriera con vinilo de corte — foto 2"
+    },
+    {
+     "file": "trabajos/CyHOKxdPbEz-03.jpg",
+     "alt": "Trigo: vidriera con vinilo de corte — foto 3"
+    }
+   ]
+  },
+  {
+   "slug": "silvia-fernandez-mapas-murales",
+   "title": "Inmobiliaria Silvia Fernández: mapas murales",
+   "client": "Inmobiliaria Silvia Fernández",
+   "category": "inmobiliarias",
+   "location": "Mar Azul",
+   "doneAt": "2023-12-01",
+   "summary": "Mapas murales de la zona, impresos y montados en la oficina de Mar Azul.",
+   "description": null,
+   "materials": [
+    "Vinilo impreso",
+    "Bastidor"
+   ],
+   "featured": true,
+   "instagramCode": "C0UwllEvXtM",
+   "images": [
+    {
+     "file": "trabajos/C0UwllEvXtM-01.jpg",
+     "alt": "Inmobiliaria Silvia Fernández: mapas murales — foto 1"
+    },
+    {
+     "file": "trabajos/C0UwllEvXtM-03.jpg",
+     "alt": "Inmobiliaria Silvia Fernández: mapas murales — foto 2"
+    },
+    {
+     "file": "trabajos/C0UwllEvXtM-04.jpg",
+     "alt": "Inmobiliaria Silvia Fernández: mapas murales — foto 3"
+    },
+    {
+     "file": "trabajos/C0UwllEvXtM-06.jpg",
+     "alt": "Inmobiliaria Silvia Fernández: mapas murales — foto 4"
+    },
+    {
+     "file": "trabajos/C0UwllEvXtM-07.jpg",
+     "alt": "Inmobiliaria Silvia Fernández: mapas murales — foto 5"
+    },
+    {
+     "file": "trabajos/C0UwllEvXtM-08.jpg",
+     "alt": "Inmobiliaria Silvia Fernández: mapas murales — foto 6"
+    }
+   ]
+  },
+  {
+   "slug": "silvia-fernandez-carteles-luminosos",
+   "title": "Inmobiliaria Silvia Fernández: carteles luminosos",
+   "client": "Inmobiliaria Silvia Fernández",
+   "category": "carteleria",
+   "location": "Mar Azul",
+   "doneAt": "2023-03-26",
+   "summary": "Dos carteles luminosos de acrílico y chapa para la inmobiliaria de Mar Azul.",
+   "description": null,
+   "materials": [
+    "Acrílico",
+    "Chapa",
+    "LED"
+   ],
+   "featured": true,
+   "instagramCode": "CqO2Ridu_r5",
+   "images": [
+    {
+     "file": "trabajos/CqO2Ridu_r5-05.jpg",
+     "alt": "Inmobiliaria Silvia Fernández: carteles luminosos — foto 1"
+    },
+    {
+     "file": "trabajos/CqO2Ridu_r5-01.jpg",
+     "alt": "Inmobiliaria Silvia Fernández: carteles luminosos — foto 2"
+    },
+    {
+     "file": "trabajos/CqO2Ridu_r5-02.jpg",
+     "alt": "Inmobiliaria Silvia Fernández: carteles luminosos — foto 3"
+    },
+    {
+     "file": "trabajos/CqO2Ridu_r5-03.jpg",
+     "alt": "Inmobiliaria Silvia Fernández: carteles luminosos — foto 4"
+    },
+    {
+     "file": "trabajos/CqO2Ridu_r5-04.jpg",
+     "alt": "Inmobiliaria Silvia Fernández: carteles luminosos — foto 5"
+    },
+    {
+     "file": "trabajos/CqO2Ridu_r5-07.jpg",
+     "alt": "Inmobiliaria Silvia Fernández: carteles luminosos — foto 6"
+    },
+    {
+     "file": "trabajos/CqO2Ridu_r5-08.jpg",
+     "alt": "Inmobiliaria Silvia Fernández: carteles luminosos — foto 7"
+    }
+   ]
+  },
+  {
+   "slug": "carteles-inmobiliarios-vendido",
+   "title": "Carteles inmobiliarios",
+   "client": null,
+   "category": "inmobiliarias",
+   "location": "Villa Gesell",
+   "doneAt": "2023-10-19",
+   "summary": "Carteles inmobiliarios con bastidor de madera, chapa gruesa y vinilo refractario.",
+   "description": null,
+   "materials": [
+    "Bastidor de madera",
+    "Chapa gruesa",
+    "Vinilo refractario"
+   ],
+   "featured": true,
+   "instagramCode": "Cyk5kbBOEps",
+   "images": [
+    {
+     "file": "trabajos/Cyk5kbBOEps-01.jpg",
+     "alt": "Carteles inmobiliarios — foto 1"
+    },
+    {
+     "file": "trabajos/Cyk5kbBOEps-03.jpg",
+     "alt": "Carteles inmobiliarios — foto 2"
+    },
+    {
+     "file": "trabajos/Cyk5kbBOEps-04.jpg",
+     "alt": "Carteles inmobiliarios — foto 3"
+    }
+   ]
+  },
+  {
+   "slug": "mapas-de-zonificacion",
+   "title": "Mapas de zonificación",
+   "client": null,
+   "category": "inmobiliarias",
+   "location": "Villa Gesell",
+   "doneAt": "2023-11-03",
+   "summary": "Mapas de zonificación nuevos: en adhesivo, papel, PVC o chapa.",
+   "description": null,
+   "materials": [
+    "Vinilo impreso",
+    "PVC",
+    "Chapa"
+   ],
+   "featured": false,
+   "instagramCode": "CzMRCWrudvi",
+   "images": [
+    {
+     "file": "trabajos/CzMRCWrudvi-03.jpg",
+     "alt": "Mapas de zonificación — foto 1"
+    },
+    {
+     "file": "trabajos/CzMRCWrudvi-01.jpg",
+     "alt": "Mapas de zonificación — foto 2"
+    },
+    {
+     "file": "trabajos/CzMRCWrudvi-04.jpg",
+     "alt": "Mapas de zonificación — foto 3"
+    }
+   ]
+  },
+  {
+   "slug": "calcos-tornasoladas",
+   "title": "Calcos tornasoladas impresas y laqueadas",
+   "client": null,
+   "category": "calcos-y-stickers",
+   "location": "Villa Gesell",
+   "doneAt": "2023-11-19",
+   "summary": "Calcos tornasoladas impresas laqueadas, vinilo de corte y vinilo impreso.",
+   "description": null,
+   "materials": [
+    "Vinilo tornasolado",
+    "Laqueado"
+   ],
+   "featured": true,
+   "instagramCode": "Cz01bG9OHOR",
+   "images": [
+    {
+     "file": "trabajos/Cz01bG9OHOR-01.jpg",
+     "alt": "Calcos tornasoladas impresas y laqueadas — foto 1"
+    },
+    {
+     "file": "trabajos/Cz01bG9OHOR-02.jpg",
+     "alt": "Calcos tornasoladas impresas y laqueadas — foto 2"
+    },
+    {
+     "file": "trabajos/Cz01bG9OHOR-03.jpg",
+     "alt": "Calcos tornasoladas impresas y laqueadas — foto 3"
+    },
+    {
+     "file": "trabajos/Cz01bG9OHOR-06.jpg",
+     "alt": "Calcos tornasoladas impresas y laqueadas — foto 4"
+    },
+    {
+     "file": "trabajos/Cz01bG9OHOR-08.jpg",
+     "alt": "Calcos tornasoladas impresas y laqueadas — foto 5"
+    },
+    {
+     "file": "trabajos/Cz01bG9OHOR-09.jpg",
+     "alt": "Calcos tornasoladas impresas y laqueadas — foto 6"
+    },
+    {
+     "file": "trabajos/Cz01bG9OHOR-10.jpg",
+     "alt": "Calcos tornasoladas impresas y laqueadas — foto 7"
+    }
+   ]
+  },
+  {
+   "slug": "la-panera-lona-front",
+   "title": "La Panera: lona front laqueada",
+   "client": "La Panera",
+   "category": "carteleria",
+   "location": "Villa Gesell",
+   "doneAt": "2023-11-14",
+   "summary": "Cartel de lona front laqueada con vinilo de corte.",
+   "description": null,
+   "materials": [
+    "Lona front laqueada",
+    "Vinilo de corte"
+   ],
+   "featured": false,
+   "instagramCode": "Czn-5x6O8BI",
+   "images": [
+    {
+     "file": "trabajos/Czn-5x6O8BI-01.jpg",
+     "alt": "La Panera: lona front laqueada — foto 1"
+    },
+    {
+     "file": "trabajos/Czn-5x6O8BI-03.jpg",
+     "alt": "La Panera: lona front laqueada — foto 2"
+    },
+    {
+     "file": "trabajos/Czn-5x6O8BI-04.jpg",
+     "alt": "La Panera: lona front laqueada — foto 3"
+    }
+   ]
+  },
+  {
+   "slug": "cerveceria-esmerilados",
+   "title": "Cervecería: esmerilados, corpóreas y vinilo impreso",
+   "client": null,
+   "category": "vidrieras-y-esmerilados",
+   "location": "Villa Gesell",
+   "doneAt": "2023-11-08",
+   "summary": "Esmerilados en los ventanales, corpóreas y vinilo impreso en el interior.",
+   "description": null,
+   "materials": [
+    "Esmerilado",
+    "Letras corpóreas",
+    "Vinilo impreso"
+   ],
+   "featured": false,
+   "instagramCode": "CzZc1ULPUdY",
+   "images": [
+    {
+     "file": "trabajos/CzZc1ULPUdY-01.jpg",
+     "alt": "Cervecería: esmerilados, corpóreas y vinilo impreso — foto 1"
+    },
+    {
+     "file": "trabajos/CzZc1ULPUdY-02.jpg",
+     "alt": "Cervecería: esmerilados, corpóreas y vinilo impreso — foto 2"
+    },
+    {
+     "file": "trabajos/CzZc1ULPUdY-04.jpg",
+     "alt": "Cervecería: esmerilados, corpóreas y vinilo impreso — foto 3"
+    },
+    {
+     "file": "trabajos/CzZc1ULPUdY-05.jpg",
+     "alt": "Cervecería: esmerilados, corpóreas y vinilo impreso — foto 4"
+    },
+    {
+     "file": "trabajos/CzZc1ULPUdY-06.jpg",
+     "alt": "Cervecería: esmerilados, corpóreas y vinilo impreso — foto 5"
+    },
+    {
+     "file": "trabajos/CzZc1ULPUdY-07.jpg",
+     "alt": "Cervecería: esmerilados, corpóreas y vinilo impreso — foto 6"
+    }
+   ]
+  },
+  {
+   "slug": "panaderia-marymar",
+   "title": "Panadería Marymar: polyfan y LED",
+   "client": "Panadería Marymar",
+   "category": "carteleria",
+   "location": "Mar Azul",
+   "doneAt": "2023-10-31",
+   "summary": "Cartel de letras de polyfan con luz LED.",
+   "description": null,
+   "materials": [
+    "Polyfan",
+    "LED"
+   ],
+   "featured": true,
+   "instagramCode": "CzD0gVJuXwr",
+   "images": [
+    {
+     "file": "trabajos/CzD0gVJuXwr-02.jpg",
+     "alt": "Panadería Marymar: polyfan y LED — foto 1"
+    },
+    {
+     "file": "trabajos/CzD0gVJuXwr-01.jpg",
+     "alt": "Panadería Marymar: polyfan y LED — foto 2"
+    },
+    {
+     "file": "trabajos/CzD0gVJuXwr-03.jpg",
+     "alt": "Panadería Marymar: polyfan y LED — foto 3"
+    },
+    {
+     "file": "trabajos/CzD0gVJuXwr-05.jpg",
+     "alt": "Panadería Marymar: polyfan y LED — foto 4"
+    },
+    {
+     "file": "trabajos/CzD0gVJuXwr-06.jpg",
+     "alt": "Panadería Marymar: polyfan y LED — foto 5"
+    }
+   ]
+  },
+  {
+   "slug": "latitud-28-corporeas",
+   "title": "Latitud 28: corpóreas en altura",
+   "client": "Latitud 28",
+   "category": "carteleria",
+   "location": "Las Gaviotas",
+   "doneAt": "2023-10-20",
+   "summary": "Letras corpóreas colocadas en la fachada del edificio en Las Gaviotas.",
+   "description": null,
+   "materials": [
+    "Letras corpóreas"
+   ],
+   "featured": false,
+   "instagramCode": "CyoTjwIOZVO",
+   "images": [
+    {
+     "file": "trabajos/CyoTjwIOZVO-02.jpg",
+     "alt": "Latitud 28: corpóreas en altura — foto 1"
+    },
+    {
+     "file": "trabajos/CyoTjwIOZVO-01.jpg",
+     "alt": "Latitud 28: corpóreas en altura — foto 2"
+    },
+    {
+     "file": "trabajos/CyoTjwIOZVO-04.jpg",
+     "alt": "Latitud 28: corpóreas en altura — foto 3"
+    }
+   ]
+  },
+  {
+   "slug": "siblings-polyfan-led",
+   "title": "Siblings: polyfan con LED",
+   "client": "Siblings",
+   "category": "carteleria",
+   "location": "Villa Gesell",
+   "doneAt": "2023-10-13",
+   "summary": "Carteles de polyfan con LED, de día y de noche.",
+   "description": null,
+   "materials": [
+    "Polyfan",
+    "LED"
+   ],
+   "featured": false,
+   "instagramCode": "CyUqoBBNcLY",
+   "images": [
+    {
+     "file": "trabajos/CyUqoBBNcLY-03.jpg",
+     "alt": "Siblings: polyfan con LED — foto 1"
+    },
+    {
+     "file": "trabajos/CyUqoBBNcLY-01.jpg",
+     "alt": "Siblings: polyfan con LED — foto 2"
+    },
+    {
+     "file": "trabajos/CyUqoBBNcLY-02.jpg",
+     "alt": "Siblings: polyfan con LED — foto 3"
+    },
+    {
+     "file": "trabajos/CyUqoBBNcLY-04.jpg",
+     "alt": "Siblings: polyfan con LED — foto 4"
+    },
+    {
+     "file": "trabajos/CyUqoBBNcLY-05.jpg",
+     "alt": "Siblings: polyfan con LED — foto 5"
+    },
+    {
+     "file": "trabajos/CyUqoBBNcLY-07.jpg",
+     "alt": "Siblings: polyfan con LED — foto 6"
+    }
+   ]
+  },
+  {
+   "slug": "disenamos-tu-calco",
+   "title": "Diseñamos tu calco",
+   "client": null,
+   "category": "calcos-y-stickers",
+   "location": "Villa Gesell",
+   "doneAt": "2023-09-26",
+   "summary": "Diseñamos tu calco: puede ser impresa, de corte, laminada o laqueada.",
+   "description": null,
+   "materials": [
+    "Vinilo impreso",
+    "Vinilo de corte",
+    "Laminado",
+    "Laqueado"
+   ],
+   "featured": false,
+   "instagramCode": "Cxpv8ZGOPmr",
+   "images": [
+    {
+     "file": "trabajos/Cxpv8ZGOPmr-03.jpg",
+     "alt": "Diseñamos tu calco — foto 1"
+    },
+    {
+     "file": "trabajos/Cxpv8ZGOPmr-01.jpg",
+     "alt": "Diseñamos tu calco — foto 2"
+    },
+    {
+     "file": "trabajos/Cxpv8ZGOPmr-06.jpg",
+     "alt": "Diseñamos tu calco — foto 3"
+    },
+    {
+     "file": "trabajos/Cxpv8ZGOPmr-07.jpg",
+     "alt": "Diseñamos tu calco — foto 4"
+    },
+    {
+     "file": "trabajos/Cxpv8ZGOPmr-08.jpg",
+     "alt": "Diseñamos tu calco — foto 5"
+    },
+    {
+     "file": "trabajos/Cxpv8ZGOPmr-10.jpg",
+     "alt": "Diseñamos tu calco — foto 6"
+    }
+   ]
+  },
+  {
+   "slug": "estampados-varios-2023",
+   "title": "Estampados varios",
+   "client": null,
+   "category": "remeras-y-gorras",
+   "location": "Villa Gesell",
+   "doneAt": "2023-09-24",
+   "summary": "Remeras, buzos y gorras estampadas para jardines, talleres, clubes y comercios.",
+   "description": null,
+   "materials": [
+    "Estampado DTF",
+    "Vinilo textil"
+   ],
+   "featured": false,
+   "instagramCode": "Cxknna4OEOf",
+   "images": [
+    {
+     "file": "trabajos/Cxknna4OEOf-01.jpg",
+     "alt": "Estampados varios — foto 1"
+    },
+    {
+     "file": "trabajos/Cxknna4OEOf-02.jpg",
+     "alt": "Estampados varios — foto 2"
+    },
+    {
+     "file": "trabajos/Cxknna4OEOf-03.jpg",
+     "alt": "Estampados varios — foto 3"
+    },
+    {
+     "file": "trabajos/Cxknna4OEOf-04.jpg",
+     "alt": "Estampados varios — foto 4"
+    },
+    {
+     "file": "trabajos/Cxknna4OEOf-05.jpg",
+     "alt": "Estampados varios — foto 5"
+    },
+    {
+     "file": "trabajos/Cxknna4OEOf-06.jpg",
+     "alt": "Estampados varios — foto 6"
+    },
+    {
+     "file": "trabajos/Cxknna4OEOf-08.jpg",
+     "alt": "Estampados varios — foto 7"
+    }
+   ]
+  },
+  {
+   "slug": "vinilo-decorativo-medidor",
+   "title": "Vinilo decorativo impreso: medidor de altura",
+   "client": null,
+   "category": "vinilo-decorativo",
+   "location": "Villa Gesell",
+   "doneAt": "2023-09-20",
+   "summary": "Vinilo decorativo impreso con medidor de altura para una sala.",
+   "description": null,
+   "materials": [
+    "Vinilo impreso"
+   ],
+   "featured": false,
+   "instagramCode": "CxaROyiuai1",
+   "images": [
+    {
+     "file": "trabajos/CxaROyiuai1-01.jpg",
+     "alt": "Vinilo decorativo impreso: medidor de altura — foto 1"
+    },
+    {
+     "file": "trabajos/CxaROyiuai1-02.jpg",
+     "alt": "Vinilo decorativo impreso: medidor de altura — foto 2"
+    }
+   ]
+  },
+  {
+   "slug": "nene-cafe-acrilico",
+   "title": "Nené Café: cartel de acrílico y corte láser",
+   "client": "Nené Café",
+   "category": "carteleria",
+   "location": null,
+   "doneAt": "2023-09-09",
+   "summary": "Cartel de acrílico con corte láser.",
+   "description": null,
+   "materials": [
+    "Acrílico",
+    "Corte láser"
+   ],
+   "featured": false,
+   "instagramCode": "Cw-y47SOAJu",
+   "images": [
+    {
+     "file": "trabajos/Cw-y47SOAJu-01.jpg",
+     "alt": "Nené Café: cartel de acrílico y corte láser — foto 1"
+    },
+    {
+     "file": "trabajos/Cw-y47SOAJu-02.jpg",
+     "alt": "Nené Café: cartel de acrílico y corte láser — foto 2"
+    },
+    {
+     "file": "trabajos/Cw-y47SOAJu-03.jpg",
+     "alt": "Nené Café: cartel de acrílico y corte láser — foto 3"
+    },
+    {
+     "file": "trabajos/Cw-y47SOAJu-04.jpg",
+     "alt": "Nené Café: cartel de acrílico y corte láser — foto 4"
+    }
+   ]
+  },
+  {
+   "slug": "super-gas-camioneta",
+   "title": "Super Gas: vinilo de corte e impreso",
+   "client": "Super Gas",
+   "category": "ploteo-vehicular",
+   "location": "Villa Gesell",
+   "doneAt": "2023-09-08",
+   "summary": "Vinilo de corte y vinilo impreso en la camioneta de reparto.",
+   "description": null,
+   "materials": [
+    "Vinilo de corte",
+    "Vinilo impreso"
+   ],
+   "featured": false,
+   "instagramCode": "Cw6SSnquCKl",
+   "images": [
+    {
+     "file": "trabajos/Cw6SSnquCKl-04.jpg",
+     "alt": "Super Gas: vinilo de corte e impreso — foto 1"
+    },
+    {
+     "file": "trabajos/Cw6SSnquCKl-01.jpg",
+     "alt": "Super Gas: vinilo de corte e impreso — foto 2"
+    },
+    {
+     "file": "trabajos/Cw6SSnquCKl-03.jpg",
+     "alt": "Super Gas: vinilo de corte e impreso — foto 3"
+    },
+    {
+     "file": "trabajos/Cw6SSnquCKl-05.jpg",
+     "alt": "Super Gas: vinilo de corte e impreso — foto 4"
+    }
+   ]
+  },
+  {
+   "slug": "pizza-nico-lona-front",
+   "title": "Pizza Nico: lona front",
+   "client": "Pizza Nico",
+   "category": "carteleria",
+   "location": "Villa Gesell",
+   "doneAt": "2023-08-19",
+   "summary": "Lona front: diseño, impresión y colocación.",
+   "description": null,
+   "materials": [
+    "Lona front"
+   ],
+   "featured": false,
+   "instagramCode": "CwIf6GYOjpC",
+   "images": [
+    {
+     "file": "trabajos/CwIf6GYOjpC-02.jpg",
+     "alt": "Pizza Nico: lona front — foto 1"
+    },
+    {
+     "file": "trabajos/CwIf6GYOjpC-01.jpg",
+     "alt": "Pizza Nico: lona front — foto 2"
+    },
+    {
+     "file": "trabajos/CwIf6GYOjpC-03.jpg",
+     "alt": "Pizza Nico: lona front — foto 3"
+    },
+    {
+     "file": "trabajos/CwIf6GYOjpC-05.jpg",
+     "alt": "Pizza Nico: lona front — foto 4"
+    }
+   ]
+  },
+  {
+   "slug": "sabor-sobre-ruedas-food-truck",
+   "title": "Sabor Sobre Ruedas: food truck",
+   "client": "Sabor Sobre Ruedas",
+   "category": "ploteo-vehicular",
+   "location": "Villa Gesell",
+   "doneAt": "2023-08-15",
+   "summary": "Ploteo del food truck con vinilo de corte.",
+   "description": null,
+   "materials": [
+    "Vinilo de corte"
+   ],
+   "featured": false,
+   "instagramCode": "Cv-mUXxPv2k",
+   "images": [
+    {
+     "file": "trabajos/Cv-mUXxPv2k-01.jpg",
+     "alt": "Sabor Sobre Ruedas: food truck — foto 1"
+    },
+    {
+     "file": "trabajos/Cv-mUXxPv2k-02.jpg",
+     "alt": "Sabor Sobre Ruedas: food truck — foto 2"
+    },
+    {
+     "file": "trabajos/Cv-mUXxPv2k-03.jpg",
+     "alt": "Sabor Sobre Ruedas: food truck — foto 3"
+    },
+    {
+     "file": "trabajos/Cv-mUXxPv2k-04.jpg",
+     "alt": "Sabor Sobre Ruedas: food truck — foto 4"
+    }
+   ]
+  },
+  {
+   "slug": "consultorios-boulevard",
+   "title": "Consultorios Boulevard: acrílico y vinilo",
+   "client": "Consultorios Boulevard",
+   "category": "carteleria",
+   "location": "Villa Gesell",
+   "doneAt": "2023-08-04",
+   "summary": "Logo de acrílico de 3 mm con fondo en vinilo.",
+   "description": null,
+   "materials": [
+    "Acrílico 3 mm",
+    "Vinilo"
+   ],
+   "featured": false,
+   "instagramCode": "Cvh1-YVO6bJ",
+   "images": [
+    {
+     "file": "trabajos/Cvh1-YVO6bJ-01.jpg",
+     "alt": "Consultorios Boulevard: acrílico y vinilo — foto 1"
+    },
+    {
+     "file": "trabajos/Cvh1-YVO6bJ-03.jpg",
+     "alt": "Consultorios Boulevard: acrílico y vinilo — foto 2"
+    }
+   ]
+  },
+  {
+   "slug": "gorras-personalizadas-2023",
+   "title": "Gorras personalizadas",
+   "client": null,
+   "category": "remeras-y-gorras",
+   "location": "Villa Gesell",
+   "doneAt": "2023-07-13",
+   "summary": "Gorras trucker personalizadas para equipos, bares y comercios.",
+   "description": null,
+   "materials": [
+    "Gorras trucker"
+   ],
+   "featured": false,
+   "instagramCode": "CupZSoxvJSw",
+   "images": [
+    {
+     "file": "trabajos/CupZSoxvJSw-04.jpg",
+     "alt": "Gorras personalizadas — foto 1"
+    },
+    {
+     "file": "trabajos/CupZSoxvJSw-02.jpg",
+     "alt": "Gorras personalizadas — foto 2"
+    },
+    {
+     "file": "trabajos/CupZSoxvJSw-05.jpg",
+     "alt": "Gorras personalizadas — foto 3"
+    },
+    {
+     "file": "trabajos/CupZSoxvJSw-06.jpg",
+     "alt": "Gorras personalizadas — foto 4"
+    },
+    {
+     "file": "trabajos/CupZSoxvJSw-08.jpg",
+     "alt": "Gorras personalizadas — foto 5"
+    },
+    {
+     "file": "trabajos/CupZSoxvJSw-09.jpg",
+     "alt": "Gorras personalizadas — foto 6"
+    }
+   ]
+  },
+  {
+   "slug": "loving-store-polyfan",
+   "title": "Loving Store: corpóreas de polyfan",
+   "client": "Loving Store",
+   "category": "carteleria",
+   "location": "Villa Gesell",
+   "doneAt": "2023-07-09",
+   "summary": "Letras corpóreas de polyfan, afuera y adentro del local.",
+   "description": null,
+   "materials": [
+    "Polyfan"
+   ],
+   "featured": false,
+   "instagramCode": "CuecLz3uZLL",
+   "images": [
+    {
+     "file": "trabajos/CuecLz3uZLL-02.jpg",
+     "alt": "Loving Store: corpóreas de polyfan — foto 1"
+    },
+    {
+     "file": "trabajos/CuecLz3uZLL-03.jpg",
+     "alt": "Loving Store: corpóreas de polyfan — foto 2"
+    }
+   ]
+  },
+  {
+   "slug": "fiat-strada-negro-mate",
+   "title": "Fiat Strada: forrado completo en negro mate",
+   "client": null,
+   "category": "ploteo-vehicular",
+   "location": "Villa Gesell",
+   "doneAt": "2023-07-04",
+   "summary": "Forrado completo en negro mate.",
+   "description": null,
+   "materials": [
+    "Vinilo negro mate"
+   ],
+   "featured": true,
+   "instagramCode": "CuRphXmOIiD",
+   "images": [
+    {
+     "file": "trabajos/CuRphXmOIiD-02.jpg",
+     "alt": "Fiat Strada: forrado completo en negro mate — foto 1"
+    },
+    {
+     "file": "trabajos/CuRphXmOIiD-01.jpg",
+     "alt": "Fiat Strada: forrado completo en negro mate — foto 2"
+    },
+    {
+     "file": "trabajos/CuRphXmOIiD-03.jpg",
+     "alt": "Fiat Strada: forrado completo en negro mate — foto 3"
+    },
+    {
+     "file": "trabajos/CuRphXmOIiD-04.jpg",
+     "alt": "Fiat Strada: forrado completo en negro mate — foto 4"
+    },
+    {
+     "file": "trabajos/CuRphXmOIiD-05.jpg",
+     "alt": "Fiat Strada: forrado completo en negro mate — foto 5"
+    },
+    {
+     "file": "trabajos/CuRphXmOIiD-06.jpg",
+     "alt": "Fiat Strada: forrado completo en negro mate — foto 6"
+    },
+    {
+     "file": "trabajos/CuRphXmOIiD-08.jpg",
+     "alt": "Fiat Strada: forrado completo en negro mate — foto 7"
+    }
+   ]
+  },
+  {
+   "slug": "calcos-de-corte",
+   "title": "Calcos de vinilo de corte",
+   "client": null,
+   "category": "calcos-y-stickers",
+   "location": "Villa Gesell",
+   "doneAt": "2023-07-04",
+   "summary": "Calcos de corte para motos, autos y cascos.",
+   "description": null,
+   "materials": [
+    "Vinilo de corte"
+   ],
+   "featured": false,
+   "instagramCode": "CuQU0x0Oi8T",
+   "images": [
+    {
+     "file": "trabajos/CuQU0x0Oi8T-01.jpg",
+     "alt": "Calcos de vinilo de corte — foto 1"
+    },
+    {
+     "file": "trabajos/CuQU0x0Oi8T-03.jpg",
+     "alt": "Calcos de vinilo de corte — foto 2"
+    },
+    {
+     "file": "trabajos/CuQU0x0Oi8T-04.jpg",
+     "alt": "Calcos de vinilo de corte — foto 3"
+    },
+    {
+     "file": "trabajos/CuQU0x0Oi8T-05.jpg",
+     "alt": "Calcos de vinilo de corte — foto 4"
+    },
+    {
+     "file": "trabajos/CuQU0x0Oi8T-06.jpg",
+     "alt": "Calcos de vinilo de corte — foto 5"
+    },
+    {
+     "file": "trabajos/CuQU0x0Oi8T-07.jpg",
+     "alt": "Calcos de vinilo de corte — foto 6"
+    },
+    {
+     "file": "trabajos/CuQU0x0Oi8T-08.jpg",
+     "alt": "Calcos de vinilo de corte — foto 7"
+    },
+    {
+     "file": "trabajos/CuQU0x0Oi8T-09.jpg",
+     "alt": "Calcos de vinilo de corte — foto 8"
+    }
+   ]
+  },
+  {
+   "slug": "logos-vinilo-de-corte-vidrieras",
+   "title": "Logos en vinilo de corte para vidrieras",
+   "client": null,
+   "category": "vidrieras-y-esmerilados",
+   "location": "Villa Gesell",
+   "doneAt": "2023-06-29",
+   "summary": "Logos en vinilo de corte y esmerilado para vidrieras de comercios y estudios.",
+   "description": null,
+   "materials": [
+    "Vinilo de corte",
+    "Esmerilado"
+   ],
+   "featured": false,
+   "instagramCode": "CuDehdBOTMU",
+   "images": [
+    {
+     "file": "trabajos/CuDehdBOTMU-05.jpg",
+     "alt": "Logos en vinilo de corte para vidrieras — foto 1"
+    },
+    {
+     "file": "trabajos/CuDehdBOTMU-01.jpg",
+     "alt": "Logos en vinilo de corte para vidrieras — foto 2"
+    },
+    {
+     "file": "trabajos/CuDehdBOTMU-02.jpg",
+     "alt": "Logos en vinilo de corte para vidrieras — foto 3"
+    },
+    {
+     "file": "trabajos/CuDehdBOTMU-03.jpg",
+     "alt": "Logos en vinilo de corte para vidrieras — foto 4"
+    },
+    {
+     "file": "trabajos/CuDehdBOTMU-04.jpg",
+     "alt": "Logos en vinilo de corte para vidrieras — foto 5"
+    },
+    {
+     "file": "trabajos/CuDehdBOTMU-06.jpg",
+     "alt": "Logos en vinilo de corte para vidrieras — foto 6"
+    }
+   ]
+  },
+  {
+   "slug": "caceres-team",
+   "title": "Cáceres Team: ploteo, calcos y estampados",
+   "client": "Cáceres Team",
+   "category": "ploteo-vehicular",
+   "location": "Villa Gesell",
+   "doneAt": "2023-06-24",
+   "summary": "Ploteo vehicular, calcos y estampados para el mismo cliente.",
+   "description": null,
+   "materials": [
+    "Vinilo impreso",
+    "Calcos",
+    "Estampados"
+   ],
+   "featured": true,
+   "instagramCode": "Ct2kIX4uXBK",
+   "images": [
+    {
+     "file": "trabajos/Ct2kIX4uXBK-01.jpg",
+     "alt": "Cáceres Team: ploteo, calcos y estampados — foto 1"
+    },
+    {
+     "file": "trabajos/Ct2kIX4uXBK-02.jpg",
+     "alt": "Cáceres Team: ploteo, calcos y estampados — foto 2"
+    },
+    {
+     "file": "trabajos/Ct2kIX4uXBK-03.jpg",
+     "alt": "Cáceres Team: ploteo, calcos y estampados — foto 3"
+    },
+    {
+     "file": "trabajos/Ct2kIX4uXBK-04.jpg",
+     "alt": "Cáceres Team: ploteo, calcos y estampados — foto 4"
+    },
+    {
+     "file": "trabajos/Ct2kIX4uXBK-06.jpg",
+     "alt": "Cáceres Team: ploteo, calcos y estampados — foto 5"
+    },
+    {
+     "file": "trabajos/Ct2kIX4uXBK-07.jpg",
+     "alt": "Cáceres Team: ploteo, calcos y estampados — foto 6"
+    },
+    {
+     "file": "trabajos/Ct2kIX4uXBK-08.jpg",
+     "alt": "Cáceres Team: ploteo, calcos y estampados — foto 7"
+    },
+    {
+     "file": "trabajos/Ct2kIX4uXBK-09.jpg",
+     "alt": "Cáceres Team: ploteo, calcos y estampados — foto 8"
+    }
+   ]
+  },
+  {
+   "slug": "ilusiones-resto-boton",
+   "title": "Ilusiones Restó: cartel «botón» luminoso",
+   "client": "Ilusiones Restó",
+   "category": "carteleria",
+   "location": "Villa Gesell",
+   "doneAt": "2023-06-13",
+   "summary": "Cartel redondo luminoso tipo botón.",
+   "description": null,
+   "materials": [
+    "Alto impacto",
+    "LED"
+   ],
+   "featured": false,
+   "instagramCode": "CtcwncAPu_F",
+   "images": [
+    {
+     "file": "trabajos/CtcwncAPu_F-01.jpg",
+     "alt": "Ilusiones Restó: cartel «botón» luminoso — foto 1"
+    },
+    {
+     "file": "trabajos/CtcwncAPu_F-02.jpg",
+     "alt": "Ilusiones Restó: cartel «botón» luminoso — foto 2"
+    },
+    {
+     "file": "trabajos/CtcwncAPu_F-03.jpg",
+     "alt": "Ilusiones Restó: cartel «botón» luminoso — foto 3"
+    },
+    {
+     "file": "trabajos/CtcwncAPu_F-04.jpg",
+     "alt": "Ilusiones Restó: cartel «botón» luminoso — foto 4"
+    }
+   ]
+  },
+  {
+   "slug": "nativa-cartel-luminoso",
+   "title": "Nativa: cartel luminoso de acrílico",
+   "client": "Nativa",
+   "category": "carteleria",
+   "location": "Mar de las Pampas",
+   "doneAt": "2023-06-12",
+   "summary": "Cartel luminoso de acrílico y carteles de polyfan en Mar de las Pampas.",
+   "description": null,
+   "materials": [
+    "Acrílico",
+    "Polyfan",
+    "LED"
+   ],
+   "featured": false,
+   "instagramCode": "CtX2KMxtem-",
+   "images": [
+    {
+     "file": "trabajos/CtX2KMxtem--03.jpg",
+     "alt": "Nativa: cartel luminoso de acrílico — foto 1"
+    },
+    {
+     "file": "trabajos/CtX2KMxtem--01.jpg",
+     "alt": "Nativa: cartel luminoso de acrílico — foto 2"
+    },
+    {
+     "file": "trabajos/CtX2KMxtem--02.jpg",
+     "alt": "Nativa: cartel luminoso de acrílico — foto 3"
+    },
+    {
+     "file": "trabajos/CtX2KMxtem--04.jpg",
+     "alt": "Nativa: cartel luminoso de acrílico — foto 4"
+    },
+    {
+     "file": "trabajos/CtX2KMxtem--06.jpg",
+     "alt": "Nativa: cartel luminoso de acrílico — foto 5"
+    }
+   ]
+  },
+  {
+   "slug": "logos-vinilo-de-corte-vehiculos",
+   "title": "Logos en vinilo de corte para vehículos",
+   "client": null,
+   "category": "ploteo-vehicular",
+   "location": "Villa Gesell",
+   "doneAt": "2023-06-10",
+   "summary": "Logos en vinilo de corte para camionetas y utilitarios.",
+   "description": null,
+   "materials": [
+    "Vinilo de corte"
+   ],
+   "featured": false,
+   "instagramCode": "CtUwFeSPaxP",
+   "images": [
+    {
+     "file": "trabajos/CtUwFeSPaxP-01.jpg",
+     "alt": "Logos en vinilo de corte para vehículos — foto 1"
+    },
+    {
+     "file": "trabajos/CtUwFeSPaxP-02.jpg",
+     "alt": "Logos en vinilo de corte para vehículos — foto 2"
+    },
+    {
+     "file": "trabajos/CtUwFeSPaxP-03.jpg",
+     "alt": "Logos en vinilo de corte para vehículos — foto 3"
+    },
+    {
+     "file": "trabajos/CtUwFeSPaxP-04.jpg",
+     "alt": "Logos en vinilo de corte para vehículos — foto 4"
+    },
+    {
+     "file": "trabajos/CtUwFeSPaxP-10.jpg",
+     "alt": "Logos en vinilo de corte para vehículos — foto 5"
+    }
+   ]
+  },
+  {
+   "slug": "hotel-mojomar",
+   "title": "Hotel Mojomar: diseño y ploteo vehicular",
+   "client": "Hotel Mojomar · Pinamar",
+   "category": "ploteo-vehicular",
+   "location": "Villa Gesell",
+   "doneAt": "2023-06-09",
+   "summary": "Diseño y ploteo vehicular para el utilitario del hotel.",
+   "description": null,
+   "materials": [
+    "Vinilo de corte",
+    "Vinilo impreso"
+   ],
+   "featured": false,
+   "instagramCode": "CtSIAixPpiG",
+   "images": [
+    {
+     "file": "trabajos/CtSIAixPpiG-01.jpg",
+     "alt": "Hotel Mojomar: diseño y ploteo vehicular — foto 1"
+    },
+    {
+     "file": "trabajos/CtSIAixPpiG-02.jpg",
+     "alt": "Hotel Mojomar: diseño y ploteo vehicular — foto 2"
+    },
+    {
+     "file": "trabajos/CtSIAixPpiG-03.jpg",
+     "alt": "Hotel Mojomar: diseño y ploteo vehicular — foto 3"
+    },
+    {
+     "file": "trabajos/CtSIAixPpiG-04.jpg",
+     "alt": "Hotel Mojomar: diseño y ploteo vehicular — foto 4"
+    },
+    {
+     "file": "trabajos/CtSIAixPpiG-05.jpg",
+     "alt": "Hotel Mojomar: diseño y ploteo vehicular — foto 5"
+    },
+    {
+     "file": "trabajos/CtSIAixPpiG-06.jpg",
+     "alt": "Hotel Mojomar: diseño y ploteo vehicular — foto 6"
+    }
+   ]
+  },
+  {
+   "slug": "camping-de-ingenieros",
+   "title": "Camping de Ingenieros: corpóreas y placas",
+   "client": "Camping de Ingenieros",
+   "category": "carteleria",
+   "location": "Mar Azul",
+   "doneAt": "2023-06-08",
+   "summary": "Corpóreas de polyfan y placas de PVC con vinilo impreso en Mar Azul.",
+   "description": null,
+   "materials": [
+    "Polyfan",
+    "PVC",
+    "Vinilo impreso"
+   ],
+   "featured": false,
+   "instagramCode": "CtO2LSNOf0o",
+   "images": [
+    {
+     "file": "trabajos/CtO2LSNOf0o-01.jpg",
+     "alt": "Camping de Ingenieros: corpóreas y placas — foto 1"
+    },
+    {
+     "file": "trabajos/CtO2LSNOf0o-02.jpg",
+     "alt": "Camping de Ingenieros: corpóreas y placas — foto 2"
+    },
+    {
+     "file": "trabajos/CtO2LSNOf0o-03.jpg",
+     "alt": "Camping de Ingenieros: corpóreas y placas — foto 3"
+    },
+    {
+     "file": "trabajos/CtO2LSNOf0o-04.jpg",
+     "alt": "Camping de Ingenieros: corpóreas y placas — foto 4"
+    }
+   ]
+  },
+  {
+   "slug": "arenero-3",
+   "title": "Arenero #3: diseño y partes fondeadas",
+   "client": null,
+   "category": "motos-y-cuatris",
+   "location": "Villa Gesell",
+   "doneAt": "2023-05-16",
+   "summary": "Diseño, vinilo de corte y partes fondeadas para un arenero de competición.",
+   "description": null,
+   "materials": [
+    "Vinilo de corte",
+    "Vinilo impreso"
+   ],
+   "featured": false,
+   "instagramCode": "CsTmk7eOy1Y",
+   "images": [
+    {
+     "file": "trabajos/CsTmk7eOy1Y-01.jpg",
+     "alt": "Arenero #3: diseño y partes fondeadas — foto 1"
+    },
+    {
+     "file": "trabajos/CsTmk7eOy1Y-02.jpg",
+     "alt": "Arenero #3: diseño y partes fondeadas — foto 2"
+    },
+    {
+     "file": "trabajos/CsTmk7eOy1Y-03.jpg",
+     "alt": "Arenero #3: diseño y partes fondeadas — foto 3"
+    },
+    {
+     "file": "trabajos/CsTmk7eOy1Y-05.jpg",
+     "alt": "Arenero #3: diseño y partes fondeadas — foto 4"
+    },
+    {
+     "file": "trabajos/CsTmk7eOy1Y-06.jpg",
+     "alt": "Arenero #3: diseño y partes fondeadas — foto 5"
+    }
+   ]
+  },
+  {
+   "slug": "arenero-30",
+   "title": "Arenero #30: diseño y ploteo",
+   "client": null,
+   "category": "motos-y-cuatris",
+   "location": "Villa Gesell",
+   "doneAt": "2023-04-25",
+   "summary": "Diseño y ploteo con vinilo de corte e impreso.",
+   "description": null,
+   "materials": [
+    "Vinilo de corte",
+    "Vinilo impreso"
+   ],
+   "featured": false,
+   "instagramCode": "CrdiAeDubRe",
+   "images": [
+    {
+     "file": "trabajos/CrdiAeDubRe-01.jpg",
+     "alt": "Arenero #30: diseño y ploteo — foto 1"
+    },
+    {
+     "file": "trabajos/CrdiAeDubRe-02.jpg",
+     "alt": "Arenero #30: diseño y ploteo — foto 2"
+    },
+    {
+     "file": "trabajos/CrdiAeDubRe-04.jpg",
+     "alt": "Arenero #30: diseño y ploteo — foto 3"
+    },
+    {
+     "file": "trabajos/CrdiAeDubRe-05.jpg",
+     "alt": "Arenero #30: diseño y ploteo — foto 4"
+    },
+    {
+     "file": "trabajos/CrdiAeDubRe-07.jpg",
+     "alt": "Arenero #30: diseño y ploteo — foto 5"
+    }
+   ]
+  },
+  {
+   "slug": "fuzion-autoservicio",
+   "title": "Fuzion: corpóreas de polyfan y PVC",
+   "client": "Fuzion",
+   "category": "carteleria",
+   "location": "Villa Gesell",
+   "doneAt": "2023-05-02",
+   "summary": "Corpóreas en polyfan y PVC ploteado para el autoservicio.",
+   "description": null,
+   "materials": [
+    "Polyfan",
+    "PVC ploteado"
+   ],
+   "featured": false,
+   "instagramCode": "CruVO83tSQP",
+   "images": [
+    {
+     "file": "trabajos/CruVO83tSQP-02.jpg",
+     "alt": "Fuzion: corpóreas de polyfan y PVC — foto 1"
+    },
+    {
+     "file": "trabajos/CruVO83tSQP-01.jpg",
+     "alt": "Fuzion: corpóreas de polyfan y PVC — foto 2"
+    },
+    {
+     "file": "trabajos/CruVO83tSQP-04.jpg",
+     "alt": "Fuzion: corpóreas de polyfan y PVC — foto 3"
+    }
+   ]
+  },
+  {
+   "slug": "estampados-personalizados-2023",
+   "title": "Estampados personalizados",
+   "client": null,
+   "category": "remeras-y-gorras",
+   "location": "Villa Gesell",
+   "doneAt": "2023-04-28",
+   "summary": "Remeras, buzos y gorras estampadas a pedido.",
+   "description": null,
+   "materials": [
+    "Estampado DTF",
+    "Vinilo textil"
+   ],
+   "featured": false,
+   "instagramCode": "CrlVfPgOLP7",
+   "images": [
+    {
+     "file": "trabajos/CrlVfPgOLP7-02.jpg",
+     "alt": "Estampados personalizados — foto 1"
+    },
+    {
+     "file": "trabajos/CrlVfPgOLP7-01.jpg",
+     "alt": "Estampados personalizados — foto 2"
+    },
+    {
+     "file": "trabajos/CrlVfPgOLP7-03.jpg",
+     "alt": "Estampados personalizados — foto 3"
+    },
+    {
+     "file": "trabajos/CrlVfPgOLP7-04.jpg",
+     "alt": "Estampados personalizados — foto 4"
+    },
+    {
+     "file": "trabajos/CrlVfPgOLP7-05.jpg",
+     "alt": "Estampados personalizados — foto 5"
+    },
+    {
+     "file": "trabajos/CrlVfPgOLP7-06.jpg",
+     "alt": "Estampados personalizados — foto 6"
+    },
+    {
+     "file": "trabajos/CrlVfPgOLP7-08.jpg",
+     "alt": "Estampados personalizados — foto 7"
+    },
+    {
+     "file": "trabajos/CrlVfPgOLP7-09.jpg",
+     "alt": "Estampados personalizados — foto 8"
+    },
+    {
+     "file": "trabajos/CrlVfPgOLP7-10.jpg",
+     "alt": "Estampados personalizados — foto 9"
+    }
+   ]
+  },
+  {
+   "slug": "giachino-pastas",
+   "title": "Giachino Pastas: lona front y corpóreas",
+   "client": "Giachino Pastas",
+   "category": "carteleria",
+   "location": "Mar Azul",
+   "doneAt": "2023-04-24",
+   "summary": "Lona front y corpóreas en Mar Azul.",
+   "description": null,
+   "materials": [
+    "Lona front",
+    "Letras corpóreas"
+   ],
+   "featured": false,
+   "instagramCode": "Crb9SrpuNp2",
+   "images": [
+    {
+     "file": "trabajos/Crb9SrpuNp2-03.jpg",
+     "alt": "Giachino Pastas: lona front y corpóreas — foto 1"
+    },
+    {
+     "file": "trabajos/Crb9SrpuNp2-01.jpg",
+     "alt": "Giachino Pastas: lona front y corpóreas — foto 2"
+    },
+    {
+     "file": "trabajos/Crb9SrpuNp2-02.jpg",
+     "alt": "Giachino Pastas: lona front y corpóreas — foto 3"
+    },
+    {
+     "file": "trabajos/Crb9SrpuNp2-04.jpg",
+     "alt": "Giachino Pastas: lona front y corpóreas — foto 4"
+    },
+    {
+     "file": "trabajos/Crb9SrpuNp2-05.jpg",
+     "alt": "Giachino Pastas: lona front y corpóreas — foto 5"
+    }
+   ]
+  },
+  {
+   "slug": "centro-de-dia-villa-gesell",
+   "title": "Centro de Día Villa Gesell: corpóreas",
+   "client": "Centro de Día Villa Gesell",
+   "category": "carteleria",
+   "location": "Villa Gesell",
+   "doneAt": "2023-04-20",
+   "summary": "Corpóreas y lona impresa laqueada.",
+   "description": null,
+   "materials": [
+    "Letras corpóreas",
+    "Lona laqueada"
+   ],
+   "featured": false,
+   "instagramCode": "CrRqv4IueAt",
+   "images": [
+    {
+     "file": "trabajos/CrRqv4IueAt-01.jpg",
+     "alt": "Centro de Día Villa Gesell: corpóreas — foto 1"
+    },
+    {
+     "file": "trabajos/CrRqv4IueAt-02.jpg",
+     "alt": "Centro de Día Villa Gesell: corpóreas — foto 2"
+    },
+    {
+     "file": "trabajos/CrRqv4IueAt-03.jpg",
+     "alt": "Centro de Día Villa Gesell: corpóreas — foto 3"
+    },
+    {
+     "file": "trabajos/CrRqv4IueAt-05.jpg",
+     "alt": "Centro de Día Villa Gesell: corpóreas — foto 4"
+    },
+    {
+     "file": "trabajos/CrRqv4IueAt-06.jpg",
+     "alt": "Centro de Día Villa Gesell: corpóreas — foto 5"
+    }
+   ]
+  },
+  {
+   "slug": "zodiaco-burgers",
+   "title": "Zodiaco Burgers: tres carteles luminosos",
+   "client": "Zodiaco Burgers",
+   "category": "carteleria",
+   "location": "Mar de las Pampas",
+   "doneAt": "2023-04-18",
+   "summary": "Cartel principal con frente de acrílico y cuerpo de chapa, cartel botón redondo y cartel rectangular de alto impacto, todos luminosos.",
+   "description": null,
+   "materials": [
+    "Acrílico",
+    "Chapa",
+    "Alto impacto",
+    "LED"
+   ],
+   "featured": true,
+   "instagramCode": "CrLj3-hu3If",
+   "images": [
+    {
+     "file": "trabajos/CrLj3-hu3If-01.jpg",
+     "alt": "Zodiaco Burgers: tres carteles luminosos — foto 1"
+    },
+    {
+     "file": "trabajos/CrLj3-hu3If-02.jpg",
+     "alt": "Zodiaco Burgers: tres carteles luminosos — foto 2"
+    },
+    {
+     "file": "trabajos/CrLj3-hu3If-04.jpg",
+     "alt": "Zodiaco Burgers: tres carteles luminosos — foto 3"
+    },
+    {
+     "file": "trabajos/CrLj3-hu3If-06.jpg",
+     "alt": "Zodiaco Burgers: tres carteles luminosos — foto 4"
+    },
+    {
+     "file": "trabajos/CrLj3-hu3If-08.jpg",
+     "alt": "Zodiaco Burgers: tres carteles luminosos — foto 5"
+    }
+   ]
+  },
+  {
+   "slug": "coco-lona-front-y-vidriera",
+   "title": "Coco: lona front, corpóreas y vidriera",
+   "client": "Coco",
+   "category": "carteleria",
+   "location": "Villa Gesell",
+   "doneAt": "2023-04-15",
+   "summary": "Cartel de lona front con corpóreas de polyfan y frente de PVC ploteado, vidriera con vinilo impreso y medio corte, y cartel de lona en el interior.",
+   "description": null,
+   "materials": [
+    "Lona front",
+    "Polyfan",
+    "Vinilo impreso"
+   ],
+   "featured": false,
+   "instagramCode": "CrE23K7O9ez",
+   "images": [
+    {
+     "file": "trabajos/CrE23K7O9ez-01.jpg",
+     "alt": "Coco: lona front, corpóreas y vidriera — foto 1"
+    },
+    {
+     "file": "trabajos/CrE23K7O9ez-03.jpg",
+     "alt": "Coco: lona front, corpóreas y vidriera — foto 2"
+    },
+    {
+     "file": "trabajos/CrE23K7O9ez-05.jpg",
+     "alt": "Coco: lona front, corpóreas y vidriera — foto 3"
+    },
+    {
+     "file": "trabajos/CrE23K7O9ez-06.jpg",
+     "alt": "Coco: lona front, corpóreas y vidriera — foto 4"
+    }
+   ]
+  },
+  {
+   "slug": "s10-ploteo",
+   "title": "Chevrolet S10: ploteo vehicular",
+   "client": null,
+   "category": "ploteo-vehicular",
+   "location": "Villa Gesell",
+   "doneAt": "2023-04-14",
+   "summary": "Ploteo vehicular frente al local de Martino Gráfica.",
+   "description": null,
+   "materials": [
+    "Vinilo impreso"
+   ],
+   "featured": false,
+   "instagramCode": "Cq_1koUORmk",
+   "images": [
+    {
+     "file": "trabajos/Cq_1koUORmk-01.jpg",
+     "alt": "Chevrolet S10: ploteo vehicular — foto 1"
+    },
+    {
+     "file": "trabajos/Cq_1koUORmk-02.jpg",
+     "alt": "Chevrolet S10: ploteo vehicular — foto 2"
+    },
+    {
+     "file": "trabajos/Cq_1koUORmk-03.jpg",
+     "alt": "Chevrolet S10: ploteo vehicular — foto 3"
+    },
+    {
+     "file": "trabajos/Cq_1koUORmk-04.jpg",
+     "alt": "Chevrolet S10: ploteo vehicular — foto 4"
+    }
+   ]
+  },
+  {
+   "slug": "libella-cor-cartel",
+   "title": "Libella · COR: cartel luminoso de chapa calada",
+   "client": "Libella · COR",
+   "category": "carteleria",
+   "location": "Villa Gesell",
+   "doneAt": "2023-04-01",
+   "summary": "Cartel luminoso de chapa calada, acrílico, estructura de hierro y sistema de luz LED.",
+   "description": null,
+   "materials": [
+    "Chapa calada",
+    "Acrílico",
+    "Hierro",
+    "LED"
+   ],
+   "featured": false,
+   "instagramCode": "CqgIS6zOX4O",
+   "images": [
+    {
+     "file": "trabajos/CqgIS6zOX4O-03.jpg",
+     "alt": "Libella · COR: cartel luminoso de chapa calada — foto 1"
+    },
+    {
+     "file": "trabajos/CqgIS6zOX4O-01.jpg",
+     "alt": "Libella · COR: cartel luminoso de chapa calada — foto 2"
+    },
+    {
+     "file": "trabajos/CqgIS6zOX4O-02.jpg",
+     "alt": "Libella · COR: cartel luminoso de chapa calada — foto 3"
+    },
+    {
+     "file": "trabajos/CqgIS6zOX4O-04.jpg",
+     "alt": "Libella · COR: cartel luminoso de chapa calada — foto 4"
+    },
+    {
+     "file": "trabajos/CqgIS6zOX4O-05.jpg",
+     "alt": "Libella · COR: cartel luminoso de chapa calada — foto 5"
+    }
+   ]
+  },
+  {
+   "slug": "choribus-corporeas",
+   "title": "Choribus: corpóreas de polyfan",
+   "client": "Choribus",
+   "category": "carteleria",
+   "location": "Villa Gesell",
+   "doneAt": "2023-03-28",
+   "summary": "Corpóreas de polyfan para el frente del local.",
+   "description": null,
+   "materials": [
+    "Polyfan"
+   ],
+   "featured": false,
+   "instagramCode": "CqVfae7u_Ts",
+   "images": [
+    {
+     "file": "trabajos/CqVfae7u_Ts-02.jpg",
+     "alt": "Choribus: corpóreas de polyfan — foto 1"
+    },
+    {
+     "file": "trabajos/CqVfae7u_Ts-01.jpg",
+     "alt": "Choribus: corpóreas de polyfan — foto 2"
+    },
+    {
+     "file": "trabajos/CqVfae7u_Ts-04.jpg",
+     "alt": "Choribus: corpóreas de polyfan — foto 3"
+    }
+   ]
+  },
+  {
+   "slug": "heladera-gris-mate",
+   "title": "Heladera forrada en gris mate con vinilo de corte",
+   "client": null,
+   "category": "vinilo-decorativo",
+   "location": "Villa Gesell",
+   "doneAt": "2022-09-08",
+   "summary": "Forrado completo de heladera en gris mate, con diseños de vinilo de corte en la cocina.",
+   "description": null,
+   "materials": [
+    "Vinilo gris mate",
+    "Vinilo de corte"
+   ],
+   "featured": true,
+   "instagramCode": "CiPiF4VO5yJ",
+   "images": [
+    {
+     "file": "trabajos/CiPiF4VO5yJ-01.jpg",
+     "alt": "Heladera forrada en gris mate con vinilo de corte — foto 1"
+    },
+    {
+     "file": "trabajos/CiPiF4VO5yJ-03.jpg",
+     "alt": "Heladera forrada en gris mate con vinilo de corte — foto 2"
+    },
+    {
+     "file": "trabajos/CiPiF4VO5yJ-04.jpg",
+     "alt": "Heladera forrada en gris mate con vinilo de corte — foto 3"
+    },
+    {
+     "file": "trabajos/CiPiF4VO5yJ-06.jpg",
+     "alt": "Heladera forrada en gris mate con vinilo de corte — foto 4"
+    },
+    {
+     "file": "trabajos/CiPiF4VO5yJ-07.jpg",
+     "alt": "Heladera forrada en gris mate con vinilo de corte — foto 5"
+    },
+    {
+     "file": "trabajos/CiPiF4VO5yJ-08.jpg",
+     "alt": "Heladera forrada en gris mate con vinilo de corte — foto 6"
+    }
+   ]
+  },
+  {
+   "slug": "raiz-y-co-tarjetas-y-freezer",
+   "title": "Raíz & Co: tarjetas y ploteo de freezer",
+   "client": "Raíz & Co",
+   "category": "vinilo-decorativo",
+   "location": "Villa Gesell",
+   "doneAt": "2022-05-28",
+   "summary": "Tarjetas personales y ploteo del freezer de la tienda saludable.",
+   "description": null,
+   "materials": [
+    "Vinilo negro",
+    "Vinilo de corte",
+    "Tarjetas"
+   ],
+   "featured": false,
+   "instagramCode": "CeGhnA_uRVJ",
+   "images": [
+    {
+     "file": "trabajos/CeGhnA_uRVJ-03.jpg",
+     "alt": "Raíz & Co: tarjetas y ploteo de freezer — foto 1"
+    },
+    {
+     "file": "trabajos/CeGhnA_uRVJ-02.jpg",
+     "alt": "Raíz & Co: tarjetas y ploteo de freezer — foto 2"
+    },
+    {
+     "file": "trabajos/CeGhnA_uRVJ-04.jpg",
+     "alt": "Raíz & Co: tarjetas y ploteo de freezer — foto 3"
+    },
+    {
+     "file": "trabajos/CeGhnA_uRVJ-05.jpg",
+     "alt": "Raíz & Co: tarjetas y ploteo de freezer — foto 4"
+    },
+    {
+     "file": "trabajos/CeGhnA_uRVJ-06.jpg",
+     "alt": "Raíz & Co: tarjetas y ploteo de freezer — foto 5"
+    },
+    {
+     "file": "trabajos/CeGhnA_uRVJ-01.jpg",
+     "alt": "Raíz & Co: tarjetas y ploteo de freezer — foto 6"
+    }
+   ]
+  },
+  {
+   "slug": "grupo-idaho-identidad",
+   "title": "Grupo Idaho: logo, tarjetas y lonas",
+   "client": "Grupo Idaho",
+   "category": "calcos-y-stickers",
+   "location": "Villa Gesell",
+   "doneAt": "2022-02-20",
+   "summary": "Diseño de logo, tarjetas y lonas con ojales reforzados.",
+   "description": null,
+   "materials": [
+    "Diseño de logo",
+    "Tarjetas",
+    "Lona con ojales"
+   ],
+   "featured": false,
+   "instagramCode": "CaNJAaWuTvE",
+   "images": [
+    {
+     "file": "trabajos/CaNJAaWuTvE-02.jpg",
+     "alt": "Grupo Idaho: logo, tarjetas y lonas — foto 1"
+    },
+    {
+     "file": "trabajos/CaNJAaWuTvE-01.jpg",
+     "alt": "Grupo Idaho: logo, tarjetas y lonas — foto 2"
+    },
+    {
+     "file": "trabajos/CaNJAaWuTvE-03.jpg",
+     "alt": "Grupo Idaho: logo, tarjetas y lonas — foto 3"
+    },
+    {
+     "file": "trabajos/CaNJAaWuTvE-04.jpg",
+     "alt": "Grupo Idaho: logo, tarjetas y lonas — foto 4"
+    },
+    {
+     "file": "trabajos/CaNJAaWuTvE-05.jpg",
+     "alt": "Grupo Idaho: logo, tarjetas y lonas — foto 5"
+    }
+   ]
+  }
+ ],
+ "highlights": [
+  {
+   "slug": "ploteo-de-motos",
+   "title": "Motos",
+   "category": "motos-y-cuatris",
+   "sortOrder": 0,
+   "items": [
+    {
+     "file": "historias/ploteo-de-motos/01-021.webp"
+    },
+    {
+     "file": "historias/ploteo-de-motos/01-028.webp"
+    },
+    {
+     "file": "historias/ploteo-de-motos/01-030.webp"
+    },
+    {
+     "file": "historias/ploteo-de-motos/01-039.webp"
+    },
+    {
+     "file": "historias/ploteo-de-motos/01-050.webp"
+    },
+    {
+     "file": "historias/ploteo-de-motos/01-053.webp"
+    },
+    {
+     "file": "historias/ploteo-de-motos/01-061.webp"
+    },
+    {
+     "file": "historias/ploteo-de-motos/01-062.webp"
+    },
+    {
+     "file": "historias/ploteo-de-motos/01-063.webp"
+    }
+   ]
+  },
+  {
+   "slug": "ploteos",
+   "title": "Ploteos",
+   "category": "vidrieras-y-esmerilados",
+   "sortOrder": 1,
+   "items": [
+    {
+     "file": "historias/ploteos/02-004.webp"
+    },
+    {
+     "file": "historias/ploteos/02-005.webp"
+    },
+    {
+     "file": "historias/ploteos/02-020.webp"
+    },
+    {
+     "file": "historias/ploteos/02-026.webp"
+    },
+    {
+     "file": "historias/ploteos/02-027.webp"
+    },
+    {
+     "file": "historias/ploteos/02-029.webp"
+    },
+    {
+     "file": "historias/ploteos/02-033.webp"
+    },
+    {
+     "file": "historias/ploteos/02-034.webp"
+    },
+    {
+     "file": "historias/ploteos/06-013.webp"
+    },
+    {
+     "file": "historias/ploteos/06-018.webp"
+    }
+   ]
+  },
+  {
+   "slug": "estampados",
+   "title": "Estampados",
+   "category": "remeras-y-gorras",
+   "sortOrder": 2,
+   "items": [
+    {
+     "file": "historias/estampados/03-001.webp"
+    },
+    {
+     "file": "historias/estampados/03-002.webp"
+    },
+    {
+     "file": "historias/estampados/03-007.webp"
+    },
+    {
+     "file": "historias/estampados/03-008.webp"
+    },
+    {
+     "file": "historias/estampados/03-013.webp"
+    },
+    {
+     "file": "historias/estampados/03-014.webp"
+    },
+    {
+     "file": "historias/estampados/03-018.webp"
+    }
+   ]
+  },
+  {
+   "slug": "carteleria",
+   "title": "Cartelería",
+   "category": "carteleria",
+   "sortOrder": 3,
+   "items": [
+    {
+     "file": "historias/carteleria/04-006.webp"
+    },
+    {
+     "file": "historias/carteleria/04-009.webp"
+    },
+    {
+     "file": "historias/carteleria/04-015.webp"
+    },
+    {
+     "file": "historias/carteleria/04-018.webp"
+    },
+    {
+     "file": "historias/carteleria/04-019.webp"
+    },
+    {
+     "file": "historias/carteleria/04-020.webp"
+    },
+    {
+     "file": "historias/carteleria/04-025.webp"
+    },
+    {
+     "file": "historias/carteleria/04-027.webp"
+    },
+    {
+     "file": "historias/carteleria/04-033.webp"
+    },
+    {
+     "file": "historias/carteleria/04-037.webp"
+    },
+    {
+     "file": "historias/carteleria/04-039.webp"
+    },
+    {
+     "file": "historias/carteleria/04-042.webp"
+    }
+   ]
+  },
+  {
+   "slug": "calcos",
+   "title": "Calcos",
+   "category": "calcos-y-stickers",
+   "sortOrder": 4,
+   "items": [
+    {
+     "file": "historias/calcos/05-010.webp"
+    },
+    {
+     "file": "historias/calcos/05-015.webp"
+    },
+    {
+     "file": "historias/calcos/05-016.webp"
+    },
+    {
+     "file": "historias/calcos/05-022.webp"
+    },
+    {
+     "file": "historias/calcos/05-025.webp"
+    },
+    {
+     "file": "historias/calcos/05-029.webp"
+    },
+    {
+     "file": "historias/calcos/05-034.webp"
+    },
+    {
+     "file": "historias/calcos/05-035.webp"
+    },
+    {
+     "file": "historias/calcos/05-036.webp"
+    },
+    {
+     "file": "historias/calcos/05-039.webp"
+    },
+    {
+     "file": "historias/calcos/05-040.webp"
+    },
+    {
+     "file": "historias/calcos/05-045.webp"
+    },
+    {
+     "file": "historias/calcos/05-049.webp"
+    },
+    {
+     "file": "historias/calcos/05-050.webp"
+    }
+   ]
+  },
+  {
+   "slug": "gorras",
+   "title": "Gorras",
+   "category": "remeras-y-gorras",
+   "sortOrder": 5,
+   "items": [
+    {
+     "file": "historias/gorras/07-002.webp"
+    },
+    {
+     "file": "historias/gorras/07-006.webp"
+    },
+    {
+     "file": "historias/gorras/07-007.webp"
+    },
+    {
+     "file": "historias/gorras/07-010.webp"
+    },
+    {
+     "file": "historias/gorras/07-016.webp"
+    },
+    {
+     "file": "historias/gorras/07-022.webp"
+    },
+    {
+     "file": "historias/gorras/07-023.webp"
+    },
+    {
+     "file": "historias/gorras/07-026.webp"
+    }
+   ]
+  },
+  {
+   "slug": "vehiculos",
+   "title": "Vehículos",
+   "category": "ploteo-vehicular",
+   "sortOrder": 6,
+   "items": [
+    {
+     "file": "historias/vehiculos/08-012.webp"
+    },
+    {
+     "file": "historias/vehiculos/08-017.webp"
+    },
+    {
+     "file": "historias/vehiculos/08-045.webp"
+    },
+    {
+     "file": "historias/vehiculos/08-047.webp"
+    },
+    {
+     "file": "historias/vehiculos/08-048.webp"
+    },
+    {
+     "file": "historias/vehiculos/08-055.webp"
+    },
+    {
+     "file": "historias/vehiculos/08-056.webp"
+    },
+    {
+     "file": "historias/vehiculos/08-057.webp"
+    }
+   ]
+  },
+  {
+   "slug": "deco",
+   "title": "Deco",
+   "category": "vinilo-decorativo",
+   "sortOrder": 7,
+   "items": [
+    {
+     "file": "historias/deco/09-001.webp"
+    },
+    {
+     "file": "historias/deco/09-013.webp"
+    },
+    {
+     "file": "historias/deco/09-034.webp"
+    },
+    {
+     "file": "historias/deco/09-041.webp"
+    },
+    {
+     "file": "historias/deco/09-051.webp"
+    },
+    {
+     "file": "historias/deco/09-052.webp"
+    }
+   ]
+  },
+  {
+   "slug": "inmobiliarias",
+   "title": "Inmobiliarias",
+   "category": "inmobiliarias",
+   "sortOrder": 8,
+   "items": [
+    {
+     "file": "historias/inmobiliarias/10-002.webp"
+    },
+    {
+     "file": "historias/inmobiliarias/10-004.webp"
+    },
+    {
+     "file": "historias/inmobiliarias/10-007.webp"
+    },
+    {
+     "file": "historias/inmobiliarias/10-012.webp"
+    },
+    {
+     "file": "historias/inmobiliarias/10-019.webp"
+    },
+    {
+     "file": "historias/inmobiliarias/10-020.webp"
+    },
+    {
+     "file": "historias/inmobiliarias/10-022.webp"
+    },
+    {
+     "file": "historias/inmobiliarias/10-035.webp"
+    },
+    {
+     "file": "historias/inmobiliarias/10-036.webp"
+    },
+    {
+     "file": "historias/inmobiliarias/10-038.webp"
+    },
+    {
+     "file": "historias/inmobiliarias/10-039.webp"
+    }
+   ]
+  }
+ ],
+ "banners": [
+  {
+   "placement": "HOME_STRIP",
+   "title": "Remeras personalizadas en el día",
+   "subtitle": "Para un evento, tu emprendimiento o tu equipo. Trabajamos con tu diseño o te ayudamos a crearlo.",
+   "ctaLabel": "Cotizar remeras",
+   "ctaHref": "/cotizar?servicio=remera-estampada",
+   "image": "trabajos/DFdmot5PEme-07.jpg",
+   "sortOrder": 0
+  },
+  {
+   "placement": "HOME_STRIP",
+   "title": "Mandanos una foto de tu vehículo",
+   "subtitle": "Te mostramos cómo quedaría el tuyo ploteado antes de empezar.",
+   "ctaLabel": "Pedir presupuesto",
+   "ctaHref": "/cotizar?servicio=ploteo-rotulacion-vehicular",
+   "image": "trabajos/Da7zmZmlmsf-01.jpg",
+   "sortOrder": 1
+  },
+  {
+   "placement": "HOME_STRIP",
+   "title": "Ploteo de vidrieras de la Selección con 20% off",
+   "subtitle": "Promo publicada para mayo de 2026.",
+   "ctaLabel": "Consultar",
+   "ctaHref": "/cotizar?servicio=ploteo-de-vidrieras",
+   "image": null,
+   "active": false,
+   "startsAt": "2026-05-01T03:00:00Z",
+   "endsAt": "2026-06-01T02:59:00Z",
+   "sortOrder": 2
+  }
+ ]
+}

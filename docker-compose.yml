@@ -1,0 +1,20 @@
+# Base de datos para desarrollo: PostgreSQL 16 en el puerto 5433 (no choca con un Postgres local en 5432)
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: martino-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: martino
+      POSTGRES_PASSWORD: martino
+      POSTGRES_DB: martino
+    ports:
+      - '5433:5432'
+    volumes:
+      - martino-db:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U martino']
+      interval: 5s
+      retries: 12
+volumes:
+  martino-db:
