@@ -5,7 +5,6 @@ import { useMotionValueEvent, useSpring, type MotionValue } from 'motion/react';
 
 export function useScrollVideo(videoRef: React.RefObject<HTMLVideoElement | null>, progress: MotionValue<number>, reduce: boolean | null) {
   const frame = useRef<number | null>(null);
-  const idleTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const lastProgress = useRef(progress.get());
   const lastDirection = useRef(0);
   const smoothProgress = useSpring(progress, { stiffness: 300, damping: 32, mass: 0.25 });
@@ -20,14 +19,6 @@ export function useScrollVideo(videoRef: React.RefObject<HTMLVideoElement | null
     }
     if (direction) lastDirection.current = direction;
     lastProgress.current = value;
-    if (idleTimer.current) clearTimeout(idleTimer.current);
-    idleTimer.current = setTimeout(() => {
-      smoothProgress.stop();
-      if (frame.current !== null) {
-        cancelAnimationFrame(frame.current);
-        frame.current = null;
-      }
-    }, 180);
   });
 
   useMotionValueEvent(smoothProgress, 'change', (value) => {
@@ -52,9 +43,7 @@ export function useScrollVideo(videoRef: React.RefObject<HTMLVideoElement | null
     if (video.readyState >= HTMLMediaElement.HAVE_METADATA) syncTime();
     return () => video.removeEventListener('loadedmetadata', syncTime);
   }, [smoothProgress, reduce, videoRef]);
-
   useEffect(() => () => {
-    if (idleTimer.current) clearTimeout(idleTimer.current);
     if (frame.current !== null) cancelAnimationFrame(frame.current);
   }, []);
 }
