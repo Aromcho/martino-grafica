@@ -9,8 +9,11 @@ import { mkdirSync } from 'fs';
 import helmet from 'helmet';
 import { resolve } from 'path';
 import { AppModule } from './app.module';
+import { runMigrations } from './db/migrate';
 
 async function bootstrap() {
+  // Migraciones pendientes antes de levantar (idempotente): un deploy que sólo reinicia también actualiza la base
+  if (process.env.MIGRATE_ON_BOOT !== 'false') await runMigrations(process.env.DATABASE_URL, (m) => Logger.log(m, 'Migraciones'));
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
   const config = app.get(ConfigService);
 

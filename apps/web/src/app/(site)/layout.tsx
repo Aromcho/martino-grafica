@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import { JsonLd } from '@/components/seo/json-ld';
 import { BusinessProvider } from '@/components/site/business-provider';
+import { CartDrawer, CartProvider } from '@/components/store/cart';
 import { FloatingWhatsApp } from '@/components/site/floating-whatsapp';
 import { Providers } from '@/components/site/providers';
 import { SearchOverlay } from '@/components/site/search-overlay';
@@ -19,19 +20,22 @@ export default async function SiteLayout({ children }: { children: ReactNode }) 
     <Providers>
       <UIProvider>
         <BusinessProvider initial={business}>
-          <a href="#contenido" className="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-[90] focus:rounded-md focus:bg-lime focus:px-4 focus:py-2 focus:font-bold focus:text-ink">
-            Saltar al contenido
-          </a>
-          <SmoothScroll />
-          <SiteHeader />
-          <main id="contenido" className="min-h-svh">
-            {children}
-          </main>
-          <SiteFooter categories={categories} />
-          <TabBar />
-          <FloatingWhatsApp />
-          <SearchOverlay />
-          {ld && <JsonLd data={ld} />}
+          <CartProvider>
+            <a href="#contenido" className="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-[90] focus:rounded-md focus:bg-lime focus:px-4 focus:py-2 focus:font-bold focus:text-ink">
+              Saltar al contenido
+            </a>
+            <SmoothScroll />
+            <SiteHeader />
+            <main id="contenido" className="min-h-svh">
+              {children}
+            </main>
+            <SiteFooter categories={categories} />
+            <TabBar />
+            <FloatingWhatsApp />
+            <SearchOverlay />
+            <CartDrawer />
+            {ld && <JsonLd data={ld} />}
+          </CartProvider>
         </BusinessProvider>
       </UIProvider>
     </Providers>

@@ -89,7 +89,7 @@ export default function DashboardPage() {
                         <StatusBadge status={q.status} />
                       </span>
                       <span className="mt-0.5 block truncate text-sm text-slate">
-                        {q.kind === 'CONTACT' ? 'Consulta' : (q.productName ?? 'Presupuesto')}
+                        {q.kind === 'CONTACT' ? 'Consulta' : q.kind === 'ORDER' ? 'Compra en la tienda' : (q.productName ?? 'Presupuesto')}
                         {q.estimate ? `, est. ${money(q.estimate)}` : ''} · {timeAgo(q.createdAt)}
                       </span>
                     </Link>

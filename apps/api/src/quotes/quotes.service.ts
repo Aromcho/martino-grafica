@@ -1,6 +1,6 @@
 import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import { and, count, desc, eq, gte, or, SQL, inArray } from 'drizzle-orm';
+import { and, asc, count, desc, eq, gte, or, SQL, inArray } from 'drizzle-orm';
 import { randomInt } from 'crypto';
 import { createReadStream, promises as fs } from 'fs';
 import { extname, join, posix, resolve } from 'path';
@@ -9,7 +9,7 @@ import { waLink, waNumber } from '../common/utils/phone';
 import { nowInStoreTz } from '../common/utils/time';
 import { BusinessInfo, BusinessService } from '../business/business.service';
 import { Database, InjectDb } from '../db/db.module';
-import { DeliveryMethod, products, quoteEvents, quoteFiles, quotes, QuoteKind, QuoteStatus } from '../db/schema';
+import { DeliveryMethod, orderItems, products, quoteEvents, quoteFiles, quotes, QuoteKind, QuoteStatus } from '../db/schema';
 import { CreateQuoteDto, UpdateQuoteDto } from './dto/quote.dto';
 
 export const STATUS_LABEL: Record<QuoteStatus, string> = {
@@ -44,7 +44,8 @@ export class QuotesService {
     this.privateDir = resolve(config.get<string>('PRIVATE_DIR') ?? './private');
   }
 
-  private async newCode() {
+  /** Código corto del pedido (también lo usa la tienda) */
+  async newCode() {
     const { day, month } = nowInStoreTz();
     for (let i = 0; i < 8; i++) {
       const code = `MG-${String(day).padStart(2, '0')}${String(month).padStart(2, '0')}-${randomInt(1000, 9999)}`;
@@ -194,6 +195,7 @@ export class QuotesService {
       where: eq(quotes.id, id),
       with: {
         files: true,
+        items: { orderBy: [asc(orderItems.sortOrder)], with: { product: { columns: { id: true, slug: true, active: true } } } },
         events: { orderBy: [desc(quoteEvents.createdAt)], with: { user: { columns: { name: true } } } },
         product: { columns: { id: true, slug: true, name: true } },
         category: { columns: { id: true, name: true } },
@@ -207,9 +209,10 @@ export class QuotesService {
   replyMessage(q: typeof quotes.$inferSelect) {
     const first = q.customerName.split(' ')[0];
     const ref = `(pedido ${q.code})`;
-    const what = q.productName ? ` por ${q.productName.toLowerCase()}` : '';
+    const what = q.kind === 'ORDER' ? '' : q.productName ? ` por ${q.productName.toLowerCase()}` : '';
     switch (q.status) {
       case 'QUOTED':
+        if (q.kind === 'ORDER') return `¡Hola ${first}! Te confirmo tu pedido ${ref}${q.quotedPrice ? `: total ${money(q.quotedPrice)}` : ''}. ¿Cómo preferís pagar? Martino Gráfica`;
         return `¡Hola ${first}! Te paso el presupuesto${what} ${ref}${q.quotedPrice ? `: ${money(q.quotedPrice)}` : ''}. Cualquier duda, avisame. Martino Gráfica`;
       case 'APPROVED':
       case 'IN_PRODUCTION':
@@ -217,7 +220,9 @@ export class QuotesService {
       case 'READY':
         return `¡Hola ${first}! Tu pedido ${ref} ya está listo. ¿Cuándo pasás a retirarlo? Martino Gráfica`;
       default:
-        return `¡Hola ${first}! Te escribo de Martino Gráfica por tu consulta${what} ${ref}.`;
+        return q.kind === 'ORDER'
+          ? `¡Hola ${first}! Te escribo de Martino Gráfica por tu pedido de la tienda ${ref}. Te confirmo disponibilidad y precio final.`
+          : `¡Hola ${first}! Te escribo de Martino Gráfica por tu consulta${what} ${ref}.`;
     }
   }
 

@@ -16,6 +16,7 @@ import { QuotesModule } from './quotes/quotes.module';
 import { RevalidateModule } from './revalidate/revalidate.module';
 import { SearchModule } from './search/search.module';
 import { StatsModule } from './stats/stats.module';
+import { StoreModule } from './store/store.module';
 import { UsersModule } from './users/users.module';
 import { WorksModule } from './works/works.module';
 
@@ -36,6 +37,7 @@ import { WorksModule } from './works/works.module';
     QuotesModule,
     SearchModule,
     StatsModule,
+    StoreModule,
   ],
   controllers: [HealthController],
   providers: [

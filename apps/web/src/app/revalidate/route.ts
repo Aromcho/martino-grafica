@@ -1,7 +1,7 @@
 import { revalidateTag } from 'next/cache';
 import { NextResponse, type NextRequest } from 'next/server';
 
-const ALLOWED = new Set(['business', 'catalog', 'works', 'content']);
+const ALLOWED = new Set(['business', 'catalog', 'works', 'content', 'store']);
 
 /**
  * La API avisa acá cada vez que se guarda algo en el panel (con un secreto compartido),

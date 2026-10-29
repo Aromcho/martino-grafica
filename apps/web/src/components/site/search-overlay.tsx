@@ -8,11 +8,11 @@ import { Loader2, Search, X } from 'lucide-react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Img } from '@/components/ui/img';
 import { get } from '@/lib/client-api';
-import { monthYear } from '@/lib/format';
+import { money, monthYear } from '@/lib/format';
 import type { SearchResults } from '@/lib/types';
 import { useUI } from './ui-provider';
 
-const SUGGESTIONS = ['Ploteo de camioneta', 'Neón LED', 'Corpóreas', 'Esmerilado', 'Calcos para motos', 'Remeras', 'Gorras trucker', 'Carteles inmobiliarios', 'Mar Azul', 'Negro mate'];
+const SUGGESTIONS = ['Vinilo negro mate', 'Termofilm', 'Lona', 'PVC espumado', 'Papel para sublimar', 'Ploteo de camioneta', 'Neón LED', 'Corpóreas', 'Esmerilado', 'Calcos para motos', 'Remeras', 'Gorras trucker', 'Carteles inmobiliarios', 'Mar Azul', 'Negro mate'];
 
 function useDebounced<T>(value: T, ms = 220) {
   const [v, setV] = useState(value);
@@ -43,6 +43,7 @@ export function SearchOverlay() {
   const rows: Row[] = useMemo(() => {
     if (term.length < 2 || !data) return [];
     return [
+      ...(data.store ?? []).map((p) => ({ href: `/tienda/${p.slug}`, title: p.name, meta: [p.price != null ? money(p.price) : 'Precio a consultar', p.subcategory ?? p.category?.name].filter(Boolean).join(' · '), media: p.image, kind: 'Tienda' })),
       ...data.categories.map((c) => ({ href: `/servicios#${c.slug}`, title: c.name, meta: c.tagline ?? 'Rubro', media: c.cover, kind: 'Rubro' })),
       ...data.products.map((p) => ({ href: `/servicios/${p.slug}`, title: p.name, meta: p.category?.name ?? 'Servicio', media: p.cover, kind: 'Servicio' })),
       ...data.works.map((w) => ({ href: `/trabajos/${w.slug}`, title: w.title, meta: [w.location, monthYear(w.doneAt)].filter(Boolean).join(', '), media: w.cover, kind: 'Trabajo' })),
@@ -105,7 +106,7 @@ export function SearchOverlay() {
                 ref={inputRef}
                 value={q}
                 onChange={(e) => setQ(e.target.value)}
-                placeholder="Buscá trabajos, servicios, materiales…"
+                placeholder="Buscá productos, trabajos, servicios…"
                 className="h-11 min-w-0 flex-1 bg-transparent text-[1.05rem] text-white outline-none placeholder:text-smoke"
                 enterKeyHint="search"
                 autoComplete="off"

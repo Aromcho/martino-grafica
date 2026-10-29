@@ -42,7 +42,8 @@ export class MediaService {
   }
 
   async list(params: { page: number; pageSize: number; kind?: MediaKind; q?: string }) {
-    const conds: SQL[] = [];
+    // Las fotos del catálogo de la tienda no llenan la biblioteca (se editan desde cada producto)
+    const conds: SQL[] = [sql`coalesce(${media.source}, '') <> 'tienda'`];
     if (params.kind) conds.push(eq(media.kind, params.kind));
     if (params.q) conds.push(or(fuzzyContains(media.alt, params.q), fuzzyContains(media.source, params.q))!);
     const where = conds.length ? and(...conds) : undefined;

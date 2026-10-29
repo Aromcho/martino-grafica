@@ -51,11 +51,12 @@ export default function QuoteDetailPage() {
   };
 
   const facts = [
-    ['Trabajo', q.product ? q.product.name : q.productName],
+    ['Trabajo', q.kind === 'ORDER' ? null : q.product ? q.product.name : q.productName],
     ['Rubro', q.category?.name],
     ['Medida', measure(q.width, q.height)],
     ['Talle, tamaño o vehículo', q.size],
     ['Cantidad', q.kind === 'QUOTE' ? String(q.quantity) : null],
+    ['Entrega', q.kind === 'ORDER' ? (q.delivery === 'SHIPPING' ? 'Envío a coordinar' : 'Retiro en el taller') : null],
     ['Material', q.material],
     ['Terminación', q.finish],
     ['Diseño', q.kind === 'QUOTE' ? (q.needsDesign ? 'Necesita diseño' : 'Tiene el diseño') : null],
@@ -77,7 +78,7 @@ export default function QuoteDetailPage() {
           <span className="flex flex-wrap items-center gap-2">
             <StatusBadge status={q.status} />
             <span className="tabular">{q.code}</span>
-            <span>· {q.kind === 'CONTACT' ? 'Consulta' : 'Presupuesto'} · {timeAgo(q.createdAt)}</span>
+            <span>· {q.kind === 'CONTACT' ? 'Consulta' : q.kind === 'ORDER' ? 'Compra en la tienda' : 'Presupuesto'} · {timeAgo(q.createdAt)}</span>
           </span>
         }
       />
@@ -124,7 +125,7 @@ export default function QuoteDetailPage() {
               })}
             </ol>
             <div className="mt-4 flex flex-wrap items-end gap-3 border-t border-black/8 pt-4">
-              <Field label="Precio presupuestado" className="w-48">
+              <Field label={q.kind === 'ORDER' ? 'Total confirmado' : 'Precio presupuestado'} className="w-48">
                 <MoneyInput value={price} onChange={setPrice} placeholder="0" />
               </Field>
               <Btn onClick={() => update.mutate({ quotedPrice: price, ...(price && ['NEW', 'CONTACTED'].includes(q.status) ? { status: 'QUOTED' as const } : {}) })} disabled={update.isPending || price === q.quotedPrice}>
@@ -142,7 +143,39 @@ export default function QuoteDetailPage() {
             </div>
           </Card>
 
-          <Card title={q.kind === 'CONTACT' ? 'Consulta' : 'Lo que pidió'}>
+          {q.kind === 'ORDER' && q.items.length > 0 && (
+            <Card title={`Productos (${q.items.reduce((n, it) => n + it.quantity, 0)} u.)`}>
+              <ul className="divide-y divide-black/8">
+                {q.items.map((it) => (
+                  <li key={it.id} className="flex items-baseline gap-3 py-2.5">
+                    <span className="tabular w-10 shrink-0 font-bold">{it.quantity}×</span>
+                    <span className="min-w-0 flex-1">
+                      {it.product?.active ? (
+                        <a href={`/tienda/${it.product.slug}`} target="_blank" rel="noopener noreferrer" className="font-semibold underline-offset-4 hover:underline">
+                          {it.name}
+                        </a>
+                      ) : (
+                        <span className="font-semibold">{it.name}</span>
+                      )}
+                      {it.sku && <span className="tabular ml-2 text-xs text-slate">{it.sku}</span>}
+                    </span>
+                    <span className="tabular shrink-0 text-right text-sm">
+                      {it.subtotal != null ? <span className="font-bold">{money(it.subtotal)}</span> : <span className="text-slate">a consultar</span>}
+                      {it.unitPrice != null && it.quantity > 1 && <span className="block text-xs text-slate">{money(it.unitPrice)} c/u</span>}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              {q.estimate ? (
+                <p className="mt-3 flex items-baseline justify-between border-t border-black/10 pt-3">
+                  <span className="text-sm text-slate">Total con precios de la web</span>
+                  <span className="tabular text-lg font-extrabold">{money(q.estimate)}</span>
+                </p>
+              ) : null}
+            </Card>
+          )}
+
+          <Card title={q.kind === 'CONTACT' ? 'Consulta' : q.kind === 'ORDER' ? 'Datos del pedido' : 'Lo que pidió'}>
             {facts.length > 0 && (
               <dl className="grid grid-cols-2 gap-x-6 gap-y-4 sm:grid-cols-3">
                 {facts.map(([k, v]) => (

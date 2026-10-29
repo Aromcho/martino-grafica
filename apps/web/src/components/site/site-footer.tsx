@@ -99,6 +99,9 @@ export function SiteFooter({ categories }: { categories: Category[] }) {
             © {year} Martino Gráfica. Diseño, impresión y colocación en {info?.city ?? 'Villa Gesell'}.
           </p>
           <nav className="flex gap-4" aria-label="Legales">
+            <Link href="/tienda" className="hover:text-white">
+              Tienda
+            </Link>
             <Link href="/servicios" className="hover:text-white">
               Servicios
             </Link>

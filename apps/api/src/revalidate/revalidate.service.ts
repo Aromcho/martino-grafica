@@ -2,8 +2,8 @@ import { Injectable, Logger } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 
 /** Etiquetas de caché del sitio público (Next.js revalidateTag) */
-export type PublicTag = 'business' | 'catalog' | 'works' | 'content';
-export const ALL_TAGS: PublicTag[] = ['business', 'catalog', 'works', 'content'];
+export type PublicTag = 'business' | 'catalog' | 'works' | 'content' | 'store';
+export const ALL_TAGS: PublicTag[] = ['business', 'catalog', 'works', 'content', 'store'];
 
 /**
  * Avisa al sitio Next.js que hubo cambios para que refresque su caché al instante.

@@ -17,6 +17,8 @@ import {
   Menu,
   Package,
   Settings,
+  ShoppingBag,
+  Tags,
   SquareStack,
   Users,
   type LucideIcon,
@@ -36,6 +38,13 @@ const NAV: { title?: string; items: Item[] }[] = [
     items: [
       { href: '/admin', label: 'Inicio', icon: LayoutDashboard },
       { href: '/admin/pedidos', label: 'Pedidos', icon: ClipboardList, badge: 'quotes' },
+    ],
+  },
+  {
+    title: 'Tienda',
+    items: [
+      { href: '/admin/tienda', label: 'Productos', icon: ShoppingBag },
+      { href: '/admin/categorias-tienda', label: 'Categorías', icon: Tags },
     ],
   },
   {
@@ -62,8 +71,8 @@ const NAV: { title?: string; items: Item[] }[] = [
 const TABS: Item[] = [
   { href: '/admin', label: 'Inicio', icon: LayoutDashboard },
   { href: '/admin/pedidos', label: 'Pedidos', icon: ClipboardList, badge: 'quotes' },
+  { href: '/admin/tienda', label: 'Tienda', icon: ShoppingBag },
   { href: '/admin/trabajos', label: 'Trabajos', icon: SquareStack },
-  { href: '/admin/servicios', label: 'Servicios', icon: Package },
 ];
 
 const isActive = (pathname: string, href: string) => (href === '/admin' ? pathname === '/admin' : pathname.startsWith(href));

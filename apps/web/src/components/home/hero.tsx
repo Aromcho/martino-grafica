@@ -42,7 +42,7 @@ function HeroVideo({ progress }: { progress: ReturnType<typeof useScroll>['scrol
   );
 }
 
-export function Hero({ worksCount }: { worksCount: number }) {
+export function Hero({ productsCount }: { productsCount: number }) {
   const ref = useRef<HTMLElement>(null);
   const reduce = useReducedMotion();
   const { info } = useBusiness();
@@ -72,20 +72,20 @@ export function Hero({ worksCount }: { worksCount: number }) {
 
         <div className="grid gap-8 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)] lg:items-end">
           <div>
-            <h1 id="hero-title" className="display t-lg max-w-[14ch] lg:text-[clamp(3.5rem,6vw,5.25rem)]">
-              Ploteos, carteles y estampados en {info?.city ?? 'Villa Gesell'}
+            <h1 id="hero-title" className="display t-lg max-w-[15ch] lg:text-[clamp(3.5rem,6vw,5.25rem)]">
+              Vinilos, lonas e insumos de gráfica
             </h1>
           </div>
           <div className="space-y-6">
             <p className="lede text-white/80">
-              Del diseño a la colocación, en el mismo taller: vehículos y motos, carteles luminosos, vidrieras, calcos, remeras y gorras.
+              Comprá online lo que usamos en el taller: vinilos de corte e impresión, termofilm, lonas, placas, sublimación y herramientas. Retirás en {info?.city ?? 'Villa Gesell'} o coordinamos el envío.
             </p>
             <div className="flex flex-wrap gap-3">
-              <Link href="/cotizar" className={buttonClass('lime', 'lg')}>
-                Pedir presupuesto
+              <Link href="/tienda" className={buttonClass('lime', 'lg')}>
+                {productsCount > 0 ? `Ver ${productsCount.toLocaleString('es-AR')} productos` : 'Ir a la tienda'}
               </Link>
-              <Link href="/trabajos" className={buttonClass('outline', 'lg', 'text-white')}>
-                Ver {worksCount > 0 ? `${worksCount} trabajos` : 'trabajos'}
+              <Link href="/cotizar" className={buttonClass('outline', 'lg', 'text-white')}>
+                Pedir presupuesto
               </Link>
             </div>
             <div className="flex flex-wrap items-center gap-3 text-sm text-smoke">

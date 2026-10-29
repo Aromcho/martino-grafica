@@ -45,3 +45,13 @@ Web de Martino Gráfica hecha con contenido 100 % real del Instagram @martino.gr
 5. **Dominio** de producción (para el deploy y el SEO).
 6. **Logo original en vector**: se vectorizó desde la foto de perfil. Si hay un archivo original (AI, PDF, SVG), conviene reemplazarlo.
 7. **Promo «20 % off»** de mayo de 2026: quedó cargada como banner apagado, para reutilizar.
+
+## Tienda (octubre 2026)
+
+El foco de la web pasó a la venta: portada, menú y barra del celular llevan a la tienda.
+
+- **Catálogo**: insumos y productos de gráfica (vinilos, termofilm, lonas, placas, impresión y laminado, sublimación, armado de carteles, herramientas y equipos). Se importa del catálogo de referencia del proveedor con nombre, marca, código, foto, precio de lista y stock; no se traen objetos para personalizar (tazas, cuadernos, mouse pads).
+- **Web**: `/tienda` (categorías, tipos, búsqueda por palabras, orden, sólo con stock), `/tienda/<producto>`, carrito lateral y `/carrito`. El pedido se guarda en el panel (Pedidos → «Compra») y se abre WhatsApp con el detalle y el total.
+- **Panel**: Tienda → Productos (precio en el renglón, destacados, ocultar, stock, acciones en bloque, margen % sobre la lista del proveedor, actualizar desde el proveedor) y Categorías (orden, nombre, bajada, foto).
+- **Al arrancar**, la API aplica migraciones pendientes y, si la tienda nunca se importó, trae el catálogo en segundo plano (`STORE_AUTO_IMPORT=false` lo apaga).
+- **Pendiente del taller**: los precios cargados son los de lista del proveedor. Hay que aplicar el margen (Panel → Tienda → Margen sobre la lista) o ajustar a mano, y revisar qué productos se quieren vender.

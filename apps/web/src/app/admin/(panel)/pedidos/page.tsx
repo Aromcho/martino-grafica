@@ -80,6 +80,7 @@ function QuotesList() {
                       <span className="truncate font-bold">{x.customerName}</span>
                       <StatusBadge status={x.status} />
                       {x.kind === 'CONTACT' && <span className="text-xs font-semibold text-slate">Consulta</span>}
+                      {x.kind === 'ORDER' && <span className="rounded bg-lime px-1.5 py-0.5 text-xs font-bold text-ink">Compra{x.estimate ? ` · ${money(x.estimate)}` : ''}</span>}
                     </span>
                     <span className="mt-1 block truncate text-sm text-ink/80">
                       {x.productName ?? (x.kind === 'CONTACT' ? (x.message ?? '').slice(0, 80) : 'Sin servicio elegido')}

@@ -6,11 +6,13 @@ import { motion, useMotionValueEvent, useScroll } from 'motion/react';
 import { Search } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { LogoMark } from '@/components/brand/plotter-logo';
+import { CartButton } from '@/components/store/cart';
 import { cn } from '@/lib/cn';
 import { StatusPill } from './status-pill';
 import { useUI } from './ui-provider';
 
 export const NAV = [
+  { href: '/tienda', label: 'Tienda' },
   { href: '/trabajos', label: 'Trabajos' },
   { href: '/servicios', label: 'Servicios' },
   { href: '/historias', label: 'Historias' },
@@ -65,8 +67,9 @@ export function SiteHeader() {
         <button type="button" onClick={openSearch} className="grid size-10 place-items-center rounded-md text-white/85 hover:bg-white/10 hover:text-white" aria-label="Buscar (Ctrl+K)">
           <Search className="size-5" />
         </button>
-        <Link href="/cotizar" className="hidden h-10 items-center rounded-md bg-lime px-4 text-sm font-bold text-ink transition-colors hover:bg-white sm:inline-flex">
-          Pedir presupuesto
+        <CartButton />
+        <Link href="/tienda" className="hidden h-10 items-center rounded-md bg-lime px-4 text-sm font-bold text-ink transition-colors hover:bg-white sm:inline-flex">
+          Comprar
         </Link>
       </div>
     </motion.header>

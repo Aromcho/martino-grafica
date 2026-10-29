@@ -224,6 +224,7 @@ export interface PublicBusiness {
 
 export interface SearchResults {
   q: string;
+  store?: StoreCard[];
   products: (Pick<Product, 'id' | 'slug' | 'name' | 'summary' | 'priceFrom' | 'cover'> & { category: CategoryRef })[];
   works: { id: string; slug: string; title: string; client: string | null; location: string | null; doneAt: string | null; cover: Media | null; category: { slug: string; name: string } }[];
   categories: { id: string; slug: string; name: string; tagline: string | null; cover: Media | null }[];
@@ -247,7 +248,7 @@ export type DeliveryMethod = 'PICKUP' | 'INSTALL' | 'SHIPPING';
 export interface Quote {
   id: string;
   code: string;
-  kind: 'QUOTE' | 'CONTACT';
+  kind: 'QUOTE' | 'CONTACT' | 'ORDER';
   status: QuoteStatus;
   customerName: string;
   phone: string;
@@ -276,7 +277,19 @@ export interface Quote {
   fileCount?: number;
 }
 
+export interface OrderItem {
+  id: string;
+  productId: string | null;
+  name: string;
+  sku: string | null;
+  unitPrice: number | null;
+  quantity: number;
+  subtotal: number | null;
+  product: { id: string; slug: string; active: boolean } | null;
+}
+
 export interface QuoteDetail extends Quote {
+  items: OrderItem[];
   files: { id: string; originalName: string; mime: string | null; sizeBytes: number | null; createdAt: string }[];
   events: { id: string; type: string; fromStatus: QuoteStatus | null; toStatus: QuoteStatus | null; note: string | null; createdAt: string; user: { name: string } | null }[];
   product: { id: string; slug: string; name: string } | null;
@@ -309,4 +322,84 @@ export interface AdminStats {
   topRequested: { name: string; n: number }[];
   hours: { configured: boolean; isOpen: boolean; closesAt: string | null; next: HoursStatus['next'] };
   activity: ActivityItem[];
+}
+
+// ---------------------------------------------------------------- tienda
+export interface StoreCategory {
+  id: string;
+  slug: string;
+  name: string;
+  tagline: string | null;
+  description: string | null;
+  cover: Media | null;
+  coverId: string | null;
+  sortOrder: number;
+  active: boolean;
+  productCount: number;
+}
+
+export interface StoreCard {
+  id: string;
+  slug: string;
+  name: string;
+  brand: string | null;
+  subcategory: string | null;
+  price: number | null;
+  unit: string;
+  inStock: boolean;
+  featured: boolean;
+  image: Media | null;
+  category: { id: string; slug: string; name: string };
+}
+
+export interface StoreProduct extends StoreCard {
+  categoryId: string;
+  sku: string | null;
+  description: string | null;
+  active: boolean;
+  views: number;
+  ordered: number;
+  updatedAt: string;
+}
+
+export interface StoreProductDetail extends StoreProduct {
+  related: StoreCard[];
+}
+
+export interface StoreAdminProduct extends StoreProduct {
+  referencePrice: number | null;
+  source: string;
+  sourceId: string | null;
+  syncedAt: string | null;
+  imageId: string | null;
+  sortOrder: number;
+}
+
+export interface StoreList<T = StoreCard> extends Paginated<T> {
+  subcategories: { name: string; n: number }[];
+  category: { id: string; slug: string; name: string; tagline: string | null; description: string | null } | null;
+}
+
+export type StoreSort = 'relevancia' | 'precio-asc' | 'precio-desc' | 'nombre' | 'nuevos';
+
+export interface StoreImportStatus {
+  running: boolean;
+  phase: 'idle' | 'catalog' | 'products' | 'done' | 'error';
+  startedAt: string | null;
+  finishedAt: string | null;
+  found: number;
+  done: number;
+  created: number;
+  updated: number;
+  failed: number;
+  error: string | null;
+}
+
+export interface StoreSummary {
+  total: number;
+  noPrice: number;
+  custom: number;
+  noStock: number;
+  hidden: number;
+  import: { last: { ok?: boolean; at?: string; found?: number; created?: number; updated?: number; failed?: number; error?: string | null } | null; products: number; status: StoreImportStatus };
 }

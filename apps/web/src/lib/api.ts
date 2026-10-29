@@ -2,7 +2,7 @@
  * Lectura de datos desde componentes de servidor.
  * Pega directo a la API (NestJS) con caché de datos de Next y etiquetas para revalidar al instante.
  */
-import type { Banner, Category, Highlight, Paginated, Product, ProductDetail, PublicBusiness, SearchResults, WorkCard, WorkDetail, WorkFacets } from './types';
+import type { Banner, Category, Highlight, Paginated, Product, ProductDetail, PublicBusiness, SearchResults, StoreCategory, StoreList, StoreProductDetail, WorkCard, WorkDetail, WorkFacets } from './types';
 
 const API_URL = (process.env.API_URL ?? 'http://localhost:4000').replace(/\/$/, '');
 
@@ -15,7 +15,7 @@ export class ApiError extends Error {
   }
 }
 
-type Tag = 'business' | 'catalog' | 'works' | 'content';
+type Tag = 'business' | 'catalog' | 'works' | 'content' | 'store';
 
 export async function apiGet<T>(path: string, tags: Tag[], revalidate = 3600): Promise<T> {
   const res = await fetch(`${API_URL}/api${path}`, { next: { revalidate, tags }, headers: { accept: 'application/json' } });
@@ -82,10 +82,16 @@ export const getWork = (slug: string) => orNull(apiGet<WorkDetail>(`/works/${enc
 export const getHighlights = () => apiSafe<Highlight[]>('/highlights', [], ['content']);
 export const getBanners = (placement?: string) => apiSafe<Banner[]>(`/banners${qs({ placement })}`, [], ['content'], 600);
 export const search = (q: string) =>
-  apiSafe<SearchResults>(`/search${qs({ q })}`, { q, products: [], works: [], categories: [] }, ['catalog', 'works'], 300);
+  apiSafe<SearchResults>(`/search${qs({ q })}`, { q, store: [], products: [], works: [], categories: [] }, ['catalog', 'works', 'store'], 300);
+
+// ---------------------------------------------------------------- tienda
+export const getStoreCategories = () => apiSafe<StoreCategory[]>('/store/categories', [], ['store']);
+export const getStoreProducts = (p: { category?: string; sub?: string; q?: string; sort?: string; page?: number; pageSize?: number; featured?: boolean; stock?: string } = {}) =>
+  apiSafe<StoreList>(`/store/products${qs(p)}`, { items: [], total: 0, page: 1, pageSize: 24, pages: 1, subcategories: [], category: null }, ['store'], 900);
+export const getStoreProduct = (slug: string) => orNull(apiGet<StoreProductDetail>(`/store/products/${encodeURIComponent(slug)}?view=0`, ['store']));
 export const getSitemap = () =>
-  apiSafe<{ products: { slug: string; updatedAt: string }[]; works: { slug: string; updatedAt: string }[]; categories: { slug: string; updatedAt: string }[] }>(
+  apiSafe<{ products: { slug: string; updatedAt: string }[]; works: { slug: string; updatedAt: string }[]; categories: { slug: string; updatedAt: string }[]; store?: { slug: string; updatedAt: string }[] }>(
     '/sitemap',
-    { products: [], works: [], categories: [] },
-    ['catalog', 'works'],
+    { products: [], works: [], categories: [], store: [] },
+    ['catalog', 'works', 'store'],
   );

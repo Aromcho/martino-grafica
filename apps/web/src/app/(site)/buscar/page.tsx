@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ProductCard } from '@/components/catalog/product-card';
+import { ProductTile } from '@/components/store/product-tile';
 import { Img } from '@/components/ui/img';
 import { PageHeader } from '@/components/ui/page-header';
 import { SearchForm } from '@/components/site/search-form';
@@ -17,13 +18,33 @@ export async function generateMetadata({ searchParams }: { searchParams: SP }): 
 export default async function SearchPage({ searchParams }: { searchParams: SP }) {
   const q = ((await searchParams).q ?? '').trim().slice(0, 80);
   const r = q.length > 1 ? await search(q) : null;
-  const total = r ? r.products.length + r.works.length + r.categories.length : 0;
+  const store = r?.store ?? [];
+  const total = r ? store.length + r.products.length + r.works.length + r.categories.length : 0;
   return (
     <>
-      <PageHeader title="Buscar" lede={r ? (total ? `${plural(total, 'resultado', 'resultados')} para «${q}».` : `No encontramos nada para «${q}».`) : 'Buscá trabajos, servicios, materiales o localidades.'}>
+      <PageHeader title="Buscar" lede={r ? (total ? `${plural(total, 'resultado', 'resultados')} para «${q}».` : `No encontramos nada para «${q}».`) : 'Buscá productos de la tienda, trabajos, servicios o materiales.'}>
         <SearchForm initial={q} />
       </PageHeader>
       <div className="container-x space-y-16 pb-24">
+        {store.length > 0 && (
+          <section aria-labelledby="r-store">
+            <div className="mb-6 flex flex-wrap items-end justify-between gap-3">
+              <h2 id="r-store" className="text-lg font-bold">
+                En la tienda
+              </h2>
+              <Link href={`/tienda?q=${encodeURIComponent(q)}`} className="text-sm font-bold text-lime underline-offset-4 hover:underline">
+                Ver todos en la tienda
+              </Link>
+            </div>
+            <ul className="grid grid-cols-2 gap-x-4 gap-y-9 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4">
+              {store.map((p) => (
+                <li key={p.id} className="flex">
+                  <ProductTile product={p} className="w-full" />
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
         {r && r.categories.length > 0 && (
           <section aria-labelledby="r-cat">
             <h2 id="r-cat" className="mb-5 text-lg font-bold">

@@ -32,7 +32,7 @@ export const quoteStatusEnum = pgEnum('quote_status', [
   'DELIVERED',
   'CANCELLED',
 ]);
-export const quoteKindEnum = pgEnum('quote_kind', ['QUOTE', 'CONTACT']);
+export const quoteKindEnum = pgEnum('quote_kind', ['QUOTE', 'CONTACT', 'ORDER']);
 export const deliveryEnum = pgEnum('delivery_method', ['PICKUP', 'INSTALL', 'SHIPPING']);
 export const quoteModeEnum = pgEnum('quote_mode', ['AREA', 'UNITS', 'CUSTOM']);
 export const bannerPlacementEnum = pgEnum('banner_placement', ['HOME_HERO', 'HOME_STRIP', 'SERVICES']);
@@ -172,6 +172,78 @@ export const productImages = pgTable(
     sortOrder: integer('sort_order').notNull().default(0),
   },
   (t) => [uniqueIndex('product_images_uq').on(t.productId, t.mediaId)],
+);
+
+// ---------------------------------------------------------------- tienda (insumos y productos para vender)
+export const storeCategories = pgTable('store_categories', {
+  id: id(),
+  slug: text('slug').notNull().unique(),
+  name: text('name').notNull(),
+  tagline: text('tagline'),
+  description: text('description'),
+  coverId: uuid('cover_id').references(() => media.id, { onDelete: 'set null' }),
+  sortOrder: integer('sort_order').notNull().default(0),
+  active: boolean('active').notNull().default(true),
+  createdAt: createdAt(),
+  updatedAt: updatedAt(),
+});
+
+export const storeProducts = pgTable(
+  'store_products',
+  {
+    id: id(),
+    slug: text('slug').notNull().unique(),
+    name: text('name').notNull(),
+    categoryId: uuid('category_id')
+      .notNull()
+      .references(() => storeCategories.id, { onDelete: 'restrict' }),
+    /** Sub-rubro dentro de la categoría: "Vinilos de corte", "Papel para sublimar" */
+    subcategory: text('subcategory'),
+    brand: text('brand'),
+    sku: text('sku'),
+    description: text('description'),
+    /** Precio final en pesos. Null = "Consultar precio" */
+    price: integer('price'),
+    /** Último precio de lista del proveedor (para recalcular con un % y detectar cambios) */
+    referencePrice: integer('reference_price'),
+    unit: text('unit').notNull().default('unidad'),
+    inStock: boolean('in_stock').notNull().default(true),
+    featured: boolean('featured').notNull().default(false),
+    active: boolean('active').notNull().default(true),
+    sortOrder: integer('sort_order').notNull().default(0),
+    views: integer('views').notNull().default(0),
+    /** Unidades pedidas desde la web (para "más pedidos") */
+    ordered: integer('ordered').notNull().default(0),
+    imageId: uuid('image_id').references(() => media.id, { onDelete: 'set null' }),
+    /** Origen del catálogo: "proveedor" (importado) o "manual" */
+    source: text('source').notNull().default('manual'),
+    /** Id del producto en el catálogo del proveedor (para actualizar precios sin duplicar) */
+    sourceId: text('source_id').unique(),
+    syncedAt: timestamp('synced_at', { withTimezone: true }),
+    createdAt: createdAt(),
+    updatedAt: updatedAt(),
+  },
+  (t) => [index('store_products_category_idx').on(t.categoryId), index('store_products_active_idx').on(t.active, t.sortOrder)],
+);
+
+/** Renglones de un pedido de compra (quotes.kind = ORDER) */
+export const orderItems = pgTable(
+  'order_items',
+  {
+    id: id(),
+    quoteId: uuid('quote_id')
+      .notNull()
+      .references(() => quotes.id, { onDelete: 'cascade' }),
+    productId: uuid('product_id').references(() => storeProducts.id, { onDelete: 'set null' }),
+    /** Nombre, código y precio al momento del pedido */
+    name: text('name').notNull(),
+    sku: text('sku'),
+    unitPrice: integer('unit_price'),
+    quantity: integer('quantity').notNull().default(1),
+    subtotal: integer('subtotal'),
+    sortOrder: integer('sort_order').notNull().default(0),
+  },
+  (t) => [index('order_items_quote_idx').on(t.quoteId)],
 );
 
 // ---------------------------------------------------------------- portfolio
@@ -432,6 +504,22 @@ export const quotesRelations = relations(quotes, ({ one, many }) => ({
   category: one(categories, { fields: [quotes.categoryId], references: [categories.id] }),
   files: many(quoteFiles),
   events: many(quoteEvents),
+  items: many(orderItems),
+}));
+
+export const storeCategoriesRelations = relations(storeCategories, ({ one, many }) => ({
+  cover: one(media, { fields: [storeCategories.coverId], references: [media.id] }),
+  products: many(storeProducts),
+}));
+
+export const storeProductsRelations = relations(storeProducts, ({ one }) => ({
+  category: one(storeCategories, { fields: [storeProducts.categoryId], references: [storeCategories.id] }),
+  image: one(media, { fields: [storeProducts.imageId], references: [media.id] }),
+}));
+
+export const orderItemsRelations = relations(orderItems, ({ one }) => ({
+  quote: one(quotes, { fields: [orderItems.quoteId], references: [quotes.id] }),
+  product: one(storeProducts, { fields: [orderItems.productId], references: [storeProducts.id] }),
 }));
 
 export const quoteFilesRelations = relations(quoteFiles, ({ one }) => ({
