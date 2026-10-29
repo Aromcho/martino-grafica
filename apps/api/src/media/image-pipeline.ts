@@ -3,6 +3,10 @@ import { promises as fs } from 'fs';
 import { join, posix } from 'path';
 import sharp from 'sharp';
 
+// Sin caché de libvips y con pocos hilos: el VPS es compartido y PM2 reinicia la API a los 400 MB
+sharp.cache(false);
+sharp.concurrency(2);
+
 export const IMAGE_SIZES = { sm: 480, md: 960, lg: 1600 } as const;
 export type VariantKey = keyof typeof IMAGE_SIZES;
 

@@ -274,7 +274,8 @@ export class StoreImportService implements OnApplicationBootstrap {
           }
         }
       };
-      await Promise.all(Array.from({ length: 4 }, worker));
+      // Dos a la vez: con más, el procesado de fotos pasa el límite de memoria de PM2
+      await Promise.all(Array.from({ length: 2 }, worker));
 
       this.state.phase = 'done';
       this.state.finishedAt = new Date().toISOString();
