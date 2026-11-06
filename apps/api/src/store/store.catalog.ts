@@ -1,6 +1,6 @@
 /**
- * Categorías de la tienda y de dónde sale cada una en el catálogo del proveedor.
- * Sólo insumos y productos de gráfica (vinilos, lonas, placas, sublimación, impresión, armado de carteles):
+ * Categorías de la tienda (las columnas del taller) y de dónde salen los insumos en el catálogo del proveedor.
+ * Lo del proveedor va todo a «Insumos», agrupado por tipo (vinilos, lonas, placas…);
  * quedan afuera los objetos para personalizar tipo tazas, cuadernos o mouse pads.
  */
 export interface StoreCategorySeed {
@@ -9,21 +9,34 @@ export interface StoreCategorySeed {
   tagline: string;
 }
 
+export const INSUMOS_SLUG = 'insumos';
+
 export const STORE_CATEGORIES: StoreCategorySeed[] = [
-  { slug: 'vinilos', name: 'Vinilos', tagline: 'De corte, impresión, espejados, microperforados y más.' },
-  { slug: 'termofilm', name: 'Termofilm', tagline: 'Vinilo textil para estampar remeras, buzos y gorras.' },
-  { slug: 'lonas', name: 'Lonas y banners', tagline: 'Lonas, mesh y portabanners para eventos y vidrieras.' },
-  { slug: 'placas', name: 'Placas y soportes', tagline: 'PVC espumado, foamboard, alto impacto, polyfan y PET.' },
-  { slug: 'impresion', name: 'Impresión y laminado', tagline: 'Papel fotográfico, tintas, transfer, laminados y foil.' },
-  { slug: 'sublimacion', name: 'Sublimación', tagline: 'Papel, tintas, cinta térmica y telas teflonadas.' },
-  { slug: 'armado', name: 'Armado de carteles', tagline: 'Perfiles, LED, cables, imanes, adhesivos y cintas.' },
-  { slug: 'herramientas', name: 'Herramientas', tagline: 'Espátulas, cutters, cuchillas y posicionadores.' },
-  { slug: 'equipos', name: 'Equipos', tagline: 'Planchas, impresoras, laminadoras y accesorios.' },
+  { slug: 'ploteos', name: 'Ploteos', tagline: 'Calcos para vehículos, imanes para remisería y cubre patentes con tu logo.' },
+  { slug: 'carteleria', name: 'Cartelería', tagline: 'Banners, roll up y carteles para exterior e interior, luminosos y de neón LED.' },
+  { slug: 'estampados', name: 'Estampados', tagline: 'Remeras y gorras estampadas.' },
+  { slug: 'calcos', name: 'Calcos', tagline: 'Stickers comunes, laminados, tornasolados y DTF UV.' },
+  { slug: 'senaleticas', name: 'Señaléticas', tagline: 'Señalética y placas de acrílico.' },
+  { slug: INSUMOS_SLUG, name: 'Insumos', tagline: 'Vinilos, termofilm, lonas, placas, impresión, sublimación, herramientas y equipos.' },
 ];
+
+/** Tipo de insumo (sub-rubro dentro de «Insumos») según el grupo del proveedor */
+export const INSUMOS_GROUPS: Record<string, string> = {
+  vinilos: 'Vinilos',
+  termofilm: 'Termofilm',
+  lonas: 'Lonas y banners',
+  placas: 'Placas y soportes',
+  impresion: 'Impresión y laminado',
+  sublimacion: 'Sublimación',
+  armado: 'Armado de carteles',
+  herramientas: 'Herramientas',
+  equipos: 'Equipos',
+};
 
 export interface SupplierSource {
   /** Ruta de la categoría en el sitio del proveedor (/productos/<path>) */
   path: string;
+  /** Grupo de insumos (clave de INSUMOS_GROUPS) */
   category: string;
   subcategory: string;
 }

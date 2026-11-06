@@ -73,12 +73,12 @@ export function Hero({ productsCount }: { productsCount: number }) {
         <div className="grid gap-8 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)] lg:items-end">
           <div>
             <h1 id="hero-title" className="display t-lg max-w-[15ch] lg:text-[clamp(3.5rem,6vw,5.25rem)]">
-              Vinilos, lonas e insumos de gráfica
+              Ploteos, carteles, calcos y estampados
             </h1>
           </div>
           <div className="space-y-6">
             <p className="lede text-white/80">
-              Comprá online lo que usamos en el taller: vinilos de corte e impresión, termofilm, lonas, placas, sublimación y herramientas. Retirás en {info?.city ?? 'Villa Gesell'} o coordinamos el envío.
+              Pedí online lo que hacemos en el taller: ploteos, cartelería, estampados, calcos y señalética, más los insumos de gráfica que usamos. Retirás en {info?.city ?? 'Villa Gesell'} o coordinamos el envío.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link href="/tienda" className={buttonClass('lime', 'lg')}>

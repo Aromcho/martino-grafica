@@ -107,7 +107,7 @@ export default async function StoreProductPage({ params }: { params: Params }) {
               ) : (
                 <p className="display t-sm">Precio a consultar</p>
               )}
-              <p className="pb-1.5 text-sm text-smoke">{p.unit !== 'unidad' ? `Por ${p.unit}` : 'Precio final por unidad'}</p>
+              {p.price != null && <p className="pb-1.5 text-sm text-smoke">{p.unit !== 'unidad' ? `Por ${p.unit}` : 'Precio final por unidad'}</p>}
               <p className={`ml-auto inline-flex items-center gap-1.5 pb-1.5 text-sm font-bold ${p.inStock ? 'text-ok' : 'text-warn'}`}>
                 {p.inStock ? <Check className="size-4" strokeWidth={3} /> : <Clock className="size-4" />}
                 {p.inStock ? 'Disponible' : 'Sin stock por ahora'}

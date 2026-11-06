@@ -122,7 +122,7 @@ export function Checkout() {
         <div className="liner rounded-md px-6 py-16 text-center">
           <ShoppingBag className="mx-auto size-10 text-slate" />
           <p className="display t-sm mt-4">Tu carrito está vacío</p>
-          <p className="mx-auto mt-3 max-w-md text-slate">Recorré la tienda y sumá lo que necesites: vinilos, lonas, placas, tintas y más.</p>
+          <p className="mx-auto mt-3 max-w-md text-slate">Recorré la tienda y sumá lo que necesites: carteles, calcos, estampados, insumos y más.</p>
           <Link href="/tienda" className={buttonClass('ink', 'md', 'mt-6')}>
             Ir a la tienda
           </Link>

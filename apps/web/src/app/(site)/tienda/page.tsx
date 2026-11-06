@@ -11,12 +11,12 @@ export async function generateMetadata({ searchParams }: { searchParams: SP }): 
   const { categoria } = await searchParams;
   const cats = await getStoreCategories();
   const cat = cats.find((c) => c.slug === categoria);
-  const title = cat ? `${cat.name} · Tienda` : 'Tienda: vinilos, lonas e insumos de gráfica';
+  const title = cat ? `${cat.name} · Tienda` : 'Tienda: ploteos, cartelería, calcos, estampados e insumos';
   return {
     title,
     description: cat
       ? `${cat.name}: ${cat.tagline ?? ''} Comprá online en Martino Gráfica y coordiná retiro o envío por WhatsApp.`
-      : 'Vinilos de corte e impresión, termofilm, lonas, placas, sublimación, tintas y herramientas. Armá tu pedido online y coordinamos por WhatsApp. Villa Gesell.',
+      : 'Ploteos, cartelería, estampados, calcos, señalética e insumos de gráfica. Armá tu pedido online y coordinamos por WhatsApp. Villa Gesell.',
     alternates: { canonical: cat ? `/tienda?categoria=${cat.slug}` : '/tienda' },
   };
 }
@@ -39,7 +39,7 @@ export default async function StorePage({ searchParams }: { searchParams: SP }) 
     <>
       <PageHeader
         title="Tienda"
-        lede={`${total > 0 ? `${total.toLocaleString('es-AR')} productos` : 'Insumos'} para gráfica, cartelería y estampado: vinilos, termofilm, lonas, placas, sublimación y herramientas. Armá el pedido acá y lo confirmamos por WhatsApp.`}
+        lede={`${total > 0 ? `${total.toLocaleString('es-AR')} productos: ` : ''}ploteos, cartelería, estampados, calcos, señalética e insumos de gráfica. Armá el pedido acá y lo confirmamos por WhatsApp.`}
       />
       <StoreExplorer categories={categories} initial={initial} initialFilters={filters} />
     </>

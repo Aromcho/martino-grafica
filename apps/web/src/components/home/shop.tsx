@@ -17,7 +17,7 @@ export function ShopCategories({ categories }: { categories: StoreCategory[] }) 
           <h2 id="tienda-title" className="display t-md">
             Comprá por categoría
           </h2>
-          <p className="lede mt-4 text-white/70">Lo mismo que usamos en el taller, para que lo lleves: {total.toLocaleString('es-AR')} productos con precio publicado.</p>
+          <p className="lede mt-4 text-white/70">Ploteos, cartelería, estampados, calcos, señalética e insumos: {total.toLocaleString('es-AR')} productos.</p>
         </div>
         <Link href="/tienda" className={buttonClass('outline', 'md', 'text-white')}>
           Ver toda la tienda
@@ -87,7 +87,7 @@ export function HowToBuy() {
 }
 
 /** Los más elegidos de la tienda: carrusel en el celular, grilla en escritorio */
-export function FeaturedProducts({ products, title = 'Los más elegidos' }: { products: StoreCard[]; title?: string }) {
+export function FeaturedProducts({ products, title = 'Lo que hacemos en el taller' }: { products: StoreCard[]; title?: string }) {
   if (!products.length) return null;
   return (
     <section className="py-20 lg:py-28" aria-labelledby="destacados-title">
@@ -96,7 +96,7 @@ export function FeaturedProducts({ products, title = 'Los más elegidos' }: { pr
           <h2 id="destacados-title" className="display t-md">
             {title}
           </h2>
-          <p className="mt-3 text-smoke">Precios publicados en la web. Agregás al carrito y lo confirmamos por WhatsApp.</p>
+          <p className="mt-3 text-smoke">Agregás al carrito y te confirmamos precio final y tiempos por WhatsApp.</p>
         </div>
         <Link href="/tienda" className="inline-flex items-center gap-2 font-bold text-lime underline-offset-4 hover:underline">
           Ir a la tienda <ArrowRight className="size-4" />

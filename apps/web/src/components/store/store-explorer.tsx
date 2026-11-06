@@ -123,7 +123,7 @@ export function StoreExplorer({ categories, initial, initialFilters }: { categor
                 type="search"
                 value={text}
                 onChange={(e) => setText(e.target.value)}
-                placeholder={current ? `Buscar en ${current.name.toLowerCase()}` : 'Buscar: vinilo negro mate, lona, PVC…'}
+                placeholder={current ? `Buscar en ${current.name.toLowerCase()}` : 'Buscar: stickers, roll up, neón, vinilo…'}
                 className="h-full w-full bg-transparent pl-9 pr-9 text-[0.95rem] text-white outline-none placeholder:text-smoke"
                 enterKeyHint="search"
               />

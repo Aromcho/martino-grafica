@@ -1,4 +1,4 @@
-import { Injectable, Logger } from '@nestjs/common';
+import { Injectable, Logger, OnApplicationBootstrap } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 
 /** Etiquetas de caché del sitio público (Next.js revalidateTag) */
@@ -10,12 +10,17 @@ export const ALL_TAGS: PublicTag[] = ['business', 'catalog', 'works', 'content',
  * Agrupa los avisos que llegan juntos (200 ms) en un solo request.
  */
 @Injectable()
-export class RevalidateService {
+export class RevalidateService implements OnApplicationBootstrap {
   private readonly logger = new Logger('Revalidate');
   private pending = new Set<PublicTag>();
   private timer: NodeJS.Timeout | null = null;
 
   constructor(private readonly config: ConfigService) {}
+
+  /** Al arrancar (después de un deploy o una migración de datos) el sitio no tiene que seguir mostrando la caché vieja */
+  onApplicationBootstrap() {
+    setTimeout(() => this.trigger(ALL_TAGS), 5000).unref();
+  }
 
   trigger(tags: PublicTag[]) {
     tags.forEach((t) => this.pending.add(t));

@@ -7,7 +7,8 @@ import { Database, InjectDb } from '../db/db.module';
 import { media, settings, storeCategories, storeProducts } from '../db/schema';
 import { processImage } from '../media/image-pipeline';
 import { RevalidateService } from '../revalidate/revalidate.service';
-import { EXCLUDED_NAME, STORE_CATEGORIES, SUPPLIER_SOURCES } from './store.catalog';
+import { CATALOG_V2_KEY, CATEGORY_COVERS, WORKSHOP_PRODUCTS } from './store-catalog-v2';
+import { EXCLUDED_NAME, INSUMOS_GROUPS, INSUMOS_SLUG, STORE_CATEGORIES, SUPPLIER_SOURCES } from './store.catalog';
 
 export interface SupplierItem {
   sourceId: string;
@@ -109,6 +110,7 @@ export class StoreImportService implements OnApplicationBootstrap {
 
   async onApplicationBootstrap() {
     try {
+      await this.migrateCatalogV2();
       await this.ensureCategories();
       if (this.config.get('STORE_AUTO_IMPORT') === 'false') return;
       const last = await this.db.query.settings.findFirst({ where: eq(settings.key, SETTING_KEY) });
@@ -131,6 +133,90 @@ export class StoreImportService implements OnApplicationBootstrap {
     const have = new Set(existing.map((e) => e.slug));
     const missing = STORE_CATEGORIES.map((c, i) => ({ ...c, sortOrder: i })).filter((c) => !have.has(c.slug));
     if (missing.length && existing.length === 0) await this.db.insert(storeCategories).values(missing).onConflictDoNothing();
+  }
+
+  /**
+   * Una sola vez: pasa la tienda a las columnas del taller (ploteos, cartelería, estampados, calcos,
+   * señaléticas e insumos), manda todo lo del proveedor a «Insumos» con su categoría vieja como tipo
+   * y carga los productos propios con sus precios.
+   */
+  private async migrateCatalogV2() {
+    const done = await this.db.query.settings.findFirst({ where: eq(settings.key, CATALOG_V2_KEY) });
+    if (done) return;
+
+    // Fotos antes de la transacción: las de trabajos ya están en Medios, las generadas se bajan una vez
+    const mediaExists = async (id: string) => !!(await this.db.query.media.findFirst({ where: eq(media.id, id), columns: { id: true } }));
+    const imageIds = new Map<string, string | null>();
+    for (const p of WORKSHOP_PRODUCTS) {
+      if (p.mediaId) imageIds.set(p.slug, (await mediaExists(p.mediaId)) ? p.mediaId : null);
+      else if (p.imageUrl) imageIds.set(p.slug, await this.imageFromUrl(p.imageUrl, p.name));
+    }
+    const covers = new Map<string, string>();
+    for (const [slug, id] of Object.entries(CATEGORY_COVERS)) if (await mediaExists(id)) covers.set(slug, id);
+
+    const result = await this.db.transaction(async (tx) => {
+      const before = await tx.select({ id: storeCategories.id, slug: storeCategories.slug }).from(storeCategories);
+      const have = new Set(before.map((c) => c.slug));
+      for (const [i, c] of STORE_CATEGORIES.entries()) {
+        const values = { name: c.name, tagline: c.tagline, sortOrder: i, active: true, coverId: covers.get(c.slug) ?? null };
+        if (have.has(c.slug)) await tx.update(storeCategories).set(values).where(eq(storeCategories.slug, c.slug));
+        else await tx.insert(storeCategories).values({ slug: c.slug, ...values });
+      }
+      const cats = await tx.select({ id: storeCategories.id, slug: storeCategories.slug }).from(storeCategories);
+      const catId = new Map(cats.map((c) => [c.slug, c.id]));
+      const insumos = catId.get(INSUMOS_SLUG)!;
+
+      let moved = 0;
+      for (const old of before) {
+        const group = INSUMOS_GROUPS[old.slug];
+        if (!group) continue;
+        const rows = await tx
+          .update(storeProducts)
+          .set({ categoryId: insumos, subcategory: group })
+          .where(eq(storeProducts.categoryId, old.id))
+          .returning({ id: storeProducts.id });
+        moved += rows.length;
+        await tx.delete(storeCategories).where(eq(storeCategories.id, old.id));
+      }
+
+      let created = 0;
+      for (const [i, p] of WORKSHOP_PRODUCTS.entries()) {
+        const slug = await uniqueSlug(p.slug, async (s) => (await tx.select({ id: storeProducts.id }).from(storeProducts).where(eq(storeProducts.slug, s)).limit(1)).length > 0);
+        await tx.insert(storeProducts).values({
+          slug,
+          name: p.name,
+          categoryId: catId.get(p.category)!,
+          description: p.description ?? null,
+          price: p.price,
+          unit: p.unit ?? 'unidad',
+          inStock: true,
+          featured: true,
+          active: true,
+          sortOrder: i,
+          imageId: imageIds.get(p.slug) ?? null,
+          source: 'manual',
+        });
+        created++;
+      }
+
+      const value = { ok: true, at: new Date().toISOString(), moved, created };
+      await tx.insert(settings).values({ key: CATALOG_V2_KEY, value }).onConflictDoUpdate({ target: settings.key, set: { value } });
+      return value;
+    });
+    this.logger.log(`Tienda: columnas del taller listas (${result.created} productos propios, ${result.moved} insumos reubicados)`);
+    this.revalidate.trigger(['store']);
+  }
+
+  private async imageFromUrl(url: string, alt: string): Promise<string | null> {
+    const buf = await this.fetchBuffer(url);
+    if (!buf || buf.length < 400) return null;
+    try {
+      const img = await processImage(buf, this.uploadsDir, { folder: 'tienda', quality: 85 });
+      const [row] = await this.db.insert(media).values({ kind: 'IMAGE', ...img, alt, source: 'tienda', sortOrder: 0 }).returning({ id: media.id });
+      return row.id;
+    } catch {
+      return null;
+    }
   }
 
   /** Arranca la importación en segundo plano (si no hay otra corriendo) */
@@ -206,10 +292,12 @@ export class StoreImportService implements OnApplicationBootstrap {
       // 1. Catálogo (sin repetir productos que figuran en dos categorías)
       const items = new Map<string, SupplierItem>();
       for (const src of SUPPLIER_SOURCES) {
-        if (!catId.has(src.category)) continue;
+        // Todo lo del proveedor va a «Insumos», con el grupo (vinilos, lonas…) como tipo
+        const group = INSUMOS_GROUPS[src.category];
+        if (!group || !catId.has(INSUMOS_SLUG)) continue;
         try {
           const html = await this.fetchCategory(src.path);
-          for (const it of parseListing(html, src.category, src.subcategory)) if (!items.has(it.sourceId)) items.set(it.sourceId, it);
+          for (const it of parseListing(html, INSUMOS_SLUG, group)) if (!items.has(it.sourceId)) items.set(it.sourceId, it);
         } catch (err) {
           this.logger.warn(`No se pudo leer ${src.path}: ${(err as Error).message}`);
         }
