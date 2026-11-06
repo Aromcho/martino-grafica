@@ -1,15 +1,14 @@
 'use client';
 
 import Link from 'next/link';
-import { useQueryClient } from '@tanstack/react-query';
-import { ChevronLeft, ChevronRight, Percent, Plus, RefreshCw, Search, Star } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Plus, Search, Star } from 'lucide-react';
 import { useEffect, useState } from 'react';
-import { Badge, Btn, Card, EmptyState, Field, Input, LoadingBlock, MoneyInput, PageHeader, SegmentedTabs, Select } from '@/components/admin/ui';
+import { Badge, Btn, EmptyState, LoadingBlock, MoneyInput, PageHeader, SegmentedTabs, Select } from '@/components/admin/ui';
 import { Img } from '@/components/ui/img';
 import { useAdminMutation, useAdminQuery } from '@/lib/admin';
 import { cn } from '@/lib/cn';
-import { formatDateTime, money } from '@/lib/format';
-import type { Paginated, StoreAdminProduct, StoreCategory, StoreImportStatus, StoreSummary } from '@/lib/types';
+import { money } from '@/lib/format';
+import type { Paginated, StoreAdminProduct, StoreCategory, StoreSummary } from '@/lib/types';
 
 type Status = 'ALL' | 'hidden' | 'nostock' | 'noprice' | 'custom' | 'featured';
 
@@ -32,100 +31,6 @@ function InlinePrice({ p }: { p: StoreAdminProduct }) {
     <div className="w-32" onBlur={commit} onKeyDown={(e) => e.key === 'Enter' && (e.target as HTMLElement).blur()}>
       <MoneyInput value={v} onChange={setV} placeholder="Consultar" />
     </div>
-  );
-}
-
-function ImportCard({ summary }: { summary: StoreSummary }) {
-  const qc = useQueryClient();
-  const [running, setRunning] = useState(summary.import.status.running);
-  const status = useAdminQuery<StoreImportStatus>(['store-import'], '/admin/store/import', { enabled: running, refetchInterval: running ? 2000 : undefined });
-  const s = status.data ?? summary.import.status;
-  useEffect(() => {
-    if (running && status.data && !status.data.running) {
-      setRunning(false);
-      qc.invalidateQueries({ queryKey: ['store-products'] });
-      qc.invalidateQueries({ queryKey: ['store-summary'] });
-    }
-  }, [running, status.data, qc]);
-  const start = useAdminMutation({ method: 'POST', path: '/admin/store/import', success: 'Actualizando el catálogo…', onSuccess: () => setRunning(true) });
-  const last = summary.import.last;
-  const pct = s.found ? Math.round((s.done / s.found) * 100) : 0;
-  return (
-    <Card title="Catálogo del proveedor">
-      <p className="text-sm text-slate">
-        Trae productos nuevos, precios de lista y stock. Lo que cambiaste a mano (nombre, categoría, precio propio, ocultos) no se pisa.
-        {last?.at && (
-          <>
-            {' '}
-            Última actualización: {formatDateTime(last.at)}
-            {last.ok === false ? ' (con error)' : ` · ${last.created ?? 0} nuevos, ${last.updated ?? 0} actualizados`}.
-          </>
-        )}
-      </p>
-      {running || s.running ? (
-        <div className="mt-4">
-          <div className="h-2.5 overflow-hidden rounded-full bg-liner">
-            <div className="h-full rounded-full bg-ink transition-[width]" style={{ width: `${s.phase === 'catalog' ? 4 : pct}%` }} />
-          </div>
-          <p className="tabular mt-2 text-sm font-semibold">
-            {s.phase === 'catalog' ? 'Leyendo el catálogo…' : `${s.done} de ${s.found} productos · ${s.created} nuevos`}
-          </p>
-        </div>
-      ) : (
-        <Btn className="mt-4" variant="outline" onClick={() => start.mutate(undefined)} disabled={start.isPending}>
-          <RefreshCw className="size-4" /> Actualizar desde el proveedor
-        </Btn>
-      )}
-      {s.error && <p className="mt-2 text-sm font-semibold text-danger">{s.error}</p>}
-    </Card>
-  );
-}
-
-function PriceCard({ categories }: { categories: StoreCategory[] }) {
-  const [percent, setPercent] = useState('30');
-  const [cat, setCat] = useState('');
-  const [armed, setArmed] = useState(false);
-  const apply = useAdminMutation<{ percent: number; categoryId?: string; roundTo: number }, { label: string }>({
-    method: 'POST',
-    path: '/admin/store/prices',
-    invalidate: [['store-products'], ['store-summary']],
-    success: (r) => `Listo: ${r.label}`,
-    onSuccess: () => setArmed(false),
-  });
-  const n = Number(percent.replace(',', '.'));
-  const valid = Number.isFinite(n) && n >= -90 && n <= 500;
-  return (
-    <Card title="Margen sobre la lista">
-      <p className="text-sm text-slate">Los precios importados son los de lista del proveedor. Aplicá tu margen y se recalculan (redondeados a $10). Después podés tocar cualquiera a mano.</p>
-      <div className="mt-4 flex flex-wrap items-end gap-3">
-        <Field label="Porcentaje" className="w-32">
-          <div className="relative">
-            <Input inputMode="decimal" value={percent} onChange={(e) => setPercent(e.target.value)} className="pr-9" />
-            <Percent className="pointer-events-none absolute right-3 top-1/2 size-4 -translate-y-1/2 text-slate" />
-          </div>
-        </Field>
-        <Field label="Categoría" className="min-w-48 flex-1">
-          <Select value={cat} onChange={(e) => setCat(e.target.value)}>
-            <option value="">Todas</option>
-            {categories.map((c) => (
-              <option key={c.id} value={c.id}>
-                {c.name}
-              </option>
-            ))}
-          </Select>
-        </Field>
-        {armed ? (
-          <Btn variant="danger" disabled={!valid || apply.isPending} onClick={() => apply.mutate({ percent: n, categoryId: cat || undefined, roundTo: 10 })}>
-            Confirmar: lista {n >= 0 ? '+' : ''}
-            {n} %
-          </Btn>
-        ) : (
-          <Btn disabled={!valid} onClick={() => setArmed(true)}>
-            Aplicar
-          </Btn>
-        )}
-      </div>
-    </Card>
   );
 }
 
@@ -181,11 +86,6 @@ export default function StoreAdminPage() {
           </Link>
         }
       />
-
-      <div className="mb-5 grid gap-5 lg:grid-cols-2">
-        {s && <ImportCard summary={s} />}
-        <PriceCard categories={cats.data ?? []} />
-      </div>
 
       <div className="space-y-3">
         <div className="flex flex-wrap gap-2">
@@ -249,7 +149,7 @@ export default function StoreAdminPage() {
         {list.isLoading ? (
           <LoadingBlock />
         ) : items.length === 0 ? (
-          <EmptyState title={s?.total ? 'No hay productos con ese filtro' : 'Todavía no hay productos'} text={s?.total ? undefined : 'El catálogo se carga solo la primera vez. Si no aparece, tocá «Actualizar desde el proveedor».'} />
+          <EmptyState title={s?.total ? 'No hay productos con ese filtro' : 'Todavía no hay productos'} text={s?.total ? undefined : 'Cargá el primero con «Nuevo producto».'} />
         ) : (
           <>
             <label className="mb-2 inline-flex items-center gap-2 px-1 text-sm font-semibold text-slate">

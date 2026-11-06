@@ -1,14 +1,18 @@
-import { Injectable, Logger, OnApplicationBootstrap } from '@nestjs/common';
+import { BadRequestException, Injectable, Logger, OnApplicationBootstrap } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import { count, eq, isNotNull } from 'drizzle-orm';
-import { resolve } from 'path';
+import { and, count, eq, inArray, isNotNull } from 'drizzle-orm';
+import { promises as fs } from 'fs';
+import { join, resolve } from 'path';
 import { uniqueSlug } from '../common/utils/slug';
 import { Database, InjectDb } from '../db/db.module';
 import { media, settings, storeCategories, storeProducts } from '../db/schema';
 import { processImage } from '../media/image-pipeline';
 import { RevalidateService } from '../revalidate/revalidate.service';
 import { CATALOG_V2_KEY, CATEGORY_COVERS, WORKSHOP_PRODUCTS } from './store-catalog-v2';
-import { EXCLUDED_NAME, INSUMOS_GROUPS, INSUMOS_SLUG, STORE_CATEGORIES, SUPPLIER_SOURCES } from './store.catalog';
+import { EXCLUDED_NAME, INSUMOS_GROUPS, INSUMOS_SLUG, STORE_CATEGORIES, SUPPLIER_IMPORT_ENABLED, SUPPLIER_SOURCES } from './store.catalog';
+
+const SUPPLIER_REMOVED_KEY = 'storeSupplierRemoved';
+const UNFEATURED_KEY = 'storeWorkshopUnfeatured';
 
 export interface SupplierItem {
   sourceId: string;
@@ -111,8 +115,10 @@ export class StoreImportService implements OnApplicationBootstrap {
   async onApplicationBootstrap() {
     try {
       await this.migrateCatalogV2();
+      await this.removeSupplierProducts();
+      await this.unfeatureWorkshopProducts();
       await this.ensureCategories();
-      if (this.config.get('STORE_AUTO_IMPORT') === 'false') return;
+      if (!SUPPLIER_IMPORT_ENABLED || this.config.get('STORE_AUTO_IMPORT') === 'false') return;
       const last = await this.db.query.settings.findFirst({ where: eq(settings.key, SETTING_KEY) });
       const ok = (last?.value as { ok?: boolean } | undefined)?.ok;
       if (!ok) {
@@ -207,6 +213,52 @@ export class StoreImportService implements OnApplicationBootstrap {
     this.revalidate.trigger(['store']);
   }
 
+  /** Una sola vez: borra los productos importados del proveedor y sus fotos (pedido de Martino, noviembre 2026) */
+  private async removeSupplierProducts() {
+    const done = await this.db.query.settings.findFirst({ where: eq(settings.key, SUPPLIER_REMOVED_KEY) });
+    if (done) return;
+    const files: string[] = [];
+    const result = await this.db.transaction(async (tx) => {
+      const deleted = await tx.delete(storeProducts).where(isNotNull(storeProducts.sourceId)).returning({ imageId: storeProducts.imageId });
+      const imageIds = [...new Set(deleted.map((d) => d.imageId).filter((id): id is string => !!id))];
+      let photos = 0;
+      if (imageIds.length) {
+        // Sólo las fotos de la tienda que ya no usa ningún producto
+        const used = await tx.select({ id: storeProducts.imageId }).from(storeProducts).where(inArray(storeProducts.imageId, imageIds));
+        const keep = new Set(used.map((u) => u.id));
+        const free = imageIds.filter((id) => !keep.has(id));
+        if (free.length) {
+          const gone = await tx
+            .delete(media)
+            .where(and(inArray(media.id, free), eq(media.source, 'tienda')))
+            .returning({ path: media.path, variants: media.variants });
+          for (const g of gone) files.push(g.path, ...Object.values(g.variants ?? {}));
+          photos = gone.length;
+        }
+      }
+      await tx.update(storeCategories).set({ tagline: null }).where(eq(storeCategories.slug, INSUMOS_SLUG));
+      const value = { ok: true, at: new Date().toISOString(), products: deleted.length, photos };
+      await tx.insert(settings).values({ key: SUPPLIER_REMOVED_KEY, value }).onConflictDoUpdate({ target: settings.key, set: { value } });
+      return value;
+    });
+    await Promise.all([...new Set(files)].map((p) => fs.unlink(join(this.uploadsDir, p)).catch(() => undefined)));
+    this.logger.log(`Tienda: se borraron ${result.products} productos del proveedor y ${result.photos} fotos`);
+    this.revalidate.trigger(['store']);
+  }
+
+  /**
+   * Una sola vez: sin los insumos del proveedor la tienda tiene sólo productos propios y la etiqueta
+   * «Destacado» en todos no dice nada. El orden se mantiene; desde el panel se destacan los que quieran.
+   */
+  private async unfeatureWorkshopProducts() {
+    const done = await this.db.query.settings.findFirst({ where: eq(settings.key, UNFEATURED_KEY) });
+    if (done) return;
+    const rows = await this.db.update(storeProducts).set({ featured: false }).where(eq(storeProducts.source, 'manual')).returning({ id: storeProducts.id });
+    const value = { ok: true, at: new Date().toISOString(), products: rows.length };
+    await this.db.insert(settings).values({ key: UNFEATURED_KEY, value }).onConflictDoUpdate({ target: settings.key, set: { value } });
+    this.revalidate.trigger(['store']);
+  }
+
   private async imageFromUrl(url: string, alt: string): Promise<string | null> {
     const buf = await this.fetchBuffer(url);
     if (!buf || buf.length < 400) return null;
@@ -221,6 +273,7 @@ export class StoreImportService implements OnApplicationBootstrap {
 
   /** Arranca la importación en segundo plano (si no hay otra corriendo) */
   start() {
+    if (!SUPPLIER_IMPORT_ENABLED) throw new BadRequestException('La importación del catálogo del proveedor está desactivada');
     if (!this.state.running) void this.run();
     return this.status();
   }

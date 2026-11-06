@@ -17,7 +17,7 @@ export function ShopCategories({ categories }: { categories: StoreCategory[] }) 
           <h2 id="tienda-title" className="display t-md">
             Comprá por categoría
           </h2>
-          <p className="lede mt-4 text-white/70">Ploteos, cartelería, estampados, calcos, señalética e insumos: {total.toLocaleString('es-AR')} productos.</p>
+          <p className="lede mt-4 text-white/70">Ploteos, cartelería, estampados, calcos y señalética: {total.toLocaleString('es-AR')} productos.</p>
         </div>
         <Link href="/tienda" className={buttonClass('outline', 'md', 'text-white')}>
           Ver toda la tienda

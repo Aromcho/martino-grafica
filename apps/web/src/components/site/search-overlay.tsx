@@ -12,7 +12,7 @@ import { money, monthYear } from '@/lib/format';
 import type { SearchResults } from '@/lib/types';
 import { useUI } from './ui-provider';
 
-const SUGGESTIONS = ['Stickers', 'Roll up', 'Banner', 'Neón LED', 'Carteles luminosos', 'Placas de acrílico', 'Cubre patentes', 'Remeras', 'Gorras', 'Ploteo de camioneta', 'Vinilo negro mate', 'Termofilm', 'Corpóreas', 'Esmerilado', 'Calcos para motos'];
+const SUGGESTIONS = ['Stickers', 'Roll up', 'Banner', 'Neón LED', 'Carteles luminosos', 'Placas de acrílico', 'Cubre patentes', 'Remeras', 'Gorras', 'Ploteo de camioneta', 'Corpóreas', 'Esmerilado', 'Calcos para motos'];
 
 function useDebounced<T>(value: T, ms = 220) {
   const [v, setV] = useState(value);

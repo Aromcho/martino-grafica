@@ -11,13 +11,19 @@ export interface StoreCategorySeed {
 
 export const INSUMOS_SLUG = 'insumos';
 
+/**
+ * Importación del catálogo del proveedor. Apagada desde noviembre de 2026: Martino pidió borrar esos
+ * productos y vender sólo lo suyo (los insumos propios se cargan a mano desde el panel).
+ */
+export const SUPPLIER_IMPORT_ENABLED = false;
+
 export const STORE_CATEGORIES: StoreCategorySeed[] = [
   { slug: 'ploteos', name: 'Ploteos', tagline: 'Calcos para vehículos, imanes para remisería y cubre patentes con tu logo.' },
   { slug: 'carteleria', name: 'Cartelería', tagline: 'Banners, roll up y carteles para exterior e interior, luminosos y de neón LED.' },
   { slug: 'estampados', name: 'Estampados', tagline: 'Remeras y gorras estampadas.' },
   { slug: 'calcos', name: 'Calcos', tagline: 'Stickers comunes, laminados, tornasolados y DTF UV.' },
   { slug: 'senaleticas', name: 'Señaléticas', tagline: 'Señalética y placas de acrílico.' },
-  { slug: INSUMOS_SLUG, name: 'Insumos', tagline: 'Vinilos, termofilm, lonas, placas, impresión, sublimación, herramientas y equipos.' },
+  { slug: INSUMOS_SLUG, name: 'Insumos', tagline: '' },
 ];
 
 /** Tipo de insumo (sub-rubro dentro de «Insumos») según el grupo del proveedor */

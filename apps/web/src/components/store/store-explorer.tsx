@@ -123,7 +123,7 @@ export function StoreExplorer({ categories, initial, initialFilters }: { categor
                 type="search"
                 value={text}
                 onChange={(e) => setText(e.target.value)}
-                placeholder={current ? `Buscar en ${current.name.toLowerCase()}` : 'Buscar: stickers, roll up, neón, vinilo…'}
+                placeholder={current ? `Buscar en ${current.name.toLowerCase()}` : 'Buscar: stickers, roll up, neón…'}
                 className="h-full w-full bg-transparent pl-9 pr-9 text-[0.95rem] text-white outline-none placeholder:text-smoke"
                 enterKeyHint="search"
               />
@@ -155,7 +155,7 @@ export function StoreExplorer({ categories, initial, initialFilters }: { categor
             <button type="button" className="chip" aria-pressed={!categoria} onClick={() => pickCategory('')}>
               Todo <span className="n">{all}</span>
             </button>
-            {categories.map((c) => (
+            {categories.filter((c) => c.productCount > 0 || c.slug === categoria).map((c) => (
               <button key={c.slug} type="button" className="chip" aria-pressed={categoria === c.slug} onClick={() => pickCategory(categoria === c.slug ? '' : c.slug)}>
                 {c.name} <span className="n">{c.productCount}</span>
               </button>

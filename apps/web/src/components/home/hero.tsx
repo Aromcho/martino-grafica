@@ -78,7 +78,7 @@ export function Hero({ productsCount }: { productsCount: number }) {
           </div>
           <div className="space-y-6">
             <p className="lede text-white/80">
-              Pedí online lo que hacemos en el taller: ploteos, cartelería, estampados, calcos y señalética, más los insumos de gráfica que usamos. Retirás en {info?.city ?? 'Villa Gesell'} o coordinamos el envío.
+              Pedí online lo que hacemos en el taller: ploteos, cartelería, estampados, calcos y señalética. Retirás en {info?.city ?? 'Villa Gesell'} o coordinamos el envío.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link href="/tienda" className={buttonClass('lime', 'lg')}>
