@@ -42,7 +42,7 @@ Después:
 `/admin/pedidos` reemplaza la planilla «Agenda de pendientes»: el que atiende anota el pedido (cliente, qué pidió, para cuándo, total y seña), lo mueve por el tablero (A confirmar → Por hacer → En producción → Listo → Entregado) y le pasa al cliente un link de seguimiento (`/seguimiento/<código>`), que muestra la etapa, la fecha estimada y lo que resta abonar, nunca el teléfono ni las notas internas.
 
 - Lo que llega desde la web (presupuestos, consultas y compras de la tienda) está en `/admin/consultas` y se pasa a pedido con un botón.
-- Historial de la planilla: como tiene datos de clientes **no va en el repositorio**. Se deja el archivo en `apps/api/private/import/pedidos-historial.json` (carpeta ignorada por git) y la API lo importa sola al arrancar y lo renombra a `.importado.json`. También se puede subir desde el panel (al pie de Pedidos, «Importar archivo», sólo administradores). Las filas ya cargadas no se duplican.
+- Historial de la planilla: descartado a pedido del cliente. La importación se quitó y, al arrancar, la API borra los pedidos que hayan venido del Excel (`source = 'excel'`).
 
 ## Usuario del panel
 

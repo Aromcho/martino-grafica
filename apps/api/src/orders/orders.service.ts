@@ -2,15 +2,13 @@ import { BadRequestException, Injectable, Logger, NotFoundException, OnApplicati
 import { ConfigService } from '@nestjs/config';
 import { and, asc, count, desc, eq, gte, inArray, lt, ne, or, SQL, sql } from 'drizzle-orm';
 import { randomInt } from 'crypto';
-import { existsSync, promises as fs } from 'fs';
-import { join, resolve } from 'path';
 import { BusinessInfo, BusinessService } from '../business/business.service';
 import { waLink, waNumber } from '../common/utils/phone';
 import { fuzzyContains, normCol, normalizeTerm } from '../common/utils/search';
 import { nowInStoreTz } from '../common/utils/time';
 import { Database, InjectDb } from '../db/db.module';
 import { DeliveryMethod, orderItems, quotes, workOrderEvents, workOrderPayments, workOrders, WorkOrderStatus } from '../db/schema';
-import { CreateOrderDto, ImportOrderRowDto, OrderPaymentDto, PaymentMethod, UpdateOrderDto } from './dto/order.dto';
+import { CreateOrderDto, OrderPaymentDto, PaymentMethod, UpdateOrderDto } from './dto/order.dto';
 
 export const ORDER_STATUS_LABEL: Record<WorkOrderStatus, string> = {
   TO_CONFIRM: 'A confirmar',
@@ -29,7 +27,6 @@ const METHOD_LABEL: Record<PaymentMethod, string> = {
   OTRO: 'otro medio',
 };
 const MONTHS = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
-const HISTORY_FILE = 'pedidos-historial.json';
 
 type Order = typeof workOrders.$inferSelect;
 type Tx = Parameters<Parameters<Database['transaction']>[0]>[0];
@@ -56,7 +53,6 @@ const owesSql = and(ne(workOrders.status, 'CANCELLED'), sql`coalesce(${workOrder
 export class OrdersService implements OnApplicationBootstrap {
   private readonly logger = new Logger('Pedidos');
   private readonly siteUrl: string;
-  private readonly privateDir: string;
 
   constructor(
     @InjectDb() private readonly db: Database,
@@ -64,7 +60,6 @@ export class OrdersService implements OnApplicationBootstrap {
     config: ConfigService,
   ) {
     this.siteUrl = (config.get<string>('PUBLIC_SITE_URL') ?? 'http://localhost:3000').replace(/\/$/, '');
-    this.privateDir = resolve(config.get<string>('PRIVATE_DIR') ?? './private');
   }
 
   // ---------------------------------------------------------------- helpers
@@ -464,77 +459,21 @@ export class OrdersService implements OnApplicationBootstrap {
     };
   }
 
-  // ---------------------------------------------------------------- historial de la planilla
+  // ---------------------------------------------------------------- historial descartado
   /**
-   * Carga los pedidos de la planilla "Agenda de pendientes" (ya normalizados). Se puede repetir:
-   * cada fila se identifica por su hoja y renglón, y las que ya están no se duplican.
-   */
-  async importHistory(rows: ImportOrderRowDto[], userId?: string) {
-    const sorted = [...rows].sort((a, b) => a.month.localeCompare(b.month) || a.row - b.row);
-    const known = new Set((await this.db.select({ ref: workOrders.sheetRef }).from(workOrders).where(sql`${workOrders.sheetRef} is not null`)).map((r) => r.ref));
-    let created = 0;
-    await this.db.transaction(async (tx) => {
-      for (const r of sorted) {
-        if (known.has(r.ref)) continue;
-        // La hoja de la que salió la fila (un pedido arrastrado conserva la fecha del mes en que se anotó)
-        const m = Number(/^\d{4}-(\d{2})#/.exec(r.ref)?.[1] ?? r.month.split('-')[1]);
-        const orderedAt = new Date(new Date(`${r.month}-01T12:00:00-03:00`).getTime() + r.row * 1000);
-        const total = r.total ?? null;
-        const paid = total != null ? Math.min(r.paid, total) : 0;
-        const note = [
-          `Importado del Excel «Agenda de pendientes 2026», hoja de ${MONTHS[m - 1]}.`,
-          r.sheetStatus ? `Estado en la planilla: «${r.sheetStatus}».` : `La planilla no tenía estado: quedó como «${ORDER_STATUS_LABEL[r.status]}».`,
-          r.carriedFrom ? 'Venía anotado desde el mes anterior.' : null,
-          total == null && r.paid > 0 ? `En la planilla figuraba un pago de ${money(r.paid)} sin total.` : null,
-        ]
-          .filter(Boolean)
-          .join(' ');
-        const [row] = await tx
-          .insert(workOrders)
-          .values({
-            code: await this.newCode(tx),
-            status: r.status,
-            customerName: r.customerName,
-            phone: r.phone ?? null,
-            title: r.title,
-            details: r.details ?? null,
-            delivery: r.delivery,
-            dueDate: r.dueDate ?? null,
-            dueNote: r.dueNote ?? null,
-            total,
-            paid,
-            notes: note,
-            source: 'excel',
-            sheetRef: r.ref,
-            createdBy: userId ?? null,
-            orderedAt,
-            deliveredAt: r.status === 'DELIVERED' ? (r.dueDate ? new Date(`${r.dueDate}T12:00:00-03:00`) : orderedAt) : null,
-            createdAt: orderedAt,
-          })
-          .returning({ id: workOrders.id });
-        if (paid > 0) await tx.insert(workOrderPayments).values({ orderId: row.id, amount: paid, method: 'OTRO', note: 'Importado del Excel', paidAt: orderedAt, createdAt: orderedAt, userId: userId ?? null });
-        await tx.insert(workOrderEvents).values({ orderId: row.id, type: 'created', toStatus: r.status, note: 'Importado del Excel «Agenda de pendientes 2026»', createdAt: orderedAt, userId: userId ?? null });
-        created++;
-      }
-    });
-    return { received: rows.length, created, skipped: rows.length - created, activityLabel: `${created} pedidos del Excel` };
-  }
-
-  /**
-   * Si hay un archivo de historial esperando en la carpeta privada (fuera del repositorio, porque tiene
-   * datos de clientes), lo importa al arrancar y lo renombra para no volver a leerlo.
+   * El historial importado de la planilla se descartó a pedido del cliente: al arrancar se borran los
+   * pedidos que vinieron del Excel (pagos y movimientos se van en cascada). Si no queda ningún pedido,
+   * la numeración vuelve a empezar en #0001.
    */
   async onApplicationBootstrap() {
-    const file = [join(this.privateDir, 'import', HISTORY_FILE), resolve(process.cwd(), 'private', 'import', HISTORY_FILE)].find((f) => existsSync(f));
-    if (!file) return;
     try {
-      const parsed = JSON.parse(await fs.readFile(file, 'utf8')) as ImportOrderRowDto[] | { rows: ImportOrderRowDto[] };
-      const rows = Array.isArray(parsed) ? parsed : parsed.rows;
-      const res = await this.importHistory(rows);
-      await fs.rename(file, file.replace(/\.json$/, '.importado.json'));
-      this.logger.log(`Historial de la planilla: ${res.created} pedidos importados, ${res.skipped} ya estaban`);
+      const removed = await this.db.delete(workOrders).where(eq(workOrders.source, 'excel')).returning({ id: workOrders.id });
+      if (!removed.length) return;
+      const [{ n }] = await this.db.select({ n: count() }).from(workOrders);
+      if (n === 0) await this.db.execute(sql`alter table work_orders alter column number restart with 1`);
+      this.logger.log(`Se borraron ${removed.length} pedidos importados del Excel`);
     } catch (err) {
-      this.logger.error(`No se pudo importar ${file}: ${(err as Error).message}`);
+      this.logger.error(`No se pudieron borrar los pedidos importados: ${(err as Error).message}`);
     }
   }
 }

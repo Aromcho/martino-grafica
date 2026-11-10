@@ -6,7 +6,7 @@ import { Roles } from '../common/decorators/roles.decorator';
 import { Track } from '../common/decorators/track.decorator';
 import { AdminGuard } from '../common/guards/admin.guard';
 import { workOrderStatusEnum, type WorkOrderStatus } from '../db/schema';
-import { CreateOrderDto, ImportOrdersDto, OrderNoteDto, OrderPaymentDto, UpdateOrderDto } from './dto/order.dto';
+import { CreateOrderDto, OrderNoteDto, OrderPaymentDto, UpdateOrderDto } from './dto/order.dto';
 import { OrdersService, type OrderView } from './orders.service';
 
 const VIEWS: OrderView[] = ['active', 'unpaid', 'delivered', 'all'];
@@ -67,15 +67,6 @@ export class OrdersController {
   @Track('pedido', [])
   create(@Body() dto: CreateOrderDto, @CurrentUser() user: AuthUser) {
     return this.orders.create(dto, user.id);
-  }
-
-  /** Carga el historial de la planilla (filas ya normalizadas). No duplica lo que ya está. */
-  @Post('admin/orders/import')
-  @UseGuards(AdminGuard)
-  @Roles('ADMIN')
-  @Track('pedido', [], 'importó')
-  importHistory(@Body() dto: ImportOrdersDto, @CurrentUser() user: AuthUser) {
-    return this.orders.importHistory(dto.rows, user.id);
   }
 
   /** Convierte una consulta o compra de la web en pedido del taller */

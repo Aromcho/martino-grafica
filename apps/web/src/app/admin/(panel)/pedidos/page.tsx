@@ -5,13 +5,13 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import { DndContext, DragOverlay, MouseSensor, useDraggable, useDroppable, useSensor, useSensors, type DragEndEvent, type DragStartEvent } from '@dnd-kit/core';
 import { useInfiniteQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { ArrowRight, Check, Loader2, PackageCheck, Plus, Search, X } from 'lucide-react';
-import { Suspense, useEffect, useMemo, useRef, useState } from 'react';
+import { Suspense, useEffect, useMemo, useState } from 'react';
 import { toast } from 'sonner';
 import { DeliveryIcon, DueChip, ORDER_DOT, OrderStatusBadge, PaymentPill, useDebounced } from '@/components/admin/orders/bits';
 import { OrderDrawer } from '@/components/admin/orders/order-form';
 import { Btn, EmptyState, LoadingBlock, PageHeader, SegmentedTabs, Select } from '@/components/admin/ui';
-import { useAdminQuery, useMe } from '@/lib/admin';
-import { get, HttpError, patch, post } from '@/lib/client-api';
+import { useAdminQuery } from '@/lib/admin';
+import { get, HttpError, patch } from '@/lib/client-api';
 import { cn } from '@/lib/cn';
 import { money, plural } from '@/lib/format';
 import { advanceLabel, BOARD_HINT, BOARD_STATUSES, monthLabel, nextStatus, ORDER_STATUS_LABEL, orderedText } from '@/lib/orders';
@@ -291,41 +291,6 @@ function OrdersTable({ view, q, month }: { view: View; q: string; month: string 
   );
 }
 
-// ---------------------------------------------------------------- importar historial
-/** Carga un archivo de historial (.json) armado desde la planilla vieja. Las filas que ya están no se duplican. */
-function ImportHistory() {
-  const qc = useQueryClient();
-  const input = useRef<HTMLInputElement>(null);
-  const [busy, setBusy] = useState(false);
-  const onFile = async (file: File | undefined) => {
-    if (!file) return;
-    setBusy(true);
-    try {
-      const parsed = JSON.parse(await file.text());
-      const rows = Array.isArray(parsed) ? parsed : parsed?.rows;
-      if (!Array.isArray(rows)) throw new Error('El archivo no tiene pedidos para importar');
-      const res = await post<{ created: number; skipped: number }>('/admin/orders/import', { rows });
-      toast.success(res.created ? `${plural(res.created, 'pedido importado', 'pedidos importados')}${res.skipped ? ` (${res.skipped} ya estaban)` : ''}` : 'Esos pedidos ya estaban cargados');
-      qc.invalidateQueries({ queryKey: ['orders'] });
-      qc.invalidateQueries({ queryKey: ['stats'] });
-    } catch (err) {
-      toast.error(err instanceof HttpError ? err.message : err instanceof SyntaxError ? 'El archivo no es un historial válido' : (err as Error).message);
-    } finally {
-      setBusy(false);
-      if (input.current) input.current.value = '';
-    }
-  };
-  return (
-    <p className="mt-8 text-xs text-slate">
-      ¿Tenés pedidos viejos en un archivo de historial?{' '}
-      <button type="button" onClick={() => input.current?.click()} disabled={busy} className="font-bold text-ink underline underline-offset-4 disabled:opacity-50">
-        {busy ? 'Importando…' : 'Importar archivo'}
-      </button>
-      <input ref={input} type="file" accept="application/json,.json" className="hidden" onChange={(e) => onFile(e.target.files?.[0])} />
-    </p>
-  );
-}
-
 // ---------------------------------------------------------------- página
 function Kpi({ label, value, sub, onClick, tone, alert }: { label: string; value: string | number; sub: string; onClick: () => void; tone?: 'ink'; alert?: boolean }) {
   const long = typeof value === 'string' && value.length > 6;
@@ -348,7 +313,6 @@ function OrdersPage() {
   const [month, setMonth] = useState('');
   const [drawer, setDrawer] = useState(params.get('nuevo') === '1');
   const q = useDebounced(text.trim());
-  const me = useMe();
   const summary = useAdminQuery<OrderSummary>(['orders', 'summary'], '/admin/orders/summary', { refetchInterval: 60_000 });
   const s = summary.data;
 
@@ -448,8 +412,6 @@ function OrdersPage() {
       </div>
 
       <div className="mt-4">{showBoard ? <Board onNew={() => setDrawer(true)} focus={focus} /> : <OrdersTable view={q && view === 'active' ? 'all' : view} q={q} month={month} />}</div>
-
-      {me.data?.role === 'ADMIN' && <ImportHistory />}
 
       <OrderDrawer open={drawer} onClose={() => setDrawer(false)} />
     </>
