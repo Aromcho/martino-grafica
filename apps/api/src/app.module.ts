@@ -12,6 +12,7 @@ import { ContentModule } from './content/content.module';
 import { DbModule } from './db/db.module';
 import { HealthController } from './health.controller';
 import { MediaModule } from './media/media.module';
+import { OrdersModule } from './orders/orders.module';
 import { QuotesModule } from './quotes/quotes.module';
 import { RevalidateModule } from './revalidate/revalidate.module';
 import { SearchModule } from './search/search.module';
@@ -35,6 +36,7 @@ import { WorksModule } from './works/works.module';
     WorksModule,
     ContentModule,
     QuotesModule,
+    OrdersModule,
     SearchModule,
     StatsModule,
     StoreModule,

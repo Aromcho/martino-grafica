@@ -6,6 +6,7 @@ import { BusinessService } from '../business/business.service';
 import { AdminGuard } from '../common/guards/admin.guard';
 import { mediaColumns } from '../common/media';
 import { Database, InjectDb } from '../db/db.module';
+import { OrdersService } from '../orders/orders.service';
 import { categories, highlights, media, products, quotes, works } from '../db/schema';
 
 @ApiTags('admin / dashboard')
@@ -16,6 +17,7 @@ export class StatsController {
     @InjectDb() private readonly db: Database,
     private readonly business: BusinessService,
     private readonly activity: ActivityService,
+    private readonly orders: OrdersService,
   ) {}
 
   @Get()
@@ -41,6 +43,7 @@ export class StatsController {
       topRequested,
       hours,
       recentActivity,
+      orders,
     ] = await Promise.all([
       n(this.db.select({ n: count() }).from(quotes).where(eq(quotes.status, 'NEW'))),
       n(this.db.select({ n: count() }).from(quotes).where(gte(quotes.createdAt, since7))),
@@ -73,6 +76,7 @@ export class StatsController {
         .limit(5),
       this.business.status(),
       this.activity.recent(15),
+      this.orders.summary(),
     ]);
 
     return {
@@ -85,6 +89,7 @@ export class StatsController {
       topRequested,
       hours: { configured: hours.configured, isOpen: hours.isOpen, closesAt: hours.closesAt, next: hours.next },
       activity: recentActivity,
+      orders,
     };
   }
 

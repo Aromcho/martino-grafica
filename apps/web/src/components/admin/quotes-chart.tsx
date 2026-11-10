@@ -3,7 +3,7 @@
 import { useMemo, useState } from 'react';
 import { formatDate } from '@/lib/format';
 
-/** Pedidos por día, últimos 30 días: una serie en barras finas, con el valor al pasar o tocar */
+/** Consultas web por día, últimos 30 días: una serie en barras finas, con el valor al pasar o tocar */
 export function QuotesChart({ daily }: { daily: { day: string; count: number }[] }) {
   const [hover, setHover] = useState<number | null>(null);
   const days = useMemo(() => {
@@ -26,7 +26,7 @@ export function QuotesChart({ daily }: { daily: { day: string; count: number }[]
   return (
     <div>
       <div className="flex items-baseline justify-between gap-3">
-        <p className="text-sm text-slate">Pedidos por día, últimos 30 días</p>
+        <p className="text-sm text-slate">Consultas web por día, últimos 30 días</p>
         <p className="tabular text-sm font-bold text-ink" aria-live="polite">
           {h ? `${formatDate(h.day)}: ${h.count}` : `${total} en total`}
         </p>

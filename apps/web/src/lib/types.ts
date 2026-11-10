@@ -296,6 +296,8 @@ export interface QuoteDetail extends Quote {
   category: { id: string; name: string } | null;
   whatsappUrl: string;
   customerWhatsapp: string;
+  /** Pedido del taller creado a partir de esta consulta */
+  order: { id: string; number: number; status: WorkOrderStatus } | null;
 }
 
 export interface QuoteList extends Paginated<Quote> {
@@ -322,6 +324,100 @@ export interface AdminStats {
   topRequested: { name: string; n: number }[];
   hours: { configured: boolean; isOpen: boolean; closesAt: string | null; next: HoursStatus['next'] };
   activity: ActivityItem[];
+  orders: OrderSummary;
+}
+
+// ---------------------------------------------------------------- pedidos del taller
+export type WorkOrderStatus = 'TO_CONFIRM' | 'PENDING' | 'IN_PROGRESS' | 'READY' | 'DELIVERED' | 'CANCELLED';
+export type PaymentMethod = 'EFECTIVO' | 'TRANSFERENCIA' | 'MERCADO_PAGO' | 'TARJETA' | 'OTRO';
+/** NO_PRICE: todavía sin total · UNPAID: sin seña · PARTIAL: señado · PAID: pago */
+export type PaymentState = 'NO_PRICE' | 'UNPAID' | 'PARTIAL' | 'PAID';
+
+export interface WorkOrder {
+  id: string;
+  number: number;
+  /** "#0157" */
+  ref: string;
+  code: string;
+  trackUrl: string;
+  status: WorkOrderStatus;
+  customerName: string;
+  phone: string | null;
+  title: string;
+  details: string | null;
+  delivery: DeliveryMethod;
+  dueDate: string | null;
+  dueNote: string | null;
+  total: number | null;
+  paid: number;
+  balance: number;
+  payment: PaymentState;
+  notes: string | null;
+  source: 'mostrador' | 'web' | 'excel' | string;
+  quoteId: string | null;
+  orderedAt: string;
+  deliveredAt: string | null;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface WorkOrderDetail extends WorkOrder {
+  payments: { id: string; amount: number; method: PaymentMethod; note: string | null; paidAt: string; user: { name: string } | null }[];
+  events: { id: string; type: string; fromStatus: WorkOrderStatus | null; toStatus: WorkOrderStatus | null; note: string | null; createdAt: string; user: { name: string } | null }[];
+  author: { name: string } | null;
+  quote: { id: string; code: string; kind: Quote['kind'] } | null;
+  customerWhatsapp: string | null;
+  /** Mensaje sugerido para mandarle al cliente */
+  message: string;
+  related: { id: string; number: number; ref: string; title: string; status: WorkOrderStatus; total: number | null; paid: number; balance: number; orderedAt: string }[];
+}
+
+export interface WorkOrderList extends Paginated<WorkOrder> {
+  amount: number;
+  balance: number;
+}
+
+export interface OrderBoard {
+  items: WorkOrder[];
+  today: string;
+}
+
+export interface OrderSummary {
+  byStatus: Partial<Record<WorkOrderStatus, number>>;
+  active: number;
+  all: number;
+  unpaid: { count: number; amount: number };
+  overdue: number;
+  dueToday: number;
+  month: { key: string; orders: number; amount: number; collected: number };
+  months: { month: string; count: number }[];
+}
+
+export interface OrderCustomer {
+  name: string;
+  phone: string | null;
+  orders: number;
+  last: string;
+}
+
+/** Lo que ve el cliente en /seguimiento/<código> */
+export interface OrderTracking {
+  ref: string;
+  code: string;
+  firstName: string;
+  title: string;
+  details: string | null;
+  status: WorkOrderStatus;
+  delivery: DeliveryMethod;
+  dueDate: string | null;
+  dueNote: string | null;
+  orderedAt: string | null;
+  deliveredAt: string | null;
+  total: number | null;
+  paid: number;
+  balance: number;
+  reached: Partial<Record<WorkOrderStatus, string>>;
+  updatedAt: string;
 }
 
 // ---------------------------------------------------------------- tienda

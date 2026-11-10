@@ -2,7 +2,7 @@
  * Lectura de datos desde componentes de servidor.
  * Pega directo a la API (NestJS) con caché de datos de Next y etiquetas para revalidar al instante.
  */
-import type { Banner, Category, Highlight, Paginated, Product, ProductDetail, PublicBusiness, SearchResults, StoreCategory, StoreList, StoreProductDetail, WorkCard, WorkDetail, WorkFacets } from './types';
+import type { Banner, Category, Highlight, OrderTracking, Paginated, Product, ProductDetail, PublicBusiness, SearchResults, StoreCategory, StoreList, StoreProductDetail, WorkCard, WorkDetail, WorkFacets } from './types';
 
 const API_URL = (process.env.API_URL ?? 'http://localhost:4000').replace(/\/$/, '');
 
@@ -95,3 +95,13 @@ export const getSitemap = () =>
     { products: [], works: [], categories: [], store: [] },
     ['catalog', 'works', 'store'],
   );
+
+// ---------------------------------------------------------------- seguimiento de pedidos
+/** Estado de un pedido del taller por su código. Siempre fresco: es lo que mira el cliente. */
+export async function getTracking(code: string): Promise<OrderTracking | null> {
+  if (!/^[A-Za-z0-9]{6,12}$/.test(code)) return null;
+  const res = await fetch(`${API_URL}/api/orders/track/${encodeURIComponent(code)}`, { cache: 'no-store', headers: { accept: 'application/json' } });
+  if (res.status === 404) return null;
+  if (!res.ok) throw new ApiError(res.status, `API ${res.status} en el seguimiento`);
+  return (await res.json()) as OrderTracking;
+}

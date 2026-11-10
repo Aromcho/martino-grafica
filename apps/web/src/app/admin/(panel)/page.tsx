@@ -27,6 +27,7 @@ export default function DashboardPage() {
   const { data: s, isLoading } = useAdminQuery<AdminStats>(['stats'], '/admin/stats', { refetchInterval: 60_000 });
   if (isLoading || !s) return <LoadingBlock />;
   const first = me.data?.name.split(' ')[0];
+  const orders = s.orders ?? { active: 0, overdue: 0, byStatus: {}, unpaid: { count: 0, amount: 0 } };
   const hoursText = !s.hours.configured ? 'Sin cargar' : s.hours.isOpen ? 'Abierto' : 'Cerrado';
 
   return (
@@ -36,6 +37,9 @@ export default function DashboardPage() {
         text={formatDate(new Date().toISOString(), { weekday: 'long', day: 'numeric', month: 'long' })}
         actions={
           <>
+            <Link href="/admin/pedidos?nuevo=1" className="inline-flex h-11 items-center gap-2 rounded-lg bg-lime px-4 font-bold text-ink hover:bg-lime-deep">
+              <Plus className="size-4" strokeWidth={2.6} /> Nuevo pedido
+            </Link>
             <Link href="/admin/trabajos/nuevo" className="inline-flex h-11 items-center gap-2 rounded-lg bg-ink px-4 font-bold text-white hover:bg-steel">
               <Plus className="size-4" /> Cargar trabajo
             </Link>
@@ -58,9 +62,15 @@ export default function DashboardPage() {
       )}
 
       <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
-        <Tile label="Pedidos nuevos" value={s.totals.quotesNew} href="/admin/pedidos?estado=NEW" tone="cut" sub={s.totals.quotesNew ? 'Para responder' : 'Nada pendiente'} />
-        <Tile label="En curso" value={s.totals.inProgress} href="/admin/pedidos?estado=ACTIVE" sub="Presupuestados a listos" />
-        <Tile label="Últimos 7 días" value={s.totals.quotes7} href="/admin/pedidos" sub={`${s.totals.quotes30} en 30 días`} />
+        <Tile
+          label="Pedidos en curso"
+          value={orders.active}
+          href="/admin/pedidos"
+          tone="cut"
+          sub={orders.overdue ? `${orders.overdue} con la fecha vencida` : orders.byStatus.READY ? `${orders.byStatus.READY} listos para entregar` : orders.active ? 'Sin atrasos' : 'Nada pendiente'}
+        />
+        <Tile label="Por cobrar" value={money(orders.unpaid.amount) || '$0'} href="/admin/pedidos?ver=unpaid" sub={orders.unpaid.count ? `En ${orders.unpaid.count} pedidos` : 'Nadie debe nada'} />
+        <Tile label="Consultas web nuevas" value={s.totals.quotesNew} href="/admin/consultas?estado=NEW" sub={s.totals.quotesNew ? 'Para responder' : `${s.totals.quotes7} en los últimos 7 días`} />
         <Tile label="Taller" value={hoursText} href="/admin/horarios" sub={s.hours.isOpen && s.hours.closesAt ? `Cierra ${s.hours.closesAt}` : s.hours.next ? `Abre ${s.hours.next.dayLabel.toLowerCase()} ${s.hours.next.opens}` : 'Horarios'} />
       </div>
 
@@ -70,20 +80,20 @@ export default function DashboardPage() {
             <QuotesChart daily={s.daily} />
           </Card>
           <Card
-            title="Últimos pedidos"
+            title="Últimas consultas de la web"
             actions={
-              <Link href="/admin/pedidos" className="text-sm font-bold underline-offset-4 hover:underline">
-                Ver todos
+              <Link href="/admin/consultas" className="text-sm font-bold underline-offset-4 hover:underline">
+                Ver todas
               </Link>
             }
           >
             {s.recentQuotes.length === 0 ? (
-              <p className="py-6 text-center text-sm text-slate">Todavía no llegaron pedidos desde la web.</p>
+              <p className="py-6 text-center text-sm text-slate">Todavía no llegaron consultas desde la web.</p>
             ) : (
               <ul className="-mx-2 divide-y divide-black/8">
                 {s.recentQuotes.map((q) => (
                   <li key={q.id} className="flex items-center gap-3 px-2 py-3">
-                    <Link href={`/admin/pedidos/${q.id}`} className="min-w-0 flex-1">
+                    <Link href={`/admin/consultas/${q.id}`} className="min-w-0 flex-1">
                       <span className="flex flex-wrap items-center gap-2">
                         <span className="truncate font-bold">{q.customerName}</span>
                         <StatusBadge status={q.status} />

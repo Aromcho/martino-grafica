@@ -36,6 +36,8 @@ export const quoteKindEnum = pgEnum('quote_kind', ['QUOTE', 'CONTACT', 'ORDER'])
 export const deliveryEnum = pgEnum('delivery_method', ['PICKUP', 'INSTALL', 'SHIPPING']);
 export const quoteModeEnum = pgEnum('quote_mode', ['AREA', 'UNITS', 'CUSTOM']);
 export const bannerPlacementEnum = pgEnum('banner_placement', ['HOME_HERO', 'HOME_STRIP', 'SERVICES']);
+/** Camino de un pedido del taller, desde que se toma en el mostrador hasta que se entrega */
+export const workOrderStatusEnum = pgEnum('work_order_status', ['TO_CONFIRM', 'PENDING', 'IN_PROGRESS', 'READY', 'DELIVERED', 'CANCELLED']);
 
 export type Role = (typeof roleEnum.enumValues)[number];
 export type MediaKind = (typeof mediaKindEnum.enumValues)[number];
@@ -45,6 +47,7 @@ export type QuoteKind = (typeof quoteKindEnum.enumValues)[number];
 export type DeliveryMethod = (typeof deliveryEnum.enumValues)[number];
 export type QuoteMode = (typeof quoteModeEnum.enumValues)[number];
 export type BannerPlacement = (typeof bannerPlacementEnum.enumValues)[number];
+export type WorkOrderStatus = (typeof workOrderStatusEnum.enumValues)[number];
 
 // ---------------------------------------------------------------- helpers
 const id = () => uuid('id').primaryKey().defaultRandom();
@@ -437,6 +440,88 @@ export const quoteEvents = pgTable('quote_events', {
   createdAt: createdAt(),
 });
 
+// ---------------------------------------------------------------- pedidos del taller (mostrador)
+/**
+ * Pedido que se toma en el local: qué pidió el cliente, para cuándo, cuánto sale y cuánto dejó de seña.
+ * Reemplaza la planilla "Agenda de pendientes". El cliente lo sigue con un link público (/seguimiento/<code>).
+ */
+export const workOrders = pgTable(
+  'work_orders',
+  {
+    id: id(),
+    /** Número correlativo para hablar en el taller: #0157 */
+    number: integer('number').notNull().generatedByDefaultAsIdentity().unique(),
+    /** Código del link de seguimiento (no se puede adivinar) */
+    code: text('code').notNull().unique(),
+    status: workOrderStatusEnum('status').notNull().default('PENDING'),
+    customerName: text('customer_name').notNull(),
+    phone: text('phone'),
+    /** Qué pidió: "Stickers", "Ploteo vehicular" */
+    title: text('title').notNull().default(''),
+    /** Especificaciones: medidas, colores, cantidades */
+    details: text('details'),
+    delivery: deliveryEnum('delivery').notNull().default('PICKUP'),
+    dueDate: date('due_date', { mode: 'string' }),
+    /** Fecha de entrega escrita a mano: "A confirmar", "Antes del domingo" */
+    dueNote: text('due_note'),
+    /** Precio total en pesos. Null = todavía sin precio */
+    total: integer('total'),
+    /** Suma de los pagos registrados (seña + cobros) */
+    paid: integer('paid').notNull().default(0),
+    /** Notas internas: no las ve el cliente */
+    notes: text('notes'),
+    /** mostrador | web | excel */
+    source: text('source').notNull().default('mostrador'),
+    /** Consulta o compra de la web que originó el pedido */
+    quoteId: uuid('quote_id').references(() => quotes.id, { onDelete: 'set null' }),
+    /** Fila de la planilla de la que se importó (evita duplicar al reimportar) */
+    sheetRef: text('sheet_ref').unique(),
+    createdBy: uuid('created_by').references(() => users.id, { onDelete: 'set null' }),
+    /** Cuándo se tomó el pedido */
+    orderedAt: timestamp('ordered_at', { withTimezone: true }).notNull().defaultNow(),
+    deliveredAt: timestamp('delivered_at', { withTimezone: true }),
+    createdAt: createdAt(),
+    updatedAt: updatedAt(),
+  },
+  (t) => [index('work_orders_status_idx').on(t.status, t.orderedAt), index('work_orders_ordered_idx').on(t.orderedAt)],
+);
+
+export const workOrderPayments = pgTable(
+  'work_order_payments',
+  {
+    id: id(),
+    orderId: uuid('order_id')
+      .notNull()
+      .references(() => workOrders.id, { onDelete: 'cascade' }),
+    amount: integer('amount').notNull(),
+    /** EFECTIVO | TRANSFERENCIA | MERCADO_PAGO | TARJETA | OTRO */
+    method: text('method').notNull().default('EFECTIVO'),
+    note: text('note'),
+    userId: uuid('user_id').references(() => users.id, { onDelete: 'set null' }),
+    paidAt: timestamp('paid_at', { withTimezone: true }).notNull().defaultNow(),
+    createdAt: createdAt(),
+  },
+  (t) => [index('work_order_payments_order_idx').on(t.orderId), index('work_order_payments_paid_idx').on(t.paidAt)],
+);
+
+export const workOrderEvents = pgTable(
+  'work_order_events',
+  {
+    id: id(),
+    orderId: uuid('order_id')
+      .notNull()
+      .references(() => workOrders.id, { onDelete: 'cascade' }),
+    /** created | status | payment | note | edit | whatsapp */
+    type: text('type').notNull(),
+    fromStatus: workOrderStatusEnum('from_status'),
+    toStatus: workOrderStatusEnum('to_status'),
+    note: text('note'),
+    userId: uuid('user_id').references(() => users.id, { onDelete: 'set null' }),
+    createdAt: createdAt(),
+  },
+  (t) => [index('work_order_events_order_idx').on(t.orderId, t.createdAt)],
+);
+
 /** Registro de actividad del panel (para el dashboard) */
 export const activity = pgTable(
   'activity',
@@ -529,6 +614,23 @@ export const quoteFilesRelations = relations(quoteFiles, ({ one }) => ({
 export const quoteEventsRelations = relations(quoteEvents, ({ one }) => ({
   quote: one(quotes, { fields: [quoteEvents.quoteId], references: [quotes.id] }),
   user: one(users, { fields: [quoteEvents.userId], references: [users.id] }),
+}));
+
+export const workOrdersRelations = relations(workOrders, ({ one, many }) => ({
+  quote: one(quotes, { fields: [workOrders.quoteId], references: [quotes.id] }),
+  author: one(users, { fields: [workOrders.createdBy], references: [users.id] }),
+  payments: many(workOrderPayments),
+  events: many(workOrderEvents),
+}));
+
+export const workOrderPaymentsRelations = relations(workOrderPayments, ({ one }) => ({
+  order: one(workOrders, { fields: [workOrderPayments.orderId], references: [workOrders.id] }),
+  user: one(users, { fields: [workOrderPayments.userId], references: [users.id] }),
+}));
+
+export const workOrderEventsRelations = relations(workOrderEvents, ({ one }) => ({
+  order: one(workOrders, { fields: [workOrderEvents.orderId], references: [workOrders.id] }),
+  user: one(users, { fields: [workOrderEvents.userId], references: [users.id] }),
 }));
 
 export const activityRelations = relations(activity, ({ one }) => ({

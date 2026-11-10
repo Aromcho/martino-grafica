@@ -53,7 +53,7 @@ export class QuotesController {
 
   @Patch('admin/quotes/:id')
   @UseGuards(AdminGuard)
-  @Track('pedido', [])
+  @Track('consulta', [])
   update(@Param('id', ParseUUIDPipe) id: string, @Body() dto: UpdateQuoteDto, @CurrentUser() user: AuthUser) {
     return this.quotes.update(id, dto, user.id);
   }
@@ -67,7 +67,7 @@ export class QuotesController {
   /** Registra la respuesta por WhatsApp y devuelve el link con el mensaje armado */
   @Post('admin/quotes/:id/whatsapp')
   @UseGuards(AdminGuard)
-  @Track('pedido', [], 'respondió por WhatsApp')
+  @Track('consulta', [], 'respondió por WhatsApp')
   whatsapp(@Param('id', ParseUUIDPipe) id: string, @CurrentUser() user: AuthUser) {
     return this.quotes.logWhatsapp(id, user.id);
   }
@@ -87,7 +87,7 @@ export class QuotesController {
   @Delete('admin/quotes/:id')
   @UseGuards(AdminGuard)
   @Roles('ADMIN')
-  @Track('pedido', [])
+  @Track('consulta', [])
   remove(@Param('id', ParseUUIDPipe) id: string) {
     return this.quotes.remove(id);
   }

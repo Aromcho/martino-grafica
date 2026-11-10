@@ -26,7 +26,7 @@ export class TrackInterceptor implements NestInterceptor {
       tap((result) => {
         if (meta.tags.length) this.revalidate.trigger(meta.tags);
         const r = (result ?? {}) as Record<string, unknown>;
-        const label = (r.name ?? r.title ?? r.code ?? r.label ?? r.customerName ?? null) as string | null;
+        const label = (r.activityLabel ?? r.name ?? r.title ?? r.code ?? r.label ?? r.customerName ?? null) as string | null;
         const entityId = (r.id as string | undefined) ?? (req.params?.id as string | undefined) ?? null;
         void this.activity.log({
           userId: req.user?.id ?? null,

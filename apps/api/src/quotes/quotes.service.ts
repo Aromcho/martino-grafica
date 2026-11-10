@@ -9,7 +9,7 @@ import { waLink, waNumber } from '../common/utils/phone';
 import { nowInStoreTz } from '../common/utils/time';
 import { BusinessInfo, BusinessService } from '../business/business.service';
 import { Database, InjectDb } from '../db/db.module';
-import { DeliveryMethod, orderItems, products, quoteEvents, quoteFiles, quotes, QuoteKind, QuoteStatus } from '../db/schema';
+import { DeliveryMethod, orderItems, products, quoteEvents, quoteFiles, quotes, QuoteKind, QuoteStatus, workOrders } from '../db/schema';
 import { CreateQuoteDto, UpdateQuoteDto } from './dto/quote.dto';
 
 export const STATUS_LABEL: Record<QuoteStatus, string> = {
@@ -202,7 +202,8 @@ export class QuotesService {
       },
     });
     if (!row) throw new NotFoundException('Pedido no encontrado');
-    return { ...row, whatsappUrl: waLink(waNumber(row.phone), this.replyMessage(row)), customerWhatsapp: waNumber(row.phone) };
+    const order = await this.db.query.workOrders.findFirst({ where: eq(workOrders.quoteId, id), columns: { id: true, number: true, status: true } });
+    return { ...row, order: order ?? null, whatsappUrl: waLink(waNumber(row.phone), this.replyMessage(row)), customerWhatsapp: waNumber(row.phone) };
   }
 
   /** Mensaje sugerido para responderle al cliente según el estado */

@@ -10,6 +10,7 @@ import {
   ClipboardList,
   ExternalLink,
   Images,
+  Inbox,
   LayoutDashboard,
   LayoutGrid,
   LogOut,
@@ -32,12 +33,13 @@ import { cn } from '@/lib/cn';
 import type { AdminStats } from '@/lib/types';
 import { LoadingBlock } from './ui';
 
-type Item = { href: string; label: string; icon: LucideIcon; badge?: 'quotes'; admin?: boolean };
+type Item = { href: string; label: string; icon: LucideIcon; badge?: 'quotes' | 'orders'; admin?: boolean };
 const NAV: { title?: string; items: Item[] }[] = [
   {
     items: [
       { href: '/admin', label: 'Inicio', icon: LayoutDashboard },
-      { href: '/admin/pedidos', label: 'Pedidos', icon: ClipboardList, badge: 'quotes' },
+      { href: '/admin/pedidos', label: 'Pedidos', icon: ClipboardList, badge: 'orders' },
+      { href: '/admin/consultas', label: 'Consultas web', icon: Inbox, badge: 'quotes' },
     ],
   },
   {
@@ -70,14 +72,14 @@ const NAV: { title?: string; items: Item[] }[] = [
 
 const TABS: Item[] = [
   { href: '/admin', label: 'Inicio', icon: LayoutDashboard },
-  { href: '/admin/pedidos', label: 'Pedidos', icon: ClipboardList, badge: 'quotes' },
+  { href: '/admin/pedidos', label: 'Pedidos', icon: ClipboardList, badge: 'orders' },
+  { href: '/admin/consultas', label: 'Consultas', icon: Inbox, badge: 'quotes' },
   { href: '/admin/tienda', label: 'Tienda', icon: ShoppingBag },
-  { href: '/admin/trabajos', label: 'Trabajos', icon: SquareStack },
 ];
 
 const isActive = (pathname: string, href: string) => (href === '/admin' ? pathname === '/admin' : pathname.startsWith(href));
 
-function NavList({ onNavigate, newQuotes, isAdmin }: { onNavigate?: () => void; newQuotes: number; isAdmin: boolean }) {
+function NavList({ onNavigate, newQuotes, readyOrders, isAdmin }: { onNavigate?: () => void; newQuotes: number; readyOrders: number; isAdmin: boolean }) {
   const pathname = usePathname();
   return (
     <nav className="space-y-6" aria-label="Panel">
@@ -102,6 +104,11 @@ function NavList({ onNavigate, newQuotes, isAdmin }: { onNavigate?: () => void; 
                       <Icon className="relative size-[1.15rem]" aria-hidden="true" />
                       <span className="relative flex-1">{it.label}</span>
                       {it.badge === 'quotes' && newQuotes > 0 && <span className={cn('tabular relative rounded px-1.5 py-0.5 text-xs font-bold', active ? 'bg-ink text-lime' : 'bg-cut text-white')}>{newQuotes}</span>}
+                      {it.badge === 'orders' && readyOrders > 0 && (
+                        <span className={cn('tabular relative rounded px-1.5 py-0.5 text-xs font-bold', active ? 'bg-ink text-lime' : 'bg-lime text-ink')} title="Listos para entregar">
+                          {readyOrders}
+                        </span>
+                      )}
                     </Link>
                   </li>
                 );
@@ -121,6 +128,7 @@ export function AdminShell({ children }: { children: ReactNode }) {
   const [menu, setMenu] = useState(false);
   const stats = useAdminQuery<AdminStats>(['stats'], '/admin/stats', { enabled: !!me.data, refetchInterval: 60_000 });
   const newQuotes = stats.data?.totals.quotesNew ?? 0;
+  const readyOrders = stats.data?.orders?.byStatus.READY ?? 0;
   const isAdmin = me.data?.role === 'ADMIN';
 
   useEffect(() => {
@@ -158,7 +166,7 @@ export function AdminShell({ children }: { children: ReactNode }) {
           </span>
         </Link>
         <div className="flex-1">
-          <NavList newQuotes={newQuotes} isAdmin={isAdmin} />
+          <NavList newQuotes={newQuotes} readyOrders={readyOrders} isAdmin={isAdmin} />
         </div>
         {footer}
       </aside>
@@ -183,7 +191,7 @@ export function AdminShell({ children }: { children: ReactNode }) {
             </Drawer.Title>
             <Drawer.Description className="sr-only">Secciones del panel</Drawer.Description>
             <div className="flex-1">
-              <NavList onNavigate={() => setMenu(false)} newQuotes={newQuotes} isAdmin={isAdmin} />
+              <NavList onNavigate={() => setMenu(false)} newQuotes={newQuotes} readyOrders={readyOrders} isAdmin={isAdmin} />
             </div>
             {footer}
           </Drawer.Content>

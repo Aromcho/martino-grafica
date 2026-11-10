@@ -37,6 +37,13 @@ Después:
 - Panel: http://localhost:3000/admin
 - API y documentación: http://localhost:4000/api/docs
 
+## Pedidos del taller
+
+`/admin/pedidos` reemplaza la planilla «Agenda de pendientes»: el que atiende anota el pedido (cliente, qué pidió, para cuándo, total y seña), lo mueve por el tablero (A confirmar → Por hacer → En producción → Listo → Entregado) y le pasa al cliente un link de seguimiento (`/seguimiento/<código>`), que muestra la etapa, la fecha estimada y lo que resta abonar, nunca el teléfono ni las notas internas.
+
+- Lo que llega desde la web (presupuestos, consultas y compras de la tienda) está en `/admin/consultas` y se pasa a pedido con un botón.
+- Historial de la planilla: como tiene datos de clientes **no va en el repositorio**. Se deja el archivo en `apps/api/private/import/pedidos-historial.json` (carpeta ignorada por git) y la API lo importa sola al arrancar y lo renombra a `.importado.json`. También se puede subir desde el panel (al pie de Pedidos, «Importar archivo», sólo administradores). Las filas ya cargadas no se duplican.
+
 ## Usuario del panel
 
 El email inicial es `admin@martinografica.com.ar`. La contraseña aleatoria se genera durante `npm run setup` y queda guardada en `apps/api/.env` como `ADMIN_PASSWORD`. Cambiala al entrar (Panel → Datos y ajustes → Tu contraseña). Desde **Usuarios** se crean editores: cargan contenido y atienden pedidos, pero no cambian datos del negocio ni usuarios.
