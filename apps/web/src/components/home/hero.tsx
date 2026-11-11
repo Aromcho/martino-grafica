@@ -7,39 +7,27 @@ import { PlotterLogo } from '@/components/brand/plotter-logo';
 import { useBusiness } from '@/components/site/business-provider';
 import { StatusPill } from '@/components/site/status-pill';
 import { buttonClass } from '@/components/ui/button';
-import { useScrollVideo } from '@/components/home/scroll-video';
+import { ScrollFrames, type FrameSeq } from '@/components/home/scroll-frames';
 
-/** Video de fondo: vertical en el celular, horizontal en pantallas anchas. */
+const HERO_SEQ: Record<'wide' | 'tall', FrameSeq> = {
+  wide: { dir: '/media/video/seq/hero-d', frames: 120, poster: '/media/video/hero_16x9.webp' },
+  tall: { dir: '/media/video/seq/hero-m', frames: 120, poster: '/media/video/hero_9x16.webp' },
+};
+
+/** Fondo de la portada: secuencia vertical en el celular, horizontal en pantallas anchas. */
 function HeroVideo({ progress }: { progress: ReturnType<typeof useScroll>['scrollYProgress'] }) {
-  const ref = useRef<HTMLVideoElement>(null);
-  const reduce = useReducedMotion();
-  const [src, setSrc] = useState<{ video: string; poster: string } | null>(null);
-  useScrollVideo(ref, progress, reduce);
+  const [seq, setSeq] = useState<FrameSeq | null>(null);
 
   useEffect(() => {
     const wide = window.matchMedia('(min-width: 64rem)');
-    const pick = () => setSrc(wide.matches ? { video: '/media/video/hero_16x9.mp4', poster: '/media/video/hero_16x9.webp' } : { video: '/media/video/hero_9x16.mp4', poster: '/media/video/hero_9x16.webp' });
+    const pick = () => setSeq(wide.matches ? HERO_SEQ.wide : HERO_SEQ.tall);
     pick();
     wide.addEventListener('change', pick);
     return () => wide.removeEventListener('change', pick);
   }, []);
 
-  if (!src) return null;
-  return (
-    <video
-      ref={ref}
-      key={src.video}
-      className="absolute inset-0 size-full object-cover"
-      src={reduce ? undefined : src.video}
-      poster={src.poster}
-      muted
-      loop
-      playsInline
-      preload="metadata"
-      aria-hidden="true"
-      tabIndex={-1}
-    />
-  );
+  if (!seq) return null;
+  return <ScrollFrames key={seq.dir} seq={seq} progress={progress} eager className="absolute inset-0" />;
 }
 
 export function Hero({ productsCount }: { productsCount: number }) {
@@ -54,10 +42,10 @@ export function Hero({ productsCount }: { productsCount: number }) {
   return (
     <section ref={ref} className="relative isolate flex min-h-[100svh] flex-col overflow-hidden bg-ink pt-[calc(var(--header-h)+env(safe-area-inset-top))]" aria-labelledby="hero-title">
       <motion.div className="absolute inset-0 -z-10" style={{ y: reduce ? 0 : videoY }} aria-hidden="true">
-        <div className="absolute inset-0 opacity-[0.42] [mask-image:linear-gradient(to_bottom,black_45%,transparent)] lg:opacity-70 lg:[mask-image:none]">
+        <div className="absolute inset-0 opacity-75 [mask-image:linear-gradient(to_bottom,black_62%,transparent)] lg:opacity-90 lg:[mask-image:none]">
           <HeroVideo progress={scrollYProgress} />
         </div>
-        <div className="absolute inset-0 bg-[radial-gradient(120%_80%_at_70%_20%,transparent,rgb(0_0_0/0.85)_70%)] lg:bg-[linear-gradient(180deg,rgb(0_0_0/0.2)_0%,transparent_38%,rgb(0_0_0/0.72)_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(120%_80%_at_70%_20%,transparent,rgb(0_0_0/0.6)_78%)] lg:bg-[linear-gradient(180deg,rgb(0_0_0/0.15)_0%,transparent_40%,rgb(0_0_0/0.55)_100%)]" />
       </motion.div>
 
       <div className="container-x flex flex-1 flex-col justify-between gap-10 pb-[calc(var(--tabbar-h)+2.5rem)] pt-8 lg:pb-16 lg:pt-14">

@@ -2,49 +2,36 @@
 
 import { motion, useReducedMotion, useScroll, useTransform } from 'motion/react';
 import { useRef } from 'react';
-import { useScrollVideo } from '@/components/home/scroll-video';
+import { ScrollFrames, type FrameSeq } from '@/components/home/scroll-frames';
 
 const STEPS = [
   {
     title: 'Diseño',
     text: 'Traés tu logo o lo creamos con vos. Si querés plotear un vehículo, mandanos una foto y te mostramos cómo quedaría antes de empezar.',
-    video: '/media/video/peel.mp4',
-    poster: '/media/video/peel.webp',
+    seq: { dir: '/media/video/seq/peel', frames: 72, poster: '/media/video/peel.webp' },
   },
   {
     title: 'Impresión y corte',
     text: 'Imprimimos en gran formato y cortamos en el plotter: vinilo impreso, de corte, laminado, laqueado, holográfico o tornasolado.',
-    video: '/media/video/printer.mp4',
-    poster: '/media/video/printer.webp',
+    seq: { dir: '/media/video/seq/printer', frames: 72, poster: '/media/video/printer.webp' },
   },
   {
     title: 'Colocación',
     text: 'Lo colocamos nosotros: en el taller o en tu local, vidriera o vehículo. Muchos trabajos de motos y calcos salen en el día.',
-    video: '/media/video/squeegee.mp4',
-    poster: '/media/video/squeegee.webp',
+    seq: { dir: '/media/video/seq/squeegee', frames: 72, poster: '/media/video/squeegee.webp' },
   },
 ];
 
-function StepVideo({ src, poster }: { src: string; poster: string }) {
-  const ref = useRef<HTMLVideoElement>(null);
+function StepVideo({ seq }: { seq: FrameSeq }) {
   const box = useRef<HTMLDivElement>(null);
   const reduce = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: box, offset: ['start end', 'end start'] });
   const y = useTransform(scrollYProgress, [0, 1], ['-9%', '9%']);
-  useScrollVideo(ref, scrollYProgress, reduce);
   return (
     <div ref={box} className="relative aspect-[4/3] overflow-hidden rounded-[3px] bg-graphite">
-      <motion.video
-        ref={ref}
-        style={{ y: reduce ? 0 : y }}
-        className="absolute inset-x-0 -top-[10%] h-[120%] w-full object-cover"
-        src={reduce ? undefined : src}
-        poster={poster}
-        muted
-        playsInline
-        preload="metadata"
-        aria-hidden="true"
-      />
+      <motion.div style={{ y: reduce ? 0 : y }} className="absolute inset-x-0 -top-[10%] h-[120%] w-full">
+        <ScrollFrames seq={seq} progress={scrollYProgress} className="absolute inset-0" />
+      </motion.div>
     </div>
   );
 }
@@ -63,7 +50,7 @@ export function Process() {
         <ol className="grid gap-12 lg:grid-cols-3 lg:gap-8">
           {STEPS.map((s, i) => (
             <li key={s.title}>
-              <StepVideo src={s.video} poster={s.poster} />
+              <StepVideo seq={s.seq} />
               <div className="mt-6 flex items-baseline gap-4">
                 <span className="display tabular text-[2.6rem] text-lime" aria-hidden="true">
                   {i + 1}
