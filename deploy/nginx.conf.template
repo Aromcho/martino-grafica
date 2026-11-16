@@ -1,4 +1,4 @@
-# Martino Gráfica — server block propio. Reemplazá __DOMINIO__ (ver deploy/DEPLOY.md).
+# Martino Gráfica — server block propio. Reemplazá __DOMINIO__ y __UPLOADS__ (ver deploy/DEPLOY.md).
 # No modifica ningún otro sitio: va en su propio archivo de sites-available.
 
 upstream martino_web { server 127.0.0.1:3020; keepalive 16; }
@@ -35,7 +35,7 @@ server {
 
     # Fotos optimizadas: las sirve Nginx directo del disco (más rápido) con caché larga
     location /uploads/ {
-        alias __RUTA__/apps/api/uploads/;
+        alias __UPLOADS__/;
         access_log off;
         expires 30d;
         add_header Cache-Control "public, max-age=2592000, immutable";

@@ -4,7 +4,8 @@ Todo es propio de Martino y no toca los sitios que ya están en el servidor:
 
 | Pieza | Valor | Para qué |
 |---|---|---|
-| Carpeta | `/var/www/martinografica` | el proyecto |
+| Carpeta | `/root/martinografica` | el proyecto (código, `.env`, PM2) |
+| Fotos | `/var/www/martinografica.com/uploads` | `UPLOADS_DIR` en `apps/api/.env`; las sirve Nginx directo |
 | Web (Next) | `127.0.0.1:3020` | sólo accesible desde Nginx |
 | API (Nest) | `127.0.0.1:4020` | sólo accesible desde Nginx |
 | PostgreSQL | Docker `martino-db-prod`, `127.0.0.1:5435` | base propia |
@@ -30,10 +31,11 @@ certbot --version
 ## 3. Subir el proyecto
 
 ```bash
-sudo mkdir -p /var/www/martinografica && sudo chown $USER: /var/www/martinografica
-# Desde tu PC (o con git clone):
-scp -r MartinoGrafica/* usuario@IP:/var/www/martinografica/
-cd /var/www/martinografica
+git clone git@github-martino-grafica:Aromcho/martino-grafica.git /root/martinografica
+cd /root/martinografica
+# Nginx (www-data) no puede leer /root: las fotos van aparte. En apps/api/.env:
+#   UPLOADS_DIR=/var/www/martinografica.com/uploads
+sudo mkdir -p /var/www/martinografica.com/uploads
 ```
 
 ## 4. Base de datos
@@ -90,12 +92,12 @@ curl -s http://127.0.0.1:4020/api/health && curl -sI http://127.0.0.1:3020 | hea
 ## 7. Nginx (un archivo nuevo, sin tocar los otros)
 
 ```bash
-sed -e 's/__DOMINIO__/tudominio/g' -e 's#__RUTA__#/var/www/martinografica#g' deploy/nginx.conf.template | sudo tee /etc/nginx/sites-available/martinografica
+sed -e 's/__DOMINIO__/tudominio/g' -e 's#__UPLOADS__#/var/www/martinografica.com/uploads#g' deploy/nginx.conf.template | sudo tee /etc/nginx/sites-available/martinografica
 sudo ln -s /etc/nginx/sites-available/martinografica /etc/nginx/sites-enabled/martinografica
 sudo nginx -t && sudo systemctl reload nginx      # reload, no restart: los otros sitios siguen sirviendo
 ```
 
-Nginx sirve `/uploads` directo del disco: el usuario de Nginx (`www-data`) necesita leer `apps/api/uploads` (`chmod o+rx` en las carpetas del camino si hiciera falta).
+Nginx sirve `/uploads` directo del disco, desde `UPLOADS_DIR` (`/var/www/martinografica.com/uploads`), porque `www-data` no puede leer `/root`.
 
 ## 8. HTTPS con Certbot (sólo este dominio)
 
@@ -109,7 +111,7 @@ Certbot edita únicamente el archivo `martinografica` y agrega la redirección a
 
 ```bash
 crontab -e
-30 3 * * * bash /var/www/martinografica/deploy/backup.sh >> /var/log/martino-backup.log 2>&1
+30 3 * * * bash /root/martinografica/deploy/backup.sh >> /var/log/martino-backup.log 2>&1
 ```
 
 Guarda la base, las fotos y los archivos de clientes en `/var/backups/martino` (14 días). Para restaurar la base:
@@ -118,7 +120,7 @@ Guarda la base, las fotos y los archivos de clientes en `/var/backups/martino` (
 ## Actualizaciones
 
 ```bash
-cd /var/www/martinografica
+cd /root/martinografica
 # subí los archivos nuevos (o git pull)
 bash deploy/deploy.sh
 ```
