@@ -11,6 +11,7 @@ import { TrackInterceptor } from './common/interceptors/track.interceptor';
 import { ContentModule } from './content/content.module';
 import { DbModule } from './db/db.module';
 import { HealthController } from './health.controller';
+import { InternalModule } from './internal/internal.module';
 import { MediaModule } from './media/media.module';
 import { OrdersModule } from './orders/orders.module';
 import { QuotesModule } from './quotes/quotes.module';
@@ -40,6 +41,7 @@ import { WorksModule } from './works/works.module';
     SearchModule,
     StatsModule,
     StoreModule,
+    InternalModule,
   ],
   controllers: [HealthController],
   providers: [
